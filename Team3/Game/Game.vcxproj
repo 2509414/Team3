@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{9b362dd0-9449-44b3-a605-0cafdc9957ca}</ProjectGuid>
+    <RootNamespace>Game</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>"C:\Users\2509414\Desktop\Game\プロジェクトに追加すべきファイル_VC用"</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>"C:\Users\2509414\Desktop\Game\プロジェクトに追加すべきファイル_VC用"</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>"C:\Users\kazum\OneDrive\デスクトップ\Game\プロジェクトに追加すべきファイル_VC用"</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>"C:\Users\kazum\OneDrive\デスクトップ\Game\プロジェクトに追加すべきファイル_VC用"</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>"C:\Users\2509414\Desktop\Game\プロジェクトに追加すべきファイル_VC用"</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>"C:\Users\2509414\Desktop\Game\プロジェクトに追加すべきファイル_VC用"</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>"C:\Users\kazum\OneDrive\デスクトップ\Game\プロジェクトに追加すべきファイル_VC用"</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>"C:\Users\kazum\OneDrive\デスクトップ\Game\プロジェクトに追加すべきファイル_VC用"</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Game\Hitcheck\Hitcheck.cpp" />
+    <ClCompile Include="src\Game\Object\BG\BG.cpp" />
+    <ClCompile Include="src\Game\Object\Enemy\Enemy.cpp" />
+    <ClCompile Include="src\Game\Object\Player\Gimmick\Arrow.cpp" />
+    <ClCompile Include="src\Game\Object\Player\Gimmick\Plshot.cpp" />
+    <ClCompile Include="src\Game\Object\Player\Player.cpp" />
+    <ClCompile Include="src\Game\Object\Stage\Gimmick\MoveBlock.cpp" />
+    <ClCompile Include="src\Game\Object\Stage\Stage.cpp" />
+    <ClCompile Include="src\Game\Scene\Scene_Game\Scene_Game.cpp" />
+    <ClCompile Include="src\Game\Scene\Scene_Manager\Scene_Manager.cpp" />
+    <ClCompile Include="src\Game\Scene\Scene_Result\Scene_Result.cpp" />
+    <ClCompile Include="src\Game\Scene\Scene_Title\SceneTitle.cpp" />
+    <ClCompile Include="src\Game\Score\Coin.cpp" />
+    <ClCompile Include="src\Game\Score\Score.cpp" />
+    <ClCompile Include="src\Game\Timer\Timer.cpp" />
+    <ClCompile Include="src\Lib\Collision\Collision.cpp" />
+    <ClCompile Include="src\Lib\Debug\display.cpp" />
+    <ClCompile Include="src\Lib\Debug\Fps.cpp" />
+    <ClCompile Include="src\Lib\Effect\Effect.cpp" />
+    <ClCompile Include="src\Lib\Fade\Fade.cpp" />
+    <ClCompile Include="src\Lib\KeyInput\KeyInput.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Comon.h" />
+    <ClInclude Include="src\Game\Hitcheck\Hitcheck.h" />
+    <ClInclude Include="src\Game\Object\BG\BG.h" />
+    <ClInclude Include="src\Game\Object\Enemy\Enemy.h" />
+    <ClInclude Include="src\Game\Object\Player\Gimmick\Arrow.h" />
+    <ClInclude Include="src\Game\Object\Player\Gimmick\Plshot.h" />
+    <ClInclude Include="src\Game\Object\Player\Player.h" />
+    <ClInclude Include="src\Game\Object\Stage\Gimmick\MoveBlock.h" />
+    <ClInclude Include="src\Game\Object\Stage\Stage.h" />
+    <ClInclude Include="src\Game\Scene\Scene_Game\Scene_Game.h" />
+    <ClInclude Include="src\Game\Scene\Scene_Manager\Scene_Manager.h" />
+    <ClInclude Include="src\Game\Scene\Scene_Result\Scene_Result.h" />
+    <ClInclude Include="src\Game\Scene\Scene_Title\SceneTitle.h" />
+    <ClInclude Include="src\Game\Score\Coin.h" />
+    <ClInclude Include="src\Game\Score\Score.h" />
+    <ClInclude Include="src\Game\Timer\Timer.h" />
+    <ClInclude Include="src\Lib\Collision\Collision.h" />
+    <ClInclude Include="src\Lib\Debug\display.h" />
+    <ClInclude Include="src\Lib\Debug\Fps.h" />
+    <ClInclude Include="src\Lib\Effect\Effect.h" />
+    <ClInclude Include="src\Lib\Fade\Fade.h" />
+    <ClInclude Include="src\Lib\KeyInput\KeyInput.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
