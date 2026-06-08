@@ -1,19 +1,9 @@
 #include "DxLib.h"	//DxLibを使用するために必要
-#include "Src/Game/Background.h"
-#include "Src/Game/Player.h"
-#include "Src/Lib/Input.h"
-#include "Src/Game/HitCheck.h"
-#include "Src/Game/Item.h"
-#include "Src/Game/Knife.h"
-#include "Src/Game/Stage.h"
-#include "Src/Game/SceneManager.h"
 #include "Src/Lib/Fps.h"
-#include "Src/Game/ItemEffect.h"
-#include "Src/Game/Sound.h"
-#include "Src/Game/Score.h"
-#include "Src/Lib/Time.h"
+#include "Src/Lib/Input.h"
+#include "Src/Game/Scene/SceneManager.h"
 #include "Src/Lib/fade.h"
-#include "Src/Game/SceneTitle.h"
+#include "Src/Game/Scene/SceneTitle.h"
 
 float g_deltaTime = 0.03f;
 float g_deltaBossTime = 0.03f;

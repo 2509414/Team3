@@ -1,8 +1,8 @@
 #include <DxLib.h>
 #include"Input.h"
-#include "../Game/Player.h"
-#include "../Game/Knife.h"
-#include "../Game/Knife2.h"
+#include "../Game/Knife/Knife.h"
+#include "../Game/Knife/Knife2.h"
+
 //キーボード入力構造体
 typedef struct {
 	unsigned int m_nowKey;	//今回入力したキー
