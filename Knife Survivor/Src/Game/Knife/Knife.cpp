@@ -1,17 +1,19 @@
 #include<DxLib.h>
 
 #include"Knife.h"
+#include "../Sound/Sound.h"
 //定義関連
 #define KNIFE_SPEED (5)
-#define KNIFE_ACTIVE_TIME (6)
+#define KNIFE_ACTIVE_TIME (360)
 
 //ナイフデータ初期化関数
 void Knife::Init()
 {
 	m_hndl = -1;
 
-	//弾の初期化
 	m_isActive = 0;
+
+	m_cooltime = 0.0f;
 }
 
 //	ナイフデータ読み込み関数
@@ -26,23 +28,27 @@ void Knife::Load()
 //	ナイフデータ更新関数
 void Knife::Step()
 {
-	//ナイフの移動処理
+	// クールタイム減少
+	if (m_cooltime > 0.0f)
+	{
+		m_cooltime--;
 	
-		if (m_isActive != 0)
+	}
+	//ナイフの移動処理
+	if (m_isActive != 0)
+	{
+		// ただ速度を足すだけ
+		m_pos.x += m_speed.x;
+		m_pos.y += m_speed.y;
+		m_timer += 1.0f;
+		//g_knife.m_timerがアクティブタイムより大きくなったら消す
+		if (m_timer > KNIFE_ACTIVE_TIME)
 		{
-			// ただ速度を足すだけ
-			m_pos.x += m_speed.x;
-			m_pos.y += m_speed.y;
-
-			//経過時間を加算
-			m_timer += 0.1;
-
-			//g_knife.m_timerがアクティブタイムより大きくなったら消す
-			if (m_timer > KNIFE_ACTIVE_TIME)
-			{
-				m_isActive = 0;
-			}
+			m_isActive = 0;
+			
 		}
+		DrawFormatString(300, 300, GetColor(255, 255, 255), "クールタイム %d", m_cooltime);
+	}
 }
 //	表示関数
 void Knife::Draw()
@@ -55,6 +61,12 @@ void Knife::Draw()
 		if (m_speed.x < 0.0f) isTurn = true;
 		else isTurn = false;
 		DrawRotaGraph((int)m_pos.x, (int)m_pos.y, 1.0, 0.0,m_hndl, TRUE, isTurn);
+	}
+
+	//クールタイムが0より大きかったら残り何カウントか知らせる
+	if (m_cooltime > 0)
+	{
+		DrawFormatString(40, 75,GetColor(255,0,0),"Knife クールタイム : %.1f",m_cooltime);
 	}
 }
 
@@ -70,9 +82,17 @@ void Knife::Exit()
 
 void Knife::Request(VECTOR pos, VECTOR speed)
 {
+	// クールタイム中は発射不可
+	if (m_cooltime > 0.0f)
+	{
+		return;
+	}
 	m_isActive = 1;
+	m_timer = 0.0f;		//タイマーを0にセット
+	PlaybackSound(0);
+	m_cooltime = 180;	//投げた瞬間から3秒待つ
 
-	m_timer = 0.0f;	//タイマーを0にセット
+	
 	// ナイフの移動方向や速度はプレイヤー側に設定をお願いする
 	m_speed = speed;
 	m_pos = pos;

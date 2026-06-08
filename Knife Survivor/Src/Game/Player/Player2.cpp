@@ -35,7 +35,7 @@ void Player2::Init(int Stagenum)
 	m_shothndl = -1;
 	TurnFrag = 1;
 	m_pos.x = 830;
-	m_pos.y = 519;
+	m_pos.y = 535;
 	g_isGameClear = false;
 	m_isBossScene = false;
 	Knife = 1;
@@ -124,7 +124,7 @@ void Player2::Step()
 		if (TurnFrag == 0) v.x = 5.0f;
 		else v.x = -5.0f;
 		knife2.Request(m_pos,v);
-		PlaybackSound(0);
+		
 	}
 
 	//クリックした場所にブロックを置く

@@ -8,6 +8,7 @@ public:
 	VECTOR m_pos;
 	VECTOR m_speed;	// ナイフの飛ぶ速度
 	float m_timer;	//	ナイフを投げてからの経過時間
+	float m_cooltime;// クールタイム用
 	bool m_isActive;
 
 public:
