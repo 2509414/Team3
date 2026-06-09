@@ -195,6 +195,7 @@ bool Player::HitCheckKnifeToPlayer2()
 		{
 			return false;
 		}
+
 		bool hit = ChenkHitSquareToSquare(Knife1.m_pos, 30, 30, player2.m_pos,30,30);
 		
 		if (hit == true)
