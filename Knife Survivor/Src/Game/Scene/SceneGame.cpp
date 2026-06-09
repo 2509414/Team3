@@ -37,7 +37,7 @@ int StepGame(int Stagenum)
 		Knife1.Init();
 		knife2.Init();
 		
-		TimerInit(30);	//〇秒タイマー
+		TimerInit(300);	//〇秒タイマー
 		TimerStart();	//タイマー開始
 		player1.Init(Stagenum);
 		player2.Init(Stagenum);

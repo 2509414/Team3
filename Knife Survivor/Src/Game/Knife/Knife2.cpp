@@ -89,7 +89,7 @@ void Knife2::Request(VECTOR pos, VECTOR speed)
 	m_isActive = 1;
 	m_timer = 0.0f;		//タイマーを0にセット
 	PlaybackSound(0);
-	m_cooltime = 180;	//投げた瞬間から3秒待つ
+	m_cooltime = 120;	//投げた瞬間から3秒待つ
 
 
 	// ナイフの移動方向や速度はプレイヤー側に設定をお願いする
