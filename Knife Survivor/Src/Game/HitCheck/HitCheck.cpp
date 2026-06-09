@@ -34,7 +34,7 @@ void HitCheckPlayerToStage()
 	int	objHalfSizeY = 16;
 
 	//ナイフのサイズ	
-	int KnifeSizeX = 16;
+	int KnifeSizeX = 12;
 	int KnifeSizeY = 5;
 	//プレイヤーとナイフとマップチップの座標を取得
 	VECTOR knifepos = Knife1.m_pos;

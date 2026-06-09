@@ -50,6 +50,9 @@ void UpdateKeyInput()
 	if (CheckHitKey(KEY_INPUT_W) && Knife1.m_isActive == false ||
 		input.Buttons[XINPUT_BUTTON_RIGHT_SHOULDER] && Knife1.m_isActive == false) g_inputData.m_nowKey |= KEY_KNIFE;
 	
+	//Xキーまたはコントローラー下を押したら
+	if (CheckHitKey(KEY_INPUT_X) || input.Buttons[XINPUT_BUTTON_DPAD_DOWN])g_inputData.m_nowKey |= KEY_SQUAT;
+
 	if(IsMouseLeftClick() == true) g_inputData.m_nowKey |= KEY_ITEMCRAFT;
 
 	//2P===========================================================================
@@ -76,6 +79,8 @@ void UpdateKeyInput()
 	//Iを押した またはコントローラーのRBを押したかつナイフの生存フラグがfalse (ナイフを投げる)
 	if (CheckHitKey(KEY_INPUT_I) && knife2.m_isActive == false||
 		input.Buttons[XINPUT_BUTTON_RIGHT_SHOULDER] && Knife1.m_isActive == false) g_inputData.m_nowKey |= KEY_KNIFE2;
+
+	if (CheckHitKey(KEY_INPUT_M) || input.Buttons[XINPUT_BUTTON_DPAD_DOWN])g_inputData.m_nowKey |= KEY_SQUAT2;
 }
 
 int IsKeyInput(unsigned int key)

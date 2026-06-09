@@ -28,6 +28,9 @@ public:
 	// I—¹ˆ—
 	void Exit();
 
+	//‚µ‚á‚ª‚İ
+	void Squat();
+
 	// ’…’n
 	void SetLand();
 

@@ -6,6 +6,7 @@ class Player
 {
 public:
 	int m_hndl[7];			// 画像ハンドル
+	int m_shndl[7];			//しゃがみ画像ハンドル
 	int m_playerstate;		// プレイヤーステータス
 	float playerSy;			// 縦方向速度
 	int groundY;			// 地面
@@ -17,10 +18,12 @@ public:
 	float anim;
 	int TurnFrag;			//ターンフラグ
 	int m_hp;				//体力
-
+	int m_squattime;
 	bool g_isGameClear;		// ゲームクリア判定
 	bool m_isBossScene;		// ボスシーン判定
 	bool m_isActive;		// 生存フラグ
+	bool m_isSquat;			//しゃがんでるかどうか
+
 
 	VECTOR m_pos;			// 座標
 	SHOT_DATA m_shot;		// 弾管理
@@ -41,6 +44,9 @@ public:
 
 	// ジャンプ
 	void Jump();
+
+	//しゃがみ
+	void Squat();
 
 	// 描画
 	void Draw();

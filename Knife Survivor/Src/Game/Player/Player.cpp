@@ -32,6 +32,7 @@ void Player::Init(int Stagenum)
 {
 	//画像をロードしていないという意味で-1を入れる
 	m_hndl[0] = -1;
+	m_shndl[0] = -1;
 	m_shothndl = -1;
 	TurnFrag = 0;
 	m_pos.x = 150;
@@ -41,6 +42,7 @@ void Player::Init(int Stagenum)
 	Knife = 1;
 	itemcraft = 0;
 	m_hp = 10;
+	m_isSquat = false;
 
 	if (Stagenum == 1)
 	{
@@ -60,6 +62,12 @@ void Player::Load()
 	{
 		LoadDivGraph("Data/Textures/キャラ.png", 4, 4, 1, PLAYER_X_SIZE, PLAYER_Y_SIZE, m_hndl);
 	}
+
+	if (m_shndl[0] == -1)
+	{
+		LoadDivGraph("Data/Textures/Squat.png", 4, 4, 1, PLAYER_X_SIZE, PLAYER_Y_SIZE, m_shndl);
+	}
+
 }
 
 //	プレイヤーダッシュ関数
@@ -91,11 +99,18 @@ void Player::Jump()
 
 }
 
+//しゃがみ処理
+void Player::Squat()
+{
+	
+
+}
+
+
 //	プレイヤーデータ更新関数
 void Player::Step()
 {
-
-
+	m_squattime--;
 	//プレイヤー移動処理
 	if (IsKeyInput(KEY_RIGHT))
 	{
@@ -125,8 +140,20 @@ void Player::Step()
 		VECTOR v = { 0.0f, 0.0f, 0.0f };
 		if (TurnFrag == 0) v.x = 5.0f;
 		else v.x = -5.0f;
-		Knife1.Request(m_pos,v);
+		Knife1.Request(m_pos ,v);
 		
+	}
+
+	if (IsKeyInput(KEY_SQUAT) == true)
+	{
+		m_squattime = 30;
+		
+		m_isSquat = true;
+	}
+
+	if (m_squattime < 0)
+	{
+		m_isSquat = false;
 	}
 
 	//クリックした場所にブロックを置く
@@ -159,11 +186,23 @@ void Player::Step()
 void Player::Draw()
 {
 	int frame = (int)anim;
-	for (int i = 0; i < 4; i++)
+	if (m_isSquat == false)
 	{
-		//画像描画　第１、２引数は画像の位置、第3引数は拡大縮小率、第４引数は回転率（ラジアン角指定）
-		DrawRotaGraph((int)m_pos.x, (int)m_pos.y, 0.2, 0.0, (int)m_hndl[frame], TRUE, TurnFrag);
+		for (int i = 0; i < 4; i++)
+		{
+			//画像描画　第１、２引数は画像の位置、第3引数は拡大縮小率、第４引数は回転率（ラジアン角指定）
+			DrawRotaGraph((int)m_pos.x, (int)m_pos.y, 0.2, 0.0, (int)m_hndl[frame], TRUE, TurnFrag);
+		}
 	}
+	if (m_isSquat == true)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			//画像描画　第１、２引数は画像の位置、第3引数は拡大縮小率、第４引数は回転率（ラジアン角指定）
+			DrawRotaGraph((int)m_pos.x, (int)m_pos.y + 10, 0.18, 0.0, (int)m_shndl[frame], TRUE, TurnFrag);
+		}
+	}
+	
 	DrawFormatString(75, 100, GetColor(255, 0, 0), "残りHP : %d", m_hp);
 	DrawFormatString(m_pos.x - 9,m_pos.y -50, GetColor(255, 0, 0), "1P");
 
@@ -196,20 +235,30 @@ bool Player::HitCheckKnifeToPlayer2()
 			return false;
 		}
 
-		bool hit = ChenkHitSquareToSquare(Knife1.m_pos, 30, 30, player2.m_pos,30,30);
-		
+		bool hit = false;
+
+		if (player2.m_isSquat == false)
+		{
+			hit = ChenkHitSquareToSquare(Knife1.m_pos, 15, 10, player2.m_pos, 12, 20);
+		}
+		else
+		{
+			hit = ChenkHitSquareToSquare(Knife1.m_pos, 15, 5, player2.m_pos, 12, 0);
+		}
+
 		if (hit == true)
 		{
-			//当たったらナイフの生存フラグを消す！（これをしないと毎フレームHPが減って大変だぞ)
+			//当たったらナイフの生存フラグを消す
 			Knife1.m_isActive = 0;
 			PlaybackSound(1);
 			player2.m_hp -= 1;
-			
+
 			return true;
 		}
-		
-	return false;
+
+		return false;
 }
+
 	
 	
 
