@@ -40,6 +40,9 @@
     <Filter Include="ソース ファイル\Game\Stage">
       <UniqueIdentifier>{6773b5f5-1560-4c42-8925-547b0ebb872b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Item">
+      <UniqueIdentifier>{90275622-236c-4c41-9e40-868044f69adf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Lib\Input.cpp">
@@ -96,6 +99,9 @@
     <ClCompile Include="Src\Game\Stage\Stage.cpp">
       <Filter>ソース ファイル\Game\Stage</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Item\Item.cpp">
+      <Filter>ソース ファイル\Game\Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Lib\Input.h">
@@ -151,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Stage\Stage.h">
       <Filter>ソース ファイル\Game\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Item\Item.h">
+      <Filter>ソース ファイル\Game\Item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

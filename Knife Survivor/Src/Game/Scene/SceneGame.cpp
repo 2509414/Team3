@@ -10,6 +10,7 @@
 #include "../Sound/Sound.h"
 #include "../Stage/Stage.h"
 #include "../HitCheck/HitCheck.h"
+#include "../Item/Item.h"
 
 int Winner;					//èüé“
 
@@ -18,6 +19,7 @@ Player player1;
 Player2 player2;
 Knife Knife1;
 Knife2 knife2;
+Item item;
 
 int StepGame(int Stagenum) 
 {
@@ -42,6 +44,7 @@ int StepGame(int Stagenum)
 		player1.Init(Stagenum);
 		player2.Init(Stagenum);
 
+		item.Init();
 		g_gameScene.m_state = GAMESCENE_LOAD;
 		break;
 
@@ -55,6 +58,8 @@ int StepGame(int Stagenum)
 		Knife1.Load();
 		knife2.Load();
 		
+		item.Load();
+
 		LoadSound();
 
 		RequestFadeIn();
@@ -87,6 +92,7 @@ int StepGame(int Stagenum)
 		player2.Dash();
 		player2.Jump();
 
+		item.Step();
 		
 		UpdateStage();
 
@@ -183,6 +189,7 @@ void DrawGame()
 		Knife1.Draw();
 		knife2.Draw();
 	
+		item.Draw();
 		PrintFps();
 		
 		int mx, my;
