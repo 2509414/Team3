@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Item\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Player\\Player2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Item\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Item\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -19,8 +31,20 @@
       "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\HitCheck\\HitCheck.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Player\\Player2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Sound\\Sound.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Sound\\Sound.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Sound\\Sound.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Sound\\Sound.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Knife\\Knife2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Knife\\Knife2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Knife\\Knife.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -29,18 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Stage\\Stage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Stage\\Stage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Player\\Player2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Player\\Player2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Lib\\Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -71,24 +83,12 @@
       "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Lib\\Fps.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Knife\\Knife2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Knife\\Knife2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Knife\\Knife.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Knife\\Knife.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Knife\\Knife2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Knife\\Knife2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Sound\\Sound.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Sound\\Sound.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Sound\\Sound.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|solutionrelative:Src\\Game\\Sound\\Sound.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0FA80E37-EA36-4885-87A4-35C5FB751940}|SideScroll.vcxproj|C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Stage\\Stage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -101,31 +101,32 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 2156,
+          "DockedWidth": 1750,
           "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Player2.cpp",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player2.cpp",
               "RelativeDocumentMoniker": "Src\\Game\\Player\\Player2.cpp",
               "ToolTip": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player2.cpp",
               "RelativeToolTip": "Src\\Game\\Player\\Player2.cpp",
-              "ViewState": "AgIAAOYAAAAAAAAAAAAkwOgAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAACUBAAAAAAAAAAAnwCMBAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-07T23:17:34.214Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "HitCheck.h",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\HitCheck\\HitCheck.h",
               "RelativeDocumentMoniker": "Src\\Game\\HitCheck\\HitCheck.h",
               "ToolTip": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\HitCheck\\HitCheck.h",
               "RelativeToolTip": "Src\\Game\\HitCheck\\HitCheck.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-06-08T02:08:04.197Z",
               "IsPinned": true,
@@ -133,13 +134,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Item.h",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Item\\Item.h",
               "RelativeDocumentMoniker": "Src\\Game\\Item\\Item.h",
               "ToolTip": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Item\\Item.h",
               "RelativeToolTip": "Src\\Game\\Item\\Item.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-06-10T11:53:54.497Z",
               "EditorCaption": ""
@@ -152,14 +153,14 @@
               "RelativeDocumentMoniker": "Src\\Game\\Item\\Item.cpp",
               "ToolTip": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Item\\Item.cpp",
               "RelativeToolTip": "Src\\Game\\Item\\Item.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACwAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-10T11:53:45.78Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "Stage.cpp",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Stage\\Stage.cpp",
               "RelativeDocumentMoniker": "Src\\Game\\Stage\\Stage.cpp",
@@ -167,12 +168,11 @@
               "RelativeToolTip": "Src\\Game\\Stage\\Stage.cpp",
               "ViewState": "AgIAABMAAAAAAAAAAIBRwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-10T07:44:46.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-10T07:44:46.631Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "SceneGame.h",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Scene\\SceneGame.h",
               "RelativeDocumentMoniker": "Src\\Game\\Scene\\SceneGame.h",
@@ -184,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Fps.h",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Lib\\Fps.h",
               "RelativeDocumentMoniker": "Src\\Lib\\Fps.h",
@@ -196,19 +196,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "Player.h",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player.h",
               "RelativeDocumentMoniker": "Src\\Game\\Player\\Player.h",
               "ToolTip": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player.h",
               "RelativeToolTip": "Src\\Game\\Player\\Player.h",
-              "ViewState": "AgIAAB4AAAAAAAAAAADwvzAAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-09T04:45:47.863Z"
+              "WhenOpened": "2026-06-09T04:45:47.863Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "HitCheck.cpp",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\HitCheck\\HitCheck.cpp",
               "RelativeDocumentMoniker": "Src\\Game\\HitCheck\\HitCheck.cpp",
@@ -220,20 +221,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Knife.cpp",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Knife\\Knife.cpp",
               "RelativeDocumentMoniker": "Src\\Game\\Knife\\Knife.cpp",
               "ToolTip": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Knife\\Knife.cpp",
               "RelativeToolTip": "Src\\Game\\Knife\\Knife.cpp",
-              "ViewState": "AgIAAEAAAAAAAAAAAABcwFwAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAFwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-09T02:19:34.436Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "Knife2.h",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Knife\\Knife2.h",
               "RelativeDocumentMoniker": "Src\\Game\\Knife\\Knife2.h",
@@ -245,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Input.h",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Lib\\Input.h",
               "RelativeDocumentMoniker": "Src\\Lib\\Input.h",
@@ -257,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Input.cpp",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Lib\\Input.cpp",
               "RelativeDocumentMoniker": "Src\\Lib\\Input.cpp",
@@ -269,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Collision.cpp",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Lib\\Collision.cpp",
               "RelativeDocumentMoniker": "Src\\Lib\\Collision.cpp",
@@ -281,27 +282,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 8,
               "Title": "Sound.h",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Sound\\Sound.h",
               "RelativeDocumentMoniker": "Src\\Game\\Sound\\Sound.h",
               "ToolTip": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Sound\\Sound.h",
               "RelativeToolTip": "Src\\Game\\Sound\\Sound.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-08T02:08:44.87Z"
+              "WhenOpened": "2026-06-08T02:08:44.87Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 9,
               "Title": "Sound.cpp",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Sound\\Sound.cpp",
               "RelativeDocumentMoniker": "Src\\Game\\Sound\\Sound.cpp",
               "ToolTip": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Sound\\Sound.cpp",
               "RelativeToolTip": "Src\\Game\\Sound\\Sound.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-08T02:08:42.203Z"
+              "WhenOpened": "2026-06-08T02:08:42.203Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -317,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Knife.h",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Knife\\Knife.h",
               "RelativeDocumentMoniker": "Src\\Game\\Knife\\Knife.h",
@@ -329,19 +332,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Player2.h",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player2.h",
               "RelativeDocumentMoniker": "Src\\Game\\Player\\Player2.h",
               "ToolTip": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player2.h",
               "RelativeToolTip": "Src\\Game\\Player\\Player2.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-08T01:09:45.524Z"
+              "WhenOpened": "2026-06-08T01:09:45.524Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "Time.cpp",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Lib\\Time.cpp",
               "RelativeDocumentMoniker": "Src\\Lib\\Time.cpp",
@@ -353,38 +357,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "SceneGame.cpp",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Scene\\SceneGame.cpp",
               "RelativeDocumentMoniker": "Src\\Game\\Scene\\SceneGame.cpp",
               "ToolTip": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Scene\\SceneGame.cpp",
               "RelativeToolTip": "Src\\Game\\Scene\\SceneGame.cpp",
-              "ViewState": "AgIAALQAAAAAAAAAAAAAAL8AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAcwIMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-07T23:15:38.047Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 10,
               "Title": "Knife2.cpp",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Knife\\Knife2.cpp",
               "RelativeDocumentMoniker": "Src\\Game\\Knife\\Knife2.cpp",
               "ToolTip": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Knife\\Knife2.cpp",
               "RelativeToolTip": "Src\\Game\\Knife\\Knife2.cpp",
-              "ViewState": "AgIAACIAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-07T23:18:49.912Z"
-            },
+              "WhenOpened": "2026-06-07T23:18:49.912Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1396,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player.cpp",
               "RelativeDocumentMoniker": "Src\\Game\\Player\\Player.cpp",
               "ToolTip": "C:\\Users\\hikar\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player.cpp",
               "RelativeToolTip": "Src\\Game\\Player\\Player.cpp",
-              "ViewState": "AgIAADQAAAAAAAAAAAAkwDsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABABAAAAAAAAAAAqwCQBAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-07T23:16:16.892Z",
               "EditorCaption": ""

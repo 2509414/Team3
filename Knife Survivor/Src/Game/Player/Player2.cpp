@@ -40,6 +40,7 @@ void Player2::Init(int Stagenum)
 	g_isGameClear = false;
 	m_isBossScene = false;
 	m_isSquat = false;
+	m_isAttack = false;
 	Knife = 1;
 	itemcraft = 0;
 	m_hp = 10;
@@ -253,6 +254,50 @@ bool Player2::HitCheckKnifeToPlayer1()
 		knife2.m_isActive = 0;
 		PlaybackSound(1);
 		player1.m_hp -= 1;
+
+		return true;
+	}
+
+	return false;
+}
+
+//ナイフとアイテムの判定(アイテムクラスを参照)
+bool Player2::HitCheckKnife2ToItem(Item& item)
+{
+	//falseだったら判定しない
+	if (knife2.m_isActive == false)
+	{
+		return false;
+	}
+
+	bool hit = ChenkHitSquareToSquare(knife2.m_pos, 15, 10, item.m_pos, 16, 16);
+
+	if (hit == true)
+	{
+		//HPが1じゃなかったら(８)の音 1だったら(10)の音を鳴らす　これで壊れると時だけ音を変えれる
+		if (item.m_hp != 1)
+		{
+			PlaybackSound(8);
+		}
+		else
+		{
+			PlaybackSound(10);
+		}
+		//アクティブをfalseに
+		knife2.m_isActive = false;
+
+		//hpを減らす
+		item.m_hp--;
+
+		//0以下になったら
+		if (item.m_hp <= 0)
+		{
+			// 必殺技獲得
+			m_isAttack = true;
+
+			// アイテム消す
+			item.m_isdraw = false;
+		}
 
 		return true;
 	}

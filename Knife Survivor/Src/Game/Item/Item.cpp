@@ -6,7 +6,8 @@ void Item::Init()
 {
 	m_hndl = -1;
 	m_pos = { 100.0f,100.0f,0.0f };
-	m_drawtime = GetRand(100) + 60;
+	m_drawtime = GetRand(100) + 180;
+	m_hp = GetRand(3) + 1;
 	m_speedX = 3.0f;
 	m_speedY = 2.0f;
 	m_isdraw = false;
@@ -56,6 +57,12 @@ void Item::Step()
 	{
 		m_speedY *= -1;
 	}
+
+	//”jŠüˆ—
+	if (m_hp == 0)
+	{
+		Item::Exit();
+	}
 }
 
 //•\¦ŠÖ”
@@ -64,11 +71,16 @@ void Item::Draw()
 	if (m_isdraw == true)
 	{
 		DrawGraph(m_pos.x, m_pos.y, m_hndl, TRUE);
+		DrawFormatString(450, 300, GetColor(255, 255, 0), "‚ ‚Æ%d‰ñ‚ÅŠ„‚ê‚éI", m_hp);
 	}
 }
 
 //”jŠüŠÖ”
 void Item::Exit()
 {
-	
+	if (m_hp == 0)
+	{
+		DeleteGraph(m_hndl);
+		m_isdraw = false;
+	}
 }

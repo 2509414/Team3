@@ -2,6 +2,8 @@
 
 #include "../../../Shot.h"
 
+class Item;
+
 class Player
 {
 public:
@@ -23,6 +25,7 @@ public:
 	bool m_isBossScene;		// ボスシーン判定
 	bool m_isActive;		// 生存フラグ
 	bool m_isSquat;			//しゃがんでるかどうか
+	bool m_isAttack;		//必殺技フラグ
 
 
 	VECTOR m_pos;			// 座標
@@ -65,6 +68,9 @@ public:
 
 	//ナイフと敵の当たり判定
 	bool HitCheckKnifeToPlayer2();
+
+	//ナイフとアイテムの判定
+	bool HitCheckKnife1ToItem(Item& item);
 
 };
 

@@ -105,6 +105,9 @@ int StepGame(int Stagenum)
 		player1.HitCheckKnifeToPlayer2();
 		player2.HitCheckKnifeToPlayer1();
 
+		//ナイフとアイテムの当たり判定
+		player1.HitCheckKnife1ToItem(item);
+		player2.HitCheckKnife2ToItem(item);
 
 		//ゲーム終了へ
 		if (player1.m_hp == 0)

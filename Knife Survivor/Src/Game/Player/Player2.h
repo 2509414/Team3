@@ -1,7 +1,10 @@
 #pragma once
 
 #include "../../../Shot.h"
-#include"Player.h"
+#include"Player2.h"
+#include "../Item/Item.h"
+
+class Item;
 
 class Player2:public Player
 {
@@ -35,6 +38,9 @@ public:
 	void SetLand();
 
 	bool HitCheckKnifeToPlayer1();
+
+	//ナイフとアイテムの判定
+	bool HitCheckKnife2ToItem(Item& item);
 
 	// 座標設定
 	void SetPos(VECTOR pos);

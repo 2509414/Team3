@@ -66,6 +66,11 @@ void LoadSound()
 			g_sound.m_Soundhndl[9] = LoadSoundMem("Data/Sound/BossBGM.mp3");
 		}
 
+		if (g_sound.m_Soundhndl[10] == -1)
+		{
+			g_sound.m_Soundhndl[10] = LoadSoundMem("Data/Sound/Attack.mp3");
+		}
+
 }
 
 void PlaybackSound(int SoundId)

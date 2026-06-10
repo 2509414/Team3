@@ -5,6 +5,7 @@ class Item
 public:
 	int m_drawtime;		//描画するまでの時間
 	int m_hndl;			//画像ハンドル
+	int m_hp;			//アイテムのHP
 	float m_speedX;		//X軸の移動速度
 	float m_speedY;		//Y軸の移動速度
 	bool m_isdraw;		//描画するかどうか

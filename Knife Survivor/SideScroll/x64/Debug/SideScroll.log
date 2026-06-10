@@ -1,6 +1,15 @@
 ﻿  Item.cpp
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(45,26): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
 C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(46,26): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(66,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(66,18): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(47,26): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(72,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(72,18): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Player2.cpp
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(90,45): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(116,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(127,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(146,32): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(207,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(207,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SceneGame.cpp
+  コードを生成中...
   SideScroll.vcxproj -> C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\x64\Debug\SideScroll.exe
