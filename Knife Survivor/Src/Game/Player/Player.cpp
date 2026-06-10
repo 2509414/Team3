@@ -51,7 +51,7 @@ void Player::Init(int Stagenum)
 
 	if (Stagenum == 2)
 	{
-		m_pos.y = 423 ;
+		m_pos.y = 423;
 	}
 }
 
@@ -102,7 +102,7 @@ void Player::Jump()
 //しゃがみ処理
 void Player::Squat()
 {
-	
+
 
 }
 
@@ -140,14 +140,14 @@ void Player::Step()
 		VECTOR v = { 0.0f, 0.0f, 0.0f };
 		if (TurnFrag == 0) v.x = 5.0f;
 		else v.x = -5.0f;
-		Knife1.Request(m_pos ,v);
-		
+		Knife1.Request(m_pos, v);
+
 	}
 
 	if (IsKeyInput(KEY_SQUAT) == true)
 	{
 		m_squattime = 30;
-		
+
 		m_isSquat = true;
 	}
 
@@ -164,7 +164,7 @@ void Player::Step()
 		int mx, my;
 		GetMousePoint(&mx, &my);
 
-		
+
 		int mapX = mx / OBJECT_SIZE_X;	//今の座標÷マップチップのサイズ(32)をして
 		int mapY = my / OBJECT_SIZE_Y;	//格納する場所を決める
 
@@ -202,9 +202,9 @@ void Player::Draw()
 			DrawRotaGraph((int)m_pos.x, (int)m_pos.y + 10, 0.18, 0.0, (int)m_shndl[frame], TRUE, TurnFrag);
 		}
 	}
-	
+
 	DrawFormatString(75, 100, GetColor(255, 0, 0), "残りHP : %d", m_hp);
-	DrawFormatString(m_pos.x - 9,m_pos.y -50, GetColor(255, 0, 0), "1P");
+	DrawFormatString(m_pos.x - 9, m_pos.y - 50, GetColor(255, 0, 0), "1P");
 
 }
 
@@ -230,37 +230,37 @@ void Player::SetLand()
 bool Player::HitCheckKnifeToPlayer2()
 {
 	//ナイフが出てなかったら判定しない
-		if (Knife1.m_isActive== 0)
-		{
-			return false;
-		}
-
-		bool hit = false;
-
-		if (player2.m_isSquat == false)
-		{
-			hit = ChenkHitSquareToSquare(Knife1.m_pos, 15, 10, player2.m_pos, 12, 20);
-		}
-		else
-		{
-			hit = ChenkHitSquareToSquare(Knife1.m_pos, 15, 5, player2.m_pos, 12, 0);
-		}
-
-		if (hit == true)
-		{
-			//当たったらナイフの生存フラグを消す
-			Knife1.m_isActive = 0;
-			PlaybackSound(1);
-			player2.m_hp -= 1;
-
-			return true;
-		}
-
+	if (Knife1.m_isActive == 0)
+	{
 		return false;
+	}
+
+	bool hit = false;
+
+	if (player2.m_isSquat == false)
+	{
+		hit = ChenkHitSquareToSquare(Knife1.m_pos, 15, 10, player2.m_pos, 12, 20);
+	}
+	else
+	{
+		hit = ChenkHitSquareToSquare(Knife1.m_pos, 15, 5, player2.m_pos, 12, 0);
+	}
+
+	if (hit == true)
+	{
+		//当たったらナイフの生存フラグを消す
+		Knife1.m_isActive = 0;
+		PlaybackSound(1);
+		player2.m_hp -= 1;
+
+		return true;
+	}
+
+	return false;
 }
 
-	
-	
+
+
 
 ////オフセット値を取得
 //VECTOR GetOffset()
