@@ -187,11 +187,11 @@ void Player2::Step()
 			// 攻撃の移動方向を決める
 			VECTOR v = { 0.0f, 0.0f, 0.0f };
 			if (TurnFrag == 0) {
-				m_pos.x += 10.0f;
+				/*m_pos.x += 10.0f;*/
 				attack2.Request(m_pos, true);
 			}
 			else {
-				m_pos.x += -10.0f;
+				/*m_pos.x += -10.0f;*/
 				attack2.Request(m_pos, false);
 			}
 		}
@@ -322,7 +322,7 @@ bool Player2::HitCheckAttackToPlayer1()
 		return false;
 	}
 
-	bool hit = ChenkHitSquareToSquare(attack2.m_pos, 30, 30, player1.m_pos, 30, 30);
+	bool hit = ChenkHitSquareToSquare(attack2.m_pos, 5, 30, player1.m_pos, 30, 30);
 
 	if (hit == true)
 	{
@@ -349,42 +349,46 @@ bool Player2::HitCheckAttackToPlayer1()
 //ナイフとアイテムの判定(アイテムクラスを参照)
 bool Player2::HitCheckAction2ToItem(Item& item)
 {
-	//falseだったら判定しない
-	if (knife2.m_isActive == false && attack2.m_isActive == false)
+	if (item.m_isdraw == true)
 	{
-		return false;
-	}
 
-	bool knifehit = ChenkHitSquareToSquare(knife2.m_pos, 15, 10, item.m_pos, 16, 16);
-	bool attackhit = ChenkHitSquareToSquare(attack2.m_pos, 30, 30, item.m_pos, 16, 16);
 
-	if (knifehit == true || attackhit == true)
-	{
-		//HPが1じゃなかったら(８)の音 1だったら(10)の音を鳴らす　これで壊れると時だけ音を変えれる
-		if (item.m_hp != 1)
+		//falseだったら判定しない
+		if (knife2.m_isActive == false && attack2.m_isActive == false)
 		{
-			PlaybackSound(8);
-		}
-		else
-		{
-			PlaybackSound(10);
-		}
-		//アクティブをfalseに
-		knife2.m_isActive = false;
-		attack2.m_isActive = false;
-		//hpを減らす
-		item.m_hp--;
-
-		//0以下になったら
-		if (item.m_hp <= 0)
-		{
-			// 必殺技獲得
-			m_isAttack = true;
-
-			// アイテム消す
-			item.m_isdraw = false;
+			return false;
 		}
 
+		bool knifehit = ChenkHitSquareToSquare(knife2.m_pos, 15, 10, item.m_pos, 35, 35);
+		bool attackhit = ChenkHitSquareToSquare(attack2.m_pos, 5, 30, item.m_pos, 35, 35);
+
+		if (knifehit == true || attackhit == true)
+		{
+			//HPが1じゃなかったら(８)の音 1だったら(10)の音を鳴らす　これで壊れると時だけ音を変えれる
+			if (item.m_hp != 1)
+			{
+				PlaybackSound(8);
+			}
+			else
+			{
+				PlaybackSound(10);
+			}
+			//アクティブをfalseに
+			knife2.m_isActive = false;
+			attack2.m_isActive = false;
+			//hpを減らす
+			item.m_hp--;
+
+			//0以下になったら
+			if (item.m_hp <= 0)
+			{
+				// 必殺技獲得
+				m_isAttack = true;
+
+				// アイテム消す
+				item.m_isdraw = false;
+			}
+		}
 		return true;
 	}
 

@@ -191,12 +191,12 @@ void Player::Step()
 			// 攻撃の移動方向を決める
 			VECTOR v = { 0.0f, 0.0f, 0.0f };
 			if (TurnFrag == 0) {
-				m_pos.x += 10.0f;
+				/*m_pos.x += 10.0f;*/
 				attack.Request(m_pos, true);
 			}
 			else 
 			{
-				m_pos.x += -10.0f;
+				/*m_pos.x += -10.0f;*/
 				attack.Request(m_pos, false);
 			}
 		}
@@ -318,46 +318,51 @@ bool Player::HitCheckKnifeToPlayer2()
 //ナイフとアイテムの判定(アイテムクラスを参照)
 bool Player::HitCheckAction1ToItem(Item& item)
 {
-	//falseだったら判定しない
-	if (Knife1.m_isActive == false && attack.m_isActive == false)
+	if (item.m_isdraw == true)
 	{
+
+
+		//falseだったら判定しない
+		if (Knife1.m_isActive == false && attack.m_isActive == false)
+		{
+			return false;
+		}
+
+		bool knifehit = ChenkHitSquareToSquare(Knife1.m_pos, 15, 10, item.m_pos, 35, 35);
+		bool attackhit = ChenkHitSquareToSquare(attack.m_pos, 5, 30, item.m_pos, 35, 35);
+		if (knifehit == true || attackhit == true)
+		{
+			//HPが1じゃなかったら(８)の音 1だったら(10)の音を鳴らす　これで壊れると時だけ音を変えれる
+			if (item.m_hp != 1)
+			{
+				PlaybackSound(8);
+			}
+			else
+			{
+				PlaybackSound(10);
+			}
+
+			//アクティブをfalseに
+			Knife1.m_isActive = false;
+			attack.m_isActive = false;
+			//hpを減らす
+			item.m_hp--;
+
+			//0以下になったら
+			if (item.m_hp <= 0)
+			{
+				// 必殺技獲得
+				m_isAttack = true;
+
+				// アイテム消す
+				item.m_isdraw = false;
+			}
+
+			return true;
+		}
+
 		return false;
 	}
-
-	bool knifehit  = ChenkHitSquareToSquare(Knife1.m_pos, 15, 10,item.m_pos, 16, 16);
-	bool attackhit = ChenkHitSquareToSquare(attack.m_pos, 30, 30, item.m_pos, 16, 16);
-	if (knifehit == true || attackhit == true)
-	{
-		//HPが1じゃなかったら(８)の音 1だったら(10)の音を鳴らす　これで壊れると時だけ音を変えれる
-		if (item.m_hp != 1)
-		{
-			PlaybackSound(8);
-		}
-		else
-		{
-			PlaybackSound(10);
-		}
-		
-		//アクティブをfalseに
-		Knife1.m_isActive = false;
-		attack.m_isActive = false;
-		//hpを減らす
-		item.m_hp--;
-
-		//0以下になったら
-		if (item.m_hp <= 0)
-		{
-			// 必殺技獲得
-			m_isAttack = true;
-
-			// アイテム消す
-			item.m_isdraw = false;
-		}
-
-		return true;
-	}
-
-	return false;
 }
 
 //近接攻撃とプレイヤーも当たり判定
@@ -371,7 +376,7 @@ bool Player::HitCheckAttackToPlayer2()
 		return false;
 	}
 
-	bool hit = ChenkHitSquareToSquare(attack.m_pos, 30, 30, player2.m_pos, 30, 30);
+	bool hit = ChenkHitSquareToSquare(attack.m_pos, 5, 30, player2.m_pos, 30, 30);
 
 	if (hit == true)
 	{

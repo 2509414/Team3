@@ -1,11 +1,23 @@
 ﻿  Player.cpp
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(96,44): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(124,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(134,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(146,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(156,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(175,31): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(253,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(253,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(395,1): warning C4715: 'Player::HitCheckAttackToPlayer2': 値を返さないコントロール パスがあります。
-  SideScroll.vcxproj -> C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\x64\Debug\SideScroll.exe
+  Player2.cpp
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player.cpp(96,44): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player.cpp(124,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player.cpp(134,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player.cpp(146,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player.cpp(156,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player.cpp(175,31): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player.cpp(253,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player.cpp(253,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player2.cpp(94,45): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player2.cpp(120,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player2.cpp(130,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player2.cpp(142,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player2.cpp(152,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player2.cpp(171,32): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player2.cpp(248,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player2.cpp(248,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  コードを生成中...
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player2.cpp(347,1): warning C4715: 'Player2::HitCheckAttackToPlayer1': 値を返さないコントロール パスがあります。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player.cpp(366,1): warning C4715: 'Player::HitCheckAction1ToItem': 値を返さないコントロール パスがあります。
+C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\Src\Game\Player\Player.cpp(400,1): warning C4715: 'Player::HitCheckAttackToPlayer2': 値を返さないコントロール パスがあります。
+  SideScroll.vcxproj -> C:\Users\hikar\OneDrive\デスクトップ\MyGame\Knife Survivor\x64\Debug\SideScroll.exe

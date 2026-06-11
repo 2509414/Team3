@@ -10,7 +10,7 @@ void Item::Init()
 {
 	m_hndl = -1;
 	m_pos = { 100.0f,500.0f,0.0f };
-	m_hp = GetRand(3) + 1;
+	m_hp = GetRand(3) + 3;
 	m_speedX = 3.0f;
 	m_speedY = 2.0f;
 	m_isdraw = false;

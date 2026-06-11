@@ -99,6 +99,7 @@ void Knife::Request(VECTOR pos, VECTOR speed)
 	m_cooltime = 120;	
 
 	// ナイフの移動方向や速度はプレイヤー側に設定をお願いする
+	pos.y -= 10;
 	m_speed = speed;
 	m_pos = pos;
 }
