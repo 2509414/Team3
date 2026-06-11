@@ -1,2 +1,11 @@
-﻿  SceneGame.cpp
+﻿  Player.cpp
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(96,44): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(124,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(134,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(146,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(156,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(175,31): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(253,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(253,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.cpp(395,1): warning C4715: 'Player::HitCheckAttackToPlayer2': 値を返さないコントロール パスがあります。
   SideScroll.vcxproj -> C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\x64\Debug\SideScroll.exe

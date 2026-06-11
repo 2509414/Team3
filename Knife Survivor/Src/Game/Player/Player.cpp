@@ -66,12 +66,12 @@ void Player::Load()
 {
 	if (m_hndl[0] == -1)
 	{
-		LoadDivGraph("Data/Textures/ƒLƒƒƒ‰.png", 4, 4, 1, PLAYER_X_SIZE, PLAYER_Y_SIZE, m_hndl);
+		LoadDivGraph("Data/Textures/2ndplayer.png", 4, 4, 1, PLAYER_X_SIZE, PLAYER_Y_SIZE, m_hndl);
 	}
 
 	if (m_shndl[0] == -1)
 	{
-		LoadDivGraph("Data/Textures/Squat.png", 4, 4, 1, PLAYER_X_SIZE, PLAYER_Y_SIZE, m_shndl);
+		LoadDivGraph("Data/Textures/2ndsquat.png", 4, 4, 1, PLAYER_X_SIZE, PLAYER_Y_SIZE, m_shndl);
 	}
 
 }
