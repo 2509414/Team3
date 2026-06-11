@@ -81,6 +81,7 @@ void Item::Exit()
 	if (m_hp == 0)
 	{
 		DeleteGraph(m_hndl);
+		m_pos = { -100,-100,-100 };
 		m_isdraw = false;
 	}
 }

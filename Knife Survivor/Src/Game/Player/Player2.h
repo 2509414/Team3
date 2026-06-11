@@ -2,6 +2,7 @@
 
 #include "../../../Shot.h"
 #include"Player2.h"
+#include"Player.h"
 #include "../Item/Item.h"
 
 class Item;

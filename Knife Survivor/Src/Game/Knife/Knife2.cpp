@@ -2,6 +2,9 @@
 #include"Knife.h"
 #include "Knife2.h"
 #include "../Sound/Sound.h"
+#include "../Player/Player2.h"
+
+extern Player2 player2;
 
 //定義関連
 #define KNIFE_SPEED (5)
@@ -89,8 +92,16 @@ void Knife2::Request(VECTOR pos, VECTOR speed)
 	m_isActive = 1;
 	m_timer = 0.0f;		//タイマーを0にセット
 	PlaybackSound(0);
-	m_cooltime = 120;	//投げた瞬間から3秒待つ
 
+	//必殺技状態だったらクールタイム1秒　じゃなかったら2秒設定
+	if (player2.m_isAttack == true)
+	{
+		m_cooltime = 60;	//投げた瞬間から1秒待つ
+	}
+	else
+	{
+		m_cooltime = 120;	//投げた瞬間から2秒待つ
+	}
 
 	// ナイフの移動方向や速度はプレイヤー側に設定をお願いする
 	m_speed = speed;

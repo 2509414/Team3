@@ -41,9 +41,11 @@ void Player2::Init(int Stagenum)
 	m_isBossScene = false;
 	m_isSquat = false;
 	m_isAttack = false;
+	m_isAttack = false;
 	Knife = 1;
 	itemcraft = 0;
 	m_hp = 10;
+	
 
 	if (Stagenum == 1)
 	{
