@@ -26,6 +26,7 @@ public:
 	bool m_isActive;		// 生存フラグ
 	bool m_isSquat;			//しゃがんでるかどうか
 	bool m_isAttack;		//必殺技フラグ
+	bool hit_once;			//当たり判定1回きりフラグ
 
 
 	VECTOR m_pos;			// 座標
@@ -72,5 +73,7 @@ public:
 	//ナイフとアイテムの判定
 	bool HitCheckKnife1ToItem(Item& item);
 
+	//近接攻撃とプレイヤーの当たり判定
+	bool HitCheckAttackToPlayer2();
 };
 

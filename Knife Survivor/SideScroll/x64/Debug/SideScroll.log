@@ -1,10 +1,2 @@
-﻿  HitCheck.cpp
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\HitCheck\HitCheck.cpp(73,16): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\HitCheck\HitCheck.cpp(74,16): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\HitCheck\HitCheck.cpp(78,21): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\HitCheck\HitCheck.cpp(81,21): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\HitCheck\HitCheck.cpp(204,16): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\HitCheck\HitCheck.cpp(205,16): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\HitCheck\HitCheck.cpp(209,21): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\HitCheck\HitCheck.cpp(212,21): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-  SideScroll.vcxproj -> D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\x64\Debug\SideScroll.exe
+﻿  Attack2.cpp
+  SideScroll.vcxproj -> D:\Users\2409028\Desktop\Knife Survivor\x64\Debug\SideScroll.exe

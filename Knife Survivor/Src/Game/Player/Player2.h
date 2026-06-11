@@ -38,7 +38,11 @@ public:
 	// 着地
 	void SetLand();
 
+	//ナイフとプレイヤーの当たり判定
 	bool HitCheckKnifeToPlayer1();
+
+	//近接攻撃とプレイヤーの当たり判定
+	bool HitCheckAttackToPlayer1();
 
 	//ナイフとアイテムの判定
 	bool HitCheckKnife2ToItem(Item& item);

@@ -11,6 +11,8 @@
 #include "../Stage/Stage.h"
 #include "../HitCheck/HitCheck.h"
 #include "../Item/Item.h"
+#include "../Attack/Attack.h"
+#include "../Attack/Attack2.h"
 
 int Winner;					//勝者
 
@@ -20,6 +22,8 @@ Player2 player2;
 Knife Knife1;
 Knife2 knife2;
 Item item;
+Attack attack;
+Attack2 attack2;
 
 int StepGame(int Stagenum) 
 {
@@ -44,6 +48,9 @@ int StepGame(int Stagenum)
 		player1.Init(Stagenum);
 		player2.Init(Stagenum);
 
+		attack.Init();
+		attack2.Init();
+
 		item.Init();
 		g_gameScene.m_state = GAMESCENE_LOAD;
 		break;
@@ -57,6 +64,9 @@ int StepGame(int Stagenum)
 		player2.Load();
 		Knife1.Load();
 		knife2.Load();
+
+		attack.Load();
+		attack2.Load();
 		
 		item.Load();
 
@@ -92,6 +102,8 @@ int StepGame(int Stagenum)
 		player2.Dash();
 		player2.Jump();
 
+		attack.Step();
+		attack2.Step();
 		item.Step();
 		
 		UpdateStage();
@@ -108,6 +120,10 @@ int StepGame(int Stagenum)
 		//ナイフとアイテムの当たり判定
 		player1.HitCheckKnife1ToItem(item);
 		player2.HitCheckKnife2ToItem(item);
+
+		//プレイヤーと近接攻撃の当たり判定
+		player1.HitCheckAttackToPlayer2();
+		player2.HitCheckAttackToPlayer1();
 
 		//ゲーム終了へ
 		if (player1.m_hp == 0)
@@ -191,6 +207,8 @@ void DrawGame()
 		player2.Draw();
 		Knife1.Draw();
 		knife2.Draw();
+		attack.Draw();
+		attack2.Draw();
 	
 		item.Draw();
 		PrintFps();
@@ -199,8 +217,6 @@ void DrawGame()
 		GetMousePoint(&mx, &my);
 		DrawFormatString(10, 10, GetColor(0, 0, 0), "X %d  Y %d", mx, my);
 		
-		
-
 		//残り時間変数
 		int remaining = TimerGetSec();
 		//残り時間を表示

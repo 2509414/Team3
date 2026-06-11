@@ -43,6 +43,9 @@
     <Filter Include="ソース ファイル\Game\Item">
       <UniqueIdentifier>{90275622-236c-4c41-9e40-868044f69adf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Attack">
+      <UniqueIdentifier>{e35869a2-b23c-407b-95cd-a800a7ec2d8f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Lib\Input.cpp">
@@ -102,6 +105,12 @@
     <ClCompile Include="Src\Game\Item\Item.cpp">
       <Filter>ソース ファイル\Game\Item</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Attack\Attack.cpp">
+      <Filter>ソース ファイル\Game\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Attack\Attack2.cpp">
+      <Filter>ソース ファイル\Game\Attack</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Lib\Input.h">
@@ -160,6 +169,12 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Item\Item.h">
       <Filter>ソース ファイル\Game\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Attack\Attack.h">
+      <Filter>ソース ファイル\Game\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Attack\Attack2.h">
+      <Filter>ソース ファイル\Game\Attack</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

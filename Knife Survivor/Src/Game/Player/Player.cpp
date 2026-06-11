@@ -7,6 +7,7 @@
 #include "../Stage/Stage.h"
 #include "../Sound/Sound.h"
 #include "../Item/Item.h"
+#include"../Attack/Attack.h"
 
 //定義関連
 #define WINDOW_SIZE_X (900.0f)	//ウィンドウのサイズ（横）
@@ -27,6 +28,7 @@
 extern Stage_DATA g_stageData;
 extern Knife Knife1;
 extern Player2 player2;
+extern Attack attack;
 
 //プレイヤーデータ初期化関数
 void Player::Init(int Stagenum)
@@ -45,6 +47,7 @@ void Player::Init(int Stagenum)
 	m_hp = 10;
 	m_isSquat = false;
 	m_isAttack = false;
+	hit_once = false;
 
 	if (Stagenum == 1)
 	{
@@ -156,6 +159,23 @@ void Player::Step()
 	if (m_squattime < 0)
 	{
 		m_isSquat = false;
+	}
+
+	if (IsKeyInputTrg(KEY_ATTACK))
+	{
+		if (!attack.m_isActive)
+		{
+			// 攻撃の移動方向を決める
+			VECTOR v = { 0.0f, 0.0f, 0.0f };
+			if (TurnFrag == 0) {
+				m_pos.x += 10.0f;
+				attack.Request(m_pos, true);
+			}
+			else {
+				m_pos.x += -10.0f;
+				attack.Request(m_pos, false);
+			}
+		}
 	}
 
 	//クリックした場所にブロックを置く
@@ -302,6 +322,36 @@ bool Player::HitCheckKnife1ToItem(Item& item)
 
 		return true;
 	}
+
+	return false;
+}
+
+//近接攻撃とプレイヤーも当たり判定
+bool Player::HitCheckAttackToPlayer2()
+{
+
+	//攻撃が出てなかったら判定しない
+	if (attack.m_isActive == 0)
+	{
+		hit_once = false;
+		return false;
+	}
+
+	bool hit = ChenkHitSquareToSquare(attack.m_pos, 30, 30, player2.m_pos, 30, 30);
+
+	if (hit == true)
+	{
+		//当たったらナイフの生存フラグを消す！（これをしないと毎フレームHPが減って大変だぞ)
+		if (!hit_once)
+		{
+			PlaybackSound(1);
+			player2.m_hp -= 1;
+			hit_once = true;
+		}
+
+		return true;
+	}
+
 
 	return false;
 }

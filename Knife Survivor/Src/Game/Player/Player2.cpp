@@ -6,6 +6,7 @@
 #include "../../Lib/Collision.h"
 #include "../Stage/Stage.h"
 #include "../Sound/Sound.h"
+#include "../Attack/Attack2.h"
 
 
 //定義関連
@@ -27,6 +28,7 @@
 extern Stage_DATA g_stageData;
 extern Player player1;
 extern Knife2 knife2;
+extern Attack2 attack2;
 //プレイヤーデータ初期化関数
 void Player2::Init(int Stagenum)
 {
@@ -156,7 +158,23 @@ void Player2::Step()
 	{
 		m_isSquat = false;
 	}
-
+	//アタック状態だったら
+	if (IsKeyInputTrg(KEY_ATTACK2))
+	{
+		if (!attack2.m_isActive)
+		{
+			// 攻撃の移動方向を決める
+			VECTOR v = { 0.0f, 0.0f, 0.0f };
+			if (TurnFrag == 0) {
+				m_pos.x += 10.0f;
+				attack2.Request(m_pos, true);
+			}
+			else {
+				m_pos.x += -10.0f;
+				attack2.Request(m_pos, false);
+			}
+		}
+	}
 
 	//クリックした場所にブロックを置く
 	if (IsKeyInputTrg(KEY_ITEMCRAFT))
@@ -259,6 +277,36 @@ bool Player2::HitCheckKnifeToPlayer1()
 
 		return true;
 	}
+
+	return false;
+}
+
+bool Player2::HitCheckAttackToPlayer1()
+{
+
+	//攻撃が出てなかったら判定しない
+	if (attack2.m_isActive == 0)
+	{
+		hit_once = false;
+		return false;
+	}
+
+	bool hit = ChenkHitSquareToSquare(attack2.m_pos, 30, 30, player1.m_pos, 30, 30);
+
+	if (hit == true)
+	{
+		//当たったらナイフの生存フラグを消す！（これをしないと毎フレームHPが減って大変だぞ)
+
+		if (!hit_once)
+		{
+			PlaybackSound(1);
+			player1.m_hp -= 1;
+			hit_once = true;
+		}
+
+		return true;
+	}
+
 
 	return false;
 }

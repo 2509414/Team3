@@ -136,6 +136,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Src\Game\Attack\Attack.cpp" />
+    <ClCompile Include="Src\Game\Attack\Attack2.cpp" />
     <ClCompile Include="Src\Game\Bg\Background.cpp" />
     <ClCompile Include="Src\Game\HitCheck\HitCheck.cpp" />
     <ClCompile Include="Src\Game\Item\Item.cpp" />
@@ -157,6 +159,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shot.h" />
+    <ClInclude Include="Src\Game\Attack\Attack.h" />
+    <ClInclude Include="Src\Game\Attack\Attack2.h" />
     <ClInclude Include="Src\Game\Bg\Background.h" />
     <ClInclude Include="Src\Game\HitCheck\HitCheck.h" />
     <ClInclude Include="Src\Game\Item\Item.h" />

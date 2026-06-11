@@ -55,6 +55,9 @@ void UpdateKeyInput()
 
 	if(IsMouseLeftClick() == true) g_inputData.m_nowKey |= KEY_ITEMCRAFT;
 
+	//Qキーを押した、コントローラのLBを押した（近接攻撃（仮））
+	if (CheckHitKey(KEY_INPUT_Q) || input.Buttons[XINPUT_BUTTON_LEFT_SHOULDER]) g_inputData.m_nowKey |= KEY_ATTACK;
+
 	//2P===========================================================================
 	GetJoypadXInputState(DX_INPUT_PAD2, &input);
 
@@ -81,6 +84,9 @@ void UpdateKeyInput()
 		input.Buttons[XINPUT_BUTTON_RIGHT_SHOULDER] && knife2.m_isActive == false) g_inputData.m_nowKey |= KEY_KNIFE2;
 
 	if (CheckHitKey(KEY_INPUT_M) || input.Buttons[XINPUT_BUTTON_DPAD_DOWN])g_inputData.m_nowKey |= KEY_SQUAT2;
+
+	//Uキーを押した、コントローラのLBを押した（近接攻撃（仮））
+	if (CheckHitKey(KEY_INPUT_U) || input.Buttons[XINPUT_BUTTON_LEFT_SHOULDER]) g_inputData.m_nowKey |= KEY_ATTACK2;
 }
 
 int IsKeyInput(unsigned int key)
