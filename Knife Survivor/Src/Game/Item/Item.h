@@ -1,4 +1,7 @@
 #pragma once
+#include "../Player/Player.h"
+#include "../Player/Player2.h"
+
 
 class Item
 {
@@ -9,6 +12,8 @@ public:
 	float m_speedX;		//X²‚ÌˆÚ“®‘¬“x
 	float m_speedY;		//Y²‚ÌˆÚ“®‘¬“x
 	bool m_isdraw;		//•`‰æ‚·‚é‚©‚Ç‚¤‚©
+	int m_differenceHP;	//HP‚Ì·‚ğŠi”[‚·‚é•Ï”
+	int m_differenceHP2;//
 	VECTOR m_pos;		// À•W
 
 public:

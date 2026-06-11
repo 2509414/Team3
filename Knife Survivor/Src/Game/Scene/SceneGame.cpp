@@ -126,7 +126,7 @@ int StepGame(int Stagenum)
 		player2.HitCheckAttackToPlayer1();
 
 		//ƒQ[ƒ€I—¹‚Ö
-		if (player1.m_hp == 0)
+		if (player1.m_hp <= 0)
 		{
 			PlaybackSound(1);
 			g_gameScene.m_waitCount = ENDWAIT_COUNT + 110;
@@ -135,7 +135,7 @@ int StepGame(int Stagenum)
 			RequestFadeOut();
 		}
 
-		if (player2.m_hp == 0)
+		if (player2.m_hp <= 0)
 		{
 			PlaybackSound(1);
 			g_gameScene.m_waitCount = ENDWAIT_COUNT + 110;

@@ -93,15 +93,8 @@ void Knife2::Request(VECTOR pos, VECTOR speed)
 	m_timer = 0.0f;		//タイマーを0にセット
 	PlaybackSound(0);
 
-	//必殺技状態だったらクールタイム1秒　じゃなかったら2秒設定
-	if (player2.m_isAttack == true)
-	{
-		m_cooltime = 60;	//投げた瞬間から1秒待つ
-	}
-	else
-	{
-		m_cooltime = 120;	//投げた瞬間から2秒待つ
-	}
+	//クールタイム2秒設定
+	m_cooltime = 120;
 
 	// ナイフの移動方向や速度はプレイヤー側に設定をお願いする
 	m_speed = speed;

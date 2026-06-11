@@ -292,7 +292,18 @@ bool Player::HitCheckKnifeToPlayer2()
 		hit = ChenkHitSquareToSquare(Knife1.m_pos, 15, 5, player2.m_pos, 12, 0);
 	}
 
-	if (hit == true)
+	//ヒットしたかつアタックフラグがオンだったら			
+	if (hit == true && m_isAttack == true)
+	{
+		//当たったらナイフの生存フラグを消す
+		Knife1.m_isActive = 0;				
+		PlaybackSound(1);					
+		player2.m_hp -= 2;	
+
+		return true;
+	}
+	//ヒットしたら
+	else if (hit == true)
 	{
 		//当たったらナイフの生存フラグを消す
 		Knife1.m_isActive = 0;
@@ -301,7 +312,6 @@ bool Player::HitCheckKnifeToPlayer2()
 
 		return true;
 	}
-
 	return false;
 }
 
@@ -366,18 +376,22 @@ bool Player::HitCheckAttackToPlayer2()
 	if (hit == true)
 	{
 		//当たったらナイフの生存フラグを消す！（これをしないと毎フレームHPが減って大変だぞ)
-		if (!hit_once)
+		if (!hit_once && m_isAttack == true)
+		{
+			PlaybackSound(1);
+			player2.m_hp -= 2;
+			hit_once = true;
+			return true;
+		}
+		else if (!hit_once)
 		{
 			PlaybackSound(1);
 			player2.m_hp -= 1;
 			hit_once = true;
+			return true;
 		}
-
-		return true;
+		return false;
 	}
-
-
-	return false;
 }
 
 

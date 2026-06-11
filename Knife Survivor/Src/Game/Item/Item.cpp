@@ -1,16 +1,21 @@
 #include<DxLib.h>
 #include"Item.h"
 
+extern Player player1;
+extern Player2 player2;
+
+
 //アイテムデータ初期化関数
 void Item::Init()
 {
 	m_hndl = -1;
 	m_pos = { 100.0f,500.0f,0.0f };
-	m_drawtime = GetRand(100) + 180;
 	m_hp = GetRand(3) + 1;
 	m_speedX = 3.0f;
 	m_speedY = 2.0f;
 	m_isdraw = false;
+	m_differenceHP = 0;
+	m_differenceHP2 = 0;
 }
 
 //	アイテムデータ読み込み関数
@@ -26,12 +31,12 @@ void Item::Load()
 //アイテムデータ更新関数
 void Item::Step()
 {
-	//isDrawがfalseだったらマイナスし続ける
-	if (m_isdraw ==  false)
-	{
-		m_drawtime--;
-	}
-	if (m_drawtime < 0)
+	//playerのHPの差を格納
+	m_differenceHP  = player1.m_hp - player2.m_hp;
+	m_differenceHP2 = player2.m_hp - player1.m_hp;
+
+	//HPの差が5以上だったらフラグをオンにする
+	if (m_differenceHP >= 5 || m_differenceHP2 >= 5)
 	{
 		m_isdraw = true;
 	}

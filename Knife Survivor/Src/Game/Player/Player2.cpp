@@ -47,7 +47,7 @@ void Player2::Init(int Stagenum)
 	Knife = 1;
 	itemcraft = 0;
 	m_hp = 10;
-	
+
 
 	if (Stagenum == 1)
 	{
@@ -289,7 +289,18 @@ bool Player2::HitCheckKnifeToPlayer1()
 		hit = ChenkHitSquareToSquare(knife2.m_pos, 15, 10, player1.m_pos, 12, 0);
 	}
 
-	if (hit == true)
+	//ヒットしたかつアタックフラグがオンだったら
+	if (hit == true && m_isAttack == true)
+	{
+		//当たったらナイフの生存フラグを消す
+		knife2.m_isActive = 0;
+		PlaybackSound(1);
+		player1.m_hp -= 2;
+
+		return true;
+	}
+	//ヒットしたら
+	else if (hit == true)
 	{
 		//当たったらナイフの生存フラグを消す
 		knife2.m_isActive = 0;
@@ -298,7 +309,6 @@ bool Player2::HitCheckKnifeToPlayer1()
 
 		return true;
 	}
-
 	return false;
 }
 
@@ -318,18 +328,22 @@ bool Player2::HitCheckAttackToPlayer1()
 	{
 		//当たったらナイフの生存フラグを消す！（これをしないと毎フレームHPが減って大変だぞ)
 
-		if (!hit_once)
+		if (!hit_once && m_isAttack == true)
+		{
+			PlaybackSound(1);
+			player1.m_hp -= 2;
+			hit_once = true;
+			return true;
+		}
+		else if (!hit_once)
 		{
 			PlaybackSound(1);
 			player1.m_hp -= 1;
 			hit_once = true;
+			return true;
 		}
-
-		return true;
+		return false;
 	}
-
-
-	return false;
 }
 
 //ナイフとアイテムの判定(アイテムクラスを参照)
@@ -341,7 +355,7 @@ bool Player2::HitCheckAction2ToItem(Item& item)
 		return false;
 	}
 
-	bool knifehit  = ChenkHitSquareToSquare(knife2.m_pos, 15, 10, item.m_pos, 16, 16);
+	bool knifehit = ChenkHitSquareToSquare(knife2.m_pos, 15, 10, item.m_pos, 16, 16);
 	bool attackhit = ChenkHitSquareToSquare(attack2.m_pos, 30, 30, item.m_pos, 16, 16);
 
 	if (knifehit == true || attackhit == true)
@@ -356,7 +370,7 @@ bool Player2::HitCheckAction2ToItem(Item& item)
 			PlaybackSound(10);
 		}
 		//アクティブをfalseに
-		knife2.m_isActive  = false;
+		knife2.m_isActive = false;
 		attack2.m_isActive = false;
 		//hpを減らす
 		item.m_hp--;
