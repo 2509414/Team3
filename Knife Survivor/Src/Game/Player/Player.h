@@ -71,7 +71,7 @@ public:
 	bool HitCheckKnifeToPlayer2();
 
 	//ナイフとアイテムの判定
-	bool HitCheckKnife1ToItem(Item& item);
+	bool HitCheckAction1ToItem(Item& item);
 
 	//近接攻撃とプレイヤーの当たり判定
 	bool HitCheckAttackToPlayer2();

@@ -1,2 +1,8 @@
-﻿  Attack2.cpp
-  SideScroll.vcxproj -> D:\Users\2409028\Desktop\Knife Survivor\x64\Debug\SideScroll.exe
+﻿  Player2.cpp
+C:\Users\2409028\Documents\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(94,45): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+C:\Users\2409028\Documents\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(120,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\2409028\Documents\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(131,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\2409028\Documents\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(150,32): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+C:\Users\2409028\Documents\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(227,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\2409028\Documents\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(227,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SideScroll.vcxproj -> C:\Users\2409028\Documents\GitHub\Team3\Knife Survivor\x64\Debug\SideScroll.exe

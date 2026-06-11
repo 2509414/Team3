@@ -44,9 +44,8 @@ public:
 	//近接攻撃とプレイヤーの当たり判定
 	bool HitCheckAttackToPlayer1();
 
-	//ナイフとアイテムの判定
-	bool HitCheckKnife2ToItem(Item& item);
-
+	//アクションとアイテムの判定
+	bool HitCheckAction2ToItem(Item& item);
 	// 座標設定
 	void SetPos(VECTOR pos);
 };

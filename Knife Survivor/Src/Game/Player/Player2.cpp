@@ -312,17 +312,18 @@ bool Player2::HitCheckAttackToPlayer1()
 }
 
 //ナイフとアイテムの判定(アイテムクラスを参照)
-bool Player2::HitCheckKnife2ToItem(Item& item)
+bool Player2::HitCheckAction2ToItem(Item& item)
 {
 	//falseだったら判定しない
-	if (knife2.m_isActive == false)
+	if (knife2.m_isActive == false && attack2.m_isActive == false)
 	{
 		return false;
 	}
 
-	bool hit = ChenkHitSquareToSquare(knife2.m_pos, 15, 10, item.m_pos, 16, 16);
+	bool knifehit  = ChenkHitSquareToSquare(knife2.m_pos, 15, 10, item.m_pos, 16, 16);
+	bool attackhit = ChenkHitSquareToSquare(attack2.m_pos, 30, 30, item.m_pos, 16, 16);
 
-	if (hit == true)
+	if (knifehit == true || attackhit == true)
 	{
 		//HPが1じゃなかったら(８)の音 1だったら(10)の音を鳴らす　これで壊れると時だけ音を変えれる
 		if (item.m_hp != 1)
@@ -334,8 +335,8 @@ bool Player2::HitCheckKnife2ToItem(Item& item)
 			PlaybackSound(10);
 		}
 		//アクティブをfalseに
-		knife2.m_isActive = false;
-
+		knife2.m_isActive  = false;
+		attack2.m_isActive = false;
 		//hpを減らす
 		item.m_hp--;
 

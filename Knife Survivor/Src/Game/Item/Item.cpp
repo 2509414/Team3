@@ -5,7 +5,7 @@
 void Item::Init()
 {
 	m_hndl = -1;
-	m_pos = { 100.0f,100.0f,0.0f };
+	m_pos = { 100.0f,500.0f,0.0f };
 	m_drawtime = GetRand(100) + 180;
 	m_hp = GetRand(3) + 1;
 	m_speedX = 3.0f;

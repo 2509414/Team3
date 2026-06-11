@@ -118,8 +118,8 @@ int StepGame(int Stagenum)
 		player2.HitCheckKnifeToPlayer1();
 
 		//ナイフとアイテムの当たり判定
-		player1.HitCheckKnife1ToItem(item);
-		player2.HitCheckKnife2ToItem(item);
+		player1.HitCheckAction1ToItem(item);
+		player2.HitCheckAction2ToItem(item);
 
 		//プレイヤーと近接攻撃の当たり判定
 		player1.HitCheckAttackToPlayer2();
