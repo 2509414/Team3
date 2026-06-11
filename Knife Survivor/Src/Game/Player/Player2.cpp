@@ -11,8 +11,8 @@
 //定義関連
 #define WINDOW_SIZE_X (900.0f)	//ウィンドウのサイズ（横）
 #define WINDOW_SIZE_Y (600.0f)	//ウィンドウのサイズ（縦）   
-#define MOVE_SPEED (1)			//移動速度
-#define MOVE_DASHSPEED (1.5)	//ダッシュスピード
+#define MOVE_SPEED (2)			//移動速度
+#define MOVE_DASHSPEED (1)	//ダッシュスピード
 #define MOVE_JUMPPW (-11)		//ジャンプパワー
 #define GRAVITY (0.5f)			//重力
 #define ANIM_NUM (6)			//全画像枚数

@@ -117,7 +117,7 @@ void HitCheckPlayerToStage()
 					if (g_stageData.m_stageData[y + PosY][x].m_state == -1)
 					{
 						//頭をぶつけたらジャンプパワーを0にする
-						//player1.playerSy = 0;
+						player1.playerSy = 0;
 
 						OverDistanceY *= PosY;
 
@@ -220,7 +220,7 @@ void HitCheckPlayer2ToStage()
 				if (player2.m_pos.x < g_stageData.m_stageData[y][x].m_pos.x) PosX = -1;
 				else PosX = 1;
 
-				if (player1.m_pos.y < g_stageData.m_stageData[y][x].m_pos.y) PosY = -1;
+				if (player2.m_pos.y < g_stageData.m_stageData[y][x].m_pos.y) PosY = -1;
 				else PosY = 1;
 
 				if (OverDistanceX < OverDistanceY)
