@@ -14,6 +14,7 @@
 #define WINDOW_SIZE_Y (600.0f)	//ウィンドウのサイズ（縦）   
 #define MOVE_SPEED (2)			//移動速度
 #define MOVE_DASHSPEED (1)		//ダッシュスピード
+#define MOVE_SQUATSPEED (0.5f)	//スロースピード
 #define MOVE_JUMPPW (-11)		//ジャンプパワー
 #define GRAVITY (0.5f)			//重力
 #define ANIM_NUM (6)			//全画像枚数
@@ -117,7 +118,17 @@ void Player::Step()
 {
 	m_squattime--;
 	//プレイヤー移動処理
-	if (IsKeyInput(KEY_RIGHT))
+	if (IsKeyInput(KEY_RIGHT) && IsKeyInput(KEY_SQUAT))
+	{
+		TurnFrag = 0;
+		anim += ANIM_SPEED;
+		if (anim >= 4)
+		{
+			anim = 0;
+		}
+		m_pos.x += MOVE_SQUATSPEED;
+	}
+	else if (IsKeyInput(KEY_RIGHT))
 	{
 		TurnFrag = 0;
 		anim += ANIM_SPEED;
@@ -128,7 +139,18 @@ void Player::Step()
 		m_pos.x += MOVE_SPEED;
 	}
 
-	if (IsKeyInput(KEY_LEFT))
+
+	if (IsKeyInput(KEY_LEFT) && IsKeyInput(KEY_SQUAT))
+	{
+		TurnFrag = 1;
+		anim += ANIM_SPEED;
+		if (anim >= 4)
+		{
+			anim = 0;
+		}
+		m_pos.x -= MOVE_SQUATSPEED;
+	}
+	else if (IsKeyInput(KEY_LEFT))
 	{
 		TurnFrag = 1;
 		anim += ANIM_SPEED;
@@ -138,6 +160,7 @@ void Player::Step()
 		}
 		m_pos.x -= MOVE_SPEED;
 	}
+
 
 	if (IsKeyInputTrg(KEY_KNIFE))
 	{
@@ -171,7 +194,8 @@ void Player::Step()
 				m_pos.x += 10.0f;
 				attack.Request(m_pos, true);
 			}
-			else {
+			else 
+			{
 				m_pos.x += -10.0f;
 				attack.Request(m_pos, false);
 			}

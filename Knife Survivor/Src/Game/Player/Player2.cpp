@@ -23,7 +23,7 @@
 #define Y_NUM (1)				//縦に何枚並んでいるか
 #define ANIM_SPEED (0.08)		//アニメーションのスピード
 #define BOSSSCENE_POSX (5300)	//ボスシーンに入るX座標
-
+#define MOVE_SQUATSPEED (0.5f);	//スロースピード
 
 extern Stage_DATA g_stageData;
 extern Player player1;
@@ -114,7 +114,17 @@ void Player2::Step()
 	m_squattime--;
 
 	//プレイヤー移動処理
-	if (IsKeyInput(KEY_RIGHT2))
+	if (IsKeyInput(KEY_RIGHT2) && IsKeyInput(KEY_SQUAT2))
+	{
+		TurnFrag = 0;
+		anim += ANIM_SPEED;
+		if (anim >= 4)
+		{
+			anim = 0;
+		}
+		m_pos.x += MOVE_SQUATSPEED;
+	}
+	else if (IsKeyInput(KEY_RIGHT2))
 	{
 		TurnFrag = 0;
 		anim += ANIM_SPEED;
@@ -125,7 +135,18 @@ void Player2::Step()
 		m_pos.x += MOVE_SPEED;
 	}
 
-	if (IsKeyInput(KEY_LEFT2))
+
+	if (IsKeyInput(KEY_LEFT2) && IsKeyInput(KEY_SQUAT2))
+	{
+		TurnFrag = 1;
+		anim += ANIM_SPEED;
+		if (anim >= 4)
+		{
+			anim = 0;
+		}
+		m_pos.x -= MOVE_SQUATSPEED;
+	}
+	else if (IsKeyInput(KEY_LEFT2))
 	{
 		TurnFrag = 1;
 		anim += ANIM_SPEED;

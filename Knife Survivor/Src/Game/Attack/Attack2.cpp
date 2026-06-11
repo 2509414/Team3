@@ -61,7 +61,7 @@ void Attack2::Step()
 		//m_pos.x += Attack2_Len;
 		m_timer += 1.0f;
 		//g_Attack2.m_timerがアクティブタイムより大きくなったら消す
-		if (m_timer > Attack2_ACTIVE_TIME)
+		if (m_timer >= Attack2_ACTIVE_TIME)
 		{
 			m_timer = 0;
 			m_isActive = 0;
@@ -79,12 +79,14 @@ void Attack2::Draw()
 {
 
 	int frame = (int)anim_cnt;
-	if (m_isActive == true)
-	{
-		for (int i = 0; i < 4; i++)
+	if (frame < 4) {
+		if (m_isActive == true)
 		{
-			//画像描画　第１、２引数は画像の位置、第3引数は拡大縮小率、第４引数は回転率（ラジアン角指定）
-			DrawRotaGraph((int)m_pos.x, (int)m_pos.y, 0.5f, 0.0, (int)m_hndl[frame], TRUE, !turn_flg);
+			for (int i = 0; i < 4; i++)
+			{
+				//画像描画　第１、２引数は画像の位置、第3引数は拡大縮小率、第４引数は回転率（ラジアン角指定）
+				DrawRotaGraph((int)m_pos.x, (int)m_pos.y, 0.5f, 0.0, (int)m_hndl[frame], TRUE, !turn_flg);
+			}
 		}
 	}
 	//クールタイムが0より大きかったら残り何カウントか知らせる
