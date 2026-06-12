@@ -76,7 +76,7 @@ void Item::Draw()
 	if (m_isdraw == true)
 	{
 		DrawGraph(m_pos.x, m_pos.y, m_hndl, TRUE);
-		DrawFormatString(450, 300, GetColor(255, 255, 0), "Ç†Ç∆%dâÒÇ≈äÑÇÍÇÈÅI", m_hp);
+		DrawFormatString(365, 45, GetColor(0,0,0), "Ç†Ç∆%dâÒÇ≈äÑÇÍÇÈÅI", m_hp);
 	}
 }
 
