@@ -92,7 +92,7 @@ void Attack::Draw()
 	//クールタイムが0より大きかったら残り何カウントか知らせる
 	if (m_cooltime > 0)
 	{
-		DrawFormatString(30, 55, GetColor(255, 0, 0), "Attack クールタイム : %.1f", m_cooltime);
+	/*	DrawFormatString(30, 55, GetColor(255, 0, 0), "Attack クールタイム : %.1f", m_cooltime);*/
 	}
 }
 

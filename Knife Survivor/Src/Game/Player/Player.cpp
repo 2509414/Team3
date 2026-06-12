@@ -232,7 +232,8 @@ void Player::Step()
 void Player::Draw()
 {
 	int t;
-	float time = Knife1.GetCoul();
+	float K_time = Knife1.GetCoul();
+	float A_time = attack.GetCoul();
 	int frame = (int)anim;
 	if (m_isSquat == false)
 	{
@@ -252,7 +253,14 @@ void Player::Draw()
 	}
 
 	DrawFormatString(75, 100, GetColor(255, 0, 0), "残りHP : %d", m_hp);
-	DrawLine(75, 120, 75 + time, 120, GetColor(255, 0, 0), t = 1);
+	if (K_time > 0) {
+		DrawFormatString(75, 80, GetColor(255, 0, 0), "ナイフ");
+	}
+	DrawLine(140, 88,140 + K_time, 88, GetColor(255, 0, 0), t = 1);
+	if (A_time > 0) {
+		DrawFormatString(78, 60, GetColor(255, 0, 0), "近接");
+	}
+	DrawLine(140, 68, 140 + A_time*3, 68, GetColor(255, 0, 0), t = 1);
 	DrawFormatString(m_pos.x - 9, m_pos.y - 50, GetColor(255, 0, 0), "1P");
 
 }

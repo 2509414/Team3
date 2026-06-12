@@ -5,8 +5,10 @@ D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp
 D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(142,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
 D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(152,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
 D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(171,32): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
-D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(250,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(251,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(251,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(350,1): warning C4715: 'Player2::HitCheckAttackToPlayer1': 値を返さないコントロール パスがあります。
+D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(255,24): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(259,24): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(260,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(260,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\Users\2509412\Desktop\github\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(359,1): warning C4715: 'Player2::HitCheckAttackToPlayer1': 値を返さないコントロール パスがあります。
+  LINK : 前回のインクリメンタル リンクで D:\Users\2509412\Desktop\github\Team3\Knife Survivor\x64\Debug\SideScroll.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
   SideScroll.vcxproj -> D:\Users\2509412\Desktop\github\Team3\Knife Survivor\x64\Debug\SideScroll.exe
