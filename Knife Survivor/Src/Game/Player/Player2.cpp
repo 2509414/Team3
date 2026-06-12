@@ -226,6 +226,8 @@ void Player2::Step()
 //	ï\é¶ä÷êî
 void Player2::Draw()
 {
+	int t;
+	float time = knife2.GetCoul();
 	int frame = (int)anim;
 	if (m_isSquat == false)
 	{
@@ -245,6 +247,7 @@ void Player2::Draw()
 	}
 
 	DrawFormatString(760, 100, GetColor(0, 0, 255), "écÇËHP : %d", m_hp);
+	DrawLine(760, 120, 760 + time, 120, GetColor(0, 0, 255), t = 1);
 	DrawFormatString(m_pos.x - 9, m_pos.y - 50, GetColor(0, 0, 255), "2P");
 }
 

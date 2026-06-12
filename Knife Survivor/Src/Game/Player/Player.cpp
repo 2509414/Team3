@@ -231,6 +231,8 @@ void Player::Step()
 //	ï\é¶ä÷êî
 void Player::Draw()
 {
+	int t;
+	float time = Knife1.GetCoul();
 	int frame = (int)anim;
 	if (m_isSquat == false)
 	{
@@ -250,6 +252,7 @@ void Player::Draw()
 	}
 
 	DrawFormatString(75, 100, GetColor(255, 0, 0), "écÇËHP : %d", m_hp);
+	DrawLine(75, 120, 75 + time, 120, GetColor(255, 0, 0), t = 1);
 	DrawFormatString(m_pos.x - 9, m_pos.y - 50, GetColor(255, 0, 0), "1P");
 
 }
