@@ -10,7 +10,7 @@ static const char MAP_CHIP_PATH[] = "Data/Textures/ステージアイテム素材.png";
 
 //ステージデータのファイルパス
 											//STAGE2(0)				//STAGEBOSS(1)				//STAGE1(2)
-static const char STAGE_PATH[][256] = { "Data/Stages/stage.csv", "Data/Stages/stage2.csv","Data/Stages/stage3.csv"};
+static const char STAGE_PATH[][256] = { "Data/Stages/stage.csv", "Data/Stages/stage2.csv","Data/Stages/stage3.csv","Data/Stages/stage4.csv" };
 
 //初期化処理
 void InitStage()

@@ -46,6 +46,9 @@
     <Filter Include="ソース ファイル\Game\Attack">
       <UniqueIdentifier>{e35869a2-b23c-407b-95cd-a800a7ec2d8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Controller">
+      <UniqueIdentifier>{1bef2afa-e873-4241-ac9f-98caf29956b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Lib\Input.cpp">
@@ -111,6 +114,9 @@
     <ClCompile Include="Src\Game\Attack\Attack2.cpp">
       <Filter>ソース ファイル\Game\Attack</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Controller\controller.cpp">
+      <Filter>ソース ファイル\Game\Controller</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Lib\Input.h">
@@ -175,6 +181,9 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Attack\Attack2.h">
       <Filter>ソース ファイル\Game\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Controller\controller.h">
+      <Filter>ソース ファイル\Game\Controller</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

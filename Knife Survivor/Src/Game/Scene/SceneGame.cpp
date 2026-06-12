@@ -13,6 +13,7 @@
 #include "../Item/Item.h"
 #include "../Attack/Attack.h"
 #include "../Attack/Attack2.h"
+#include "../Controller/controller.h"
 
 int Winner;					//勝者
 
@@ -24,6 +25,7 @@ Knife2 knife2;
 Item item;
 Attack attack;
 Attack2 attack2;
+Controller controller;
 
 int StepGame(int Stagenum) 
 {
@@ -35,6 +37,11 @@ int StepGame(int Stagenum)
 	{
 	case GAMESCENE_INIT:
 		//初期化処理
+		if (Stagenum != 3)
+		{
+			TimerInit(300);	//〇秒タイマー
+			TimerStart();	//タイマー開始
+		}
 		InitBG();
 		InitSound();
 		InitFps();
@@ -43,8 +50,6 @@ int StepGame(int Stagenum)
 		Knife1.Init();
 		knife2.Init();
 		
-		TimerInit(300);	//〇秒タイマー
-		TimerStart();	//タイマー開始
 		player1.Init(Stagenum);
 		player2.Init(Stagenum);
 
@@ -52,11 +57,17 @@ int StepGame(int Stagenum)
 		attack2.Init();
 
 		item.Init();
+		controller.Init();
 		g_gameScene.m_state = GAMESCENE_LOAD;
 		break;
 
 	case GAMESCENE_LOAD:
 		//データをロード
+		if (Stagenum == 3)
+		{
+			controller.Load();
+		}
+
 		LoadBG();
 		LoadStageGraph();
 		LoadStageData(Stagenum);
@@ -145,7 +156,7 @@ int StepGame(int Stagenum)
 		}
 
 		//時間切れになったら残りHPを見て勝敗を決める
-		if (TimeUp() == true)
+		if (TimeUp() == true && Stagenum != 3)
 		{	
 			if (player1.m_hp > player2.m_hp)
 			{
@@ -185,6 +196,7 @@ int StepGame(int Stagenum)
 	case GAMESCENE_END:
 	
 		ExitSound();
+		controller.Exit();
 		g_gameScene.m_state = GAMESCENE_INIT;
 		ret = 1;
 	}
@@ -211,6 +223,7 @@ void DrawGame()
 		attack2.Draw();
 	
 		item.Draw();
+		controller.Draw();
 		PrintFps();
 		
 		int mx, my;

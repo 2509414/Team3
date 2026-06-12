@@ -79,6 +79,15 @@ int StepScene()
 				//state‚ğSCENE_GAME‚É
 				g_scene.m_state = SCENE_GAME;
 			}
+
+			//ŒP—ûê‚Ìã‚Å‰Ÿ‚³‚ê‚Ä‚¢‚½‚çg_titleScene.m_nextstagenum = 3‚É‚·‚é
+			if (IsMouseOnButton(40, 485, START_BTN_W, START_BTN_H) == true)
+			{
+				Stagenum = 3;
+				//state‚ğSCENE_GAME‚É
+				g_scene.m_state = SCENE_GAME;
+			}
+
 	
 		}
 		break;

@@ -100,6 +100,11 @@ int StepTitle()
 			{
 				g_titleScene.m_hndl[6] = LoadGraph("Data/Textures/controller.png");
 			}
+
+			if (g_titleScene.m_hndl[7] == -1)
+			{
+				g_titleScene.m_hndl[7] = LoadGraph("Data/Textures/STAGE4.png");
+			}
 		}
 		
 		RequestFadeIn();
@@ -158,6 +163,14 @@ int StepTitle()
 			g_titleScene.m_state = TITLESCENE_ENDWAIT;
 		}
 
+		//左クリックが押されたかつSTAGE4ボタンの上に乗ってたら次に進む
+		if (IsMouseLeftClick() == true && IsMouseOnButton(40, 485, START_BTN_W, START_BTN_H))
+		{
+			PlaybackSound(2);
+			//フェードアウトをリクエストする
+			RequestFadeOut();
+			g_titleScene.m_state = TITLESCENE_ENDWAIT;
+		}
 		break;
 
 		//ゲーム終了後の待機
@@ -269,8 +282,28 @@ void DrawTitle()
 					TRUE);
 			}
 
+			//マウスがSTAGE4上に乗っていたらSTAGE4をtrue
+			//Stage1がtrueだったら
+			bool Stage4 = IsMouseOnButton(40, 485, START_BTN_W, START_BTN_H);
+
+			//Stage2がtrueだったら
+			if (Stage4 == true)
+			{
+
+				//乗っかっているという意味で色を表示
+				DrawBox(40,
+					485,
+					40 + START_BTN_W,
+					485 + START_BTN_H,
+					GetColor(255, 255, 0), TRUE); //ここで色を指定
+
+			}
+
 				//③文字
-				
+				// 
+				//訓練所
+				DrawGraph(40, 485, g_titleScene.m_hndl[7], TRUE);
+
 				//ボスステージ
 				DrawGraph(369, START_BTN_Y, g_titleScene.m_hndl[1], TRUE);
 
@@ -285,8 +318,8 @@ void DrawTitle()
 
 				DrawGraph(80, 50, g_titleScene.m_hndl[5], TRUE);
 
-				//操作方法
-				DrawGraph(-10, 350, g_titleScene.m_hndl[6], TRUE);
+				////操作方法
+				//DrawGraph(-10, 350, g_titleScene.m_hndl[6], TRUE);
 
 				// 点滅スピード調整
 				int blink = (GetNowCount() / 750) % 2;
