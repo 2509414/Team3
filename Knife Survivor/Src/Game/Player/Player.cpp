@@ -174,7 +174,7 @@ void Player::Step()
 
 	if (IsKeyInput(KEY_SQUAT) == true)
 	{
-		m_squattime = 30;
+		m_squattime = 10;
 
 		m_isSquat = true;
 	}
