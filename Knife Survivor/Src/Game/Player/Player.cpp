@@ -256,11 +256,11 @@ void Player::Draw()
 	if (K_time > 0) {
 		DrawFormatString(75, 80, GetColor(255, 0, 0), "ÉiÉCÉt");
 	}
-	DrawLine(140, 88,140 + K_time, 88, GetColor(255, 0, 0), t = 1);
+	DrawLine(140, 88,140 + K_time, 88, GetColor(255, 0, 0), t = 3);
 	if (A_time > 0) {
 		DrawFormatString(78, 60, GetColor(255, 0, 0), "ãﬂê⁄");
 	}
-	DrawLine(140, 68, 140 + A_time*3, 68, GetColor(255, 0, 0), t = 1);
+	DrawLine(140, 68, 140 + A_time*3, 68, GetColor(255, 0, 0), t = 3);
 	DrawFormatString(m_pos.x - 9, m_pos.y - 50, GetColor(255, 0, 0), "1P");
 
 }

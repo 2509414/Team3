@@ -138,9 +138,9 @@
               "Title": "Player.cpp",
               "DocumentMoniker": "D:\\Users\\2509412\\Desktop\\github\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player.cpp",
               "RelativeDocumentMoniker": "Src\\Game\\Player\\Player.cpp",
-              "ToolTip": "D:\\Users\\2509412\\Desktop\\github\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player.cpp",
-              "RelativeToolTip": "Src\\Game\\Player\\Player.cpp",
-              "ViewState": "AgIAAOQAAAAAAAAAAAAAAAUBAAACAAAAAAAAAA==",
+              "ToolTip": "D:\\Users\\2509412\\Desktop\\github\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player.cpp*",
+              "RelativeToolTip": "Src\\Game\\Player\\Player.cpp*",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAmwAIBAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-11T16:18:47.691Z",
               "IsPinned": true,
@@ -152,13 +152,12 @@
               "Title": "Player2.cpp",
               "DocumentMoniker": "D:\\Users\\2509412\\Desktop\\github\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player2.cpp",
               "RelativeDocumentMoniker": "Src\\Game\\Player\\Player2.cpp",
-              "ToolTip": "D:\\Users\\2509412\\Desktop\\github\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player2.cpp*",
-              "RelativeToolTip": "Src\\Game\\Player\\Player2.cpp*",
+              "ToolTip": "D:\\Users\\2509412\\Desktop\\github\\Team3\\Knife Survivor\\Src\\Game\\Player\\Player2.cpp",
+              "RelativeToolTip": "Src\\Game\\Player\\Player2.cpp",
               "ViewState": "AgIAAN4AAAAAAAAAAAAAAP4AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-11T15:16:04.511Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -170,8 +169,7 @@
               "RelativeToolTip": "Src\\Game\\Attack\\Attack.cpp",
               "ViewState": "AgIAAEsAAAAAAAAAAAAAAF4AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-11T03:25:05.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T03:25:05.17Z"
             },
             {
               "$type": "Document",
@@ -183,8 +181,7 @@
               "RelativeToolTip": "Src\\Game\\Knife\\Knife.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-08T02:08:09.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-08T02:08:09.983Z"
             },
             {
               "$type": "Document",
@@ -196,8 +193,7 @@
               "RelativeToolTip": "Src\\Game\\HitCheck\\HitCheck.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-08T02:08:04.197Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-08T02:08:04.197Z"
             },
             {
               "$type": "Document",
@@ -209,8 +205,7 @@
               "RelativeToolTip": "Src\\Game\\Knife\\Knife.cpp",
               "ViewState": "AgIAADkAAAAAAAAAAAAAAEkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-09T02:19:34.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-09T02:19:34.436Z"
             },
             {
               "$type": "Document",
@@ -222,8 +217,7 @@
               "RelativeToolTip": "Src\\Game\\Scene\\SceneManager.cpp",
               "ViewState": "AgIAAGoAAAAAAAAAAAApwHsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-11T01:01:16.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T01:01:16.491Z"
             },
             {
               "$type": "Document",
@@ -235,8 +229,7 @@
               "RelativeToolTip": "Src\\Game\\Item\\Item.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-10T11:53:45.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-10T11:53:45.78Z"
             },
             {
               "$type": "Document",
@@ -248,8 +241,7 @@
               "RelativeToolTip": "Src\\Game\\HitCheck\\HitCheck.cpp",
               "ViewState": "AgIAACcAAAAAAAAAAAAAANsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-09T03:56:19.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-09T03:56:19.397Z"
             },
             {
               "$type": "Document",
@@ -261,8 +253,7 @@
               "RelativeToolTip": "Src\\Game\\Item\\Item.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAjwA0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-10T11:53:54.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-10T11:53:54.497Z"
             },
             {
               "$type": "Document",
@@ -274,8 +265,7 @@
               "RelativeToolTip": "Src\\Game\\Knife\\Knife2.cpp",
               "ViewState": "AgIAABkAAAAAAAAAAAApwEYAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-07T23:18:49.912Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-07T23:18:49.912Z"
             },
             {
               "$type": "Document",
@@ -299,8 +289,7 @@
               "RelativeToolTip": "Src\\Game\\Attack\\Attack.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-11T03:26:16.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T03:26:16.636Z"
             },
             {
               "$type": "Document",
