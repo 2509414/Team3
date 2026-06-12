@@ -7,7 +7,7 @@
 #define START_BTN_Y  (272)//		STARTボタンのY座標
 #define START_BTN_W  (159)//		横の長さ
 #define START_BTN_H  (47) //		高さ
-#define TitlePic	 (6)  //		タイトルに使う画像の枚数
+#define TitlePic	 (7)  //		タイトルに使う画像の枚数
 
 
 enum tagTitleScene

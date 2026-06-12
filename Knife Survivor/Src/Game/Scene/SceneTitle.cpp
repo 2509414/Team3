@@ -95,6 +95,11 @@ int StepTitle()
 			{
 				g_titleScene.m_hndl[5] = LoadGraph("Data/Textures/モノクロボス.png");
 			}
+
+			if (g_titleScene.m_hndl[6] == -1)
+			{
+				g_titleScene.m_hndl[6] = LoadGraph("Data/Textures/controller.png");
+			}
 		}
 		
 		RequestFadeIn();
@@ -279,6 +284,9 @@ void DrawTitle()
 				DrawGraph(680, 50, g_titleScene.m_hndl[5], TRUE);
 
 				DrawGraph(80, 50, g_titleScene.m_hndl[5], TRUE);
+
+				//操作方法
+				DrawGraph(-10, 350, g_titleScene.m_hndl[6], TRUE);
 
 				// 点滅スピード調整
 				int blink = (GetNowCount() / 750) % 2;
