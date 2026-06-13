@@ -46,7 +46,8 @@ public:
 
 	//アクションとアイテムの判定
 	bool HitCheckAction2ToItem(Item& item);
-	// 座標設定
-	void SetPos(VECTOR pos);
+
+	void SetCoul(float time) { time = m_attacktime; }
+	float GetCoul() { return m_attacktime; }
 };
 

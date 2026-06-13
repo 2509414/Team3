@@ -22,13 +22,15 @@ public:
 	int m_hp;				//体力
 	int m_maxhp;			//最大HP
 	int m_hplength;			//HPの長さを格納
-	int m_squattime;
+	int m_squattime;		//しゃがみ時間
+	int m_attacktime;		//必殺技の時間
 	bool g_isGameClear;		// ゲームクリア判定
 	bool m_isBossScene;		// ボスシーン判定
 	bool m_isActive;		// 生存フラグ
 	bool m_isSquat;			//しゃがんでるかどうか
 	bool m_isAttack;		//必殺技フラグ
 	bool hit_once;			//当たり判定1回きりフラグ
+	float m_Itemtime;		//アイテム状態の時間
 	int m_t;
 	float m_K_time;
 	float m_A_time;
@@ -68,9 +70,6 @@ public:
 	// 座標取得
 	VECTOR GetPos();
 
-	//// 座標設定
-	//void SetPos(VECTOR pos);
-
 	//ナイフと敵の当たり判定
 	bool HitCheckKnifeToPlayer2();
 
@@ -79,5 +78,8 @@ public:
 
 	//近接攻撃とプレイヤーの当たり判定
 	bool HitCheckAttackToPlayer2();
+
+	void SetCoul(float time) { time = m_attacktime; }
+	float GetCoul() { return m_attacktime; }
 };
 

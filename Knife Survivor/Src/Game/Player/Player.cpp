@@ -111,10 +111,26 @@ void Player::Squat()
 //	プレイヤーデータ更新関数
 void Player::Step()
 {
+	if (m_isAttack == true)
+	{
+		m_attacktime--;
+	}
+
 	m_squattime--;
 	m_hplength = HP_END_X * m_hp / m_maxhp;
 	m_K_time = Knife1.GetCoul();
 	m_A_time = attack.GetCoul();
+	m_Itemtime = GetCoul();
+	//必殺技状態かチェック
+	if (m_attacktime >= 0)
+	{
+		m_isAttack = true;
+	}
+	else
+	{
+		m_isAttack = false;
+	}
+	
 	//プレイヤー移動処理
 	if (IsKeyInput(KEY_RIGHT) && IsKeyInput(KEY_SQUAT))
 	{
@@ -267,6 +283,12 @@ void Player::Draw()
 
 	DrawFormatString(75, 40, GetColor(255, 0, 0), "HP");
 	DrawLine(HP_STARTPOS_X, 47, HP_STARTPOS_X + m_hplength , 47,color,15);
+	
+	if (m_attacktime > 0) {
+		DrawFormatString(75, 100, GetColor(255, 0, 0), "必殺技");
+	}
+	DrawLine(140, 108, 140 + m_attacktime / 4,108, GetColor(255, 0, 0), m_t = 3);
+
 
 	if (m_K_time > 0) {
 		DrawFormatString(75, 80, GetColor(255, 0, 0), "ナイフ");
@@ -368,7 +390,7 @@ bool Player::HitCheckAction1ToItem(Item& item)
 			{
 				PlaybackSound(10);
 			}
-
+			
 			//アクティブをfalseに
 			Knife1.m_isActive = false;
 			attack.m_isActive = false;
@@ -378,8 +400,8 @@ bool Player::HitCheckAction1ToItem(Item& item)
 			//0以下になったら
 			if (item.m_hp <= 0)
 			{
-				// 必殺技獲得
-				m_isAttack = true;
+				//必殺技の時間をここで設定
+				m_attacktime = 900;
 
 				// アイテム消す
 				item.m_isdraw = false;
@@ -387,7 +409,6 @@ bool Player::HitCheckAction1ToItem(Item& item)
 
 			return true;
 		}
-
 		return false;
 	}
 }
