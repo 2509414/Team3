@@ -17,6 +17,8 @@
 
 int Winner;					//ŸÒ
 
+extern int Stagenum;
+
 GAME_SCENE g_gameScene = { GAMESCENE_INIT };
 Player player1;
 Player2 player2;
@@ -255,8 +257,14 @@ void DrawGame()
 		//c‚èŠÔ•Ï”
 		int remaining = TimerGetSec();
 		//c‚èŠÔ‚ğ•\¦
-		DrawFormatString(440, 40, GetColor(0, 0, 0), "%d•b", remaining);
-		
+		if (Stagenum == 3)
+		{
+			DrawFormatString(450, 40, GetColor(0, 0, 0), "‡");
+		}
+		else
+		{
+			DrawFormatString(440, 40, GetColor(0, 0, 0), "%d•b", remaining);
+		}
 		break;
 	}
 }

@@ -1,13 +1,6 @@
-﻿  Player2.cpp
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(90,45): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(120,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(130,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(142,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(152,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(171,32): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(268,24): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(273,24): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(274,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(274,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(373,1): warning C4715: 'Player2::HitCheckAttackToPlayer1': 値を返さないコントロール パスがあります。
+﻿  Item.cpp
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(51,26): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(52,26): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(78,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(78,18): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   SideScroll.vcxproj -> C:\Users\hikar\OneDrive\ドキュメント\GitHub\Team3\Knife Survivor\x64\Debug\SideScroll.exe
