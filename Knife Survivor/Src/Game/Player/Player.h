@@ -20,6 +20,8 @@ public:
 	float anim;
 	int TurnFrag;			//ターンフラグ
 	int m_hp;				//体力
+	int m_maxhp;			//最大HP
+	int m_hplength;			//HPの長さを格納
 	int m_squattime;
 	bool g_isGameClear;		// ゲームクリア判定
 	bool m_isBossScene;		// ボスシーン判定

@@ -24,7 +24,8 @@
 #define Y_NUM (1)				//縦に何枚並んでいるか
 #define ANIM_SPEED (0.08)		//アニメーションのスピード
 #define BOSSSCENE_POSX (5300)	//ボスシーンに入るX座標
-
+#define HP_STARTPOS_X (100)		//HPを描画する基準点
+#define HP_END_X (300)			//HPを描画する終点
 
 extern Stage_DATA g_stageData;
 extern Knife Knife1;
@@ -46,6 +47,7 @@ void Player::Init(int Stagenum)
 	Knife = 1;
 	itemcraft = 0;
 	m_hp = 10;
+	m_maxhp = 10;
 	m_isSquat = false;
 	m_isAttack = false;
 	hit_once = false;
@@ -110,6 +112,7 @@ void Player::Squat()
 void Player::Step()
 {
 	m_squattime--;
+	m_hplength = HP_END_X * m_hp / m_maxhp;
 	m_K_time = Knife1.GetCoul();
 	m_A_time = attack.GetCoul();
 	//プレイヤー移動処理
@@ -245,14 +248,33 @@ void Player::Draw()
 		}
 	}
 
-	DrawFormatString(75, 100, GetColor(255, 0, 0), "残りHP : %d", m_hp);
+	//残りHPに応じて色を変える
+	int color;
+
+	if (m_hp >= 6)
+	{
+		color = GetColor(0, 255, 0);      // 緑
+	}
+	else if (m_hp >= 3)
+	{
+		color = GetColor(255, 255, 0);    // 黄
+	}
+	else
+	{
+		color = GetColor(255, 0, 0);      // 赤
+	}
+		
+
+	DrawFormatString(75, 40, GetColor(255, 0, 0), "HP");
+	DrawLine(HP_STARTPOS_X, 47, HP_STARTPOS_X + m_hplength , 47,color,15);
+
 	if (m_K_time > 0) {
 		DrawFormatString(75, 80, GetColor(255, 0, 0), "ナイフ");
 	}
 	DrawLine(140, 88,140 + m_K_time, 88, GetColor(255, 0, 0), m_t = 3);
 	
 	if (m_A_time > 0) {
-		DrawFormatString(78, 60, GetColor(255, 0, 0), "近接");
+		DrawFormatString(75, 60, GetColor(255, 0, 0), "近接");
 	}
 	DrawLine(140, 68, 140 + m_A_time*3, 68, GetColor(255, 0, 0), m_t = 3);
 	DrawFormatString(m_pos.x - 9, m_pos.y - 50, GetColor(255, 0, 0), "1P");

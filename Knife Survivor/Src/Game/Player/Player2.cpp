@@ -24,6 +24,8 @@
 #define ANIM_SPEED (0.08)		//アニメーションのスピード
 #define BOSSSCENE_POSX (5300)	//ボスシーンに入るX座標
 #define MOVE_SQUATSPEED (0.5f);	//スロースピード
+#define HP2_STARTPOS_X (815)	//HPを描画する基準点
+#define HP2_END_X (515)			//HPを描画する終点
 
 extern Stage_DATA g_stageData;
 extern Player player1;
@@ -49,6 +51,7 @@ void Player2::Init(int Stagenum)
 	Knife = 1;
 	itemcraft = 0;
 	m_hp = 10;
+	m_maxhp = 10;
 	m_K_time = 0;
 	m_A_time = 0;
 }
@@ -104,11 +107,12 @@ void Player2::Squat()
 //	プレイヤーデータ更新関数
 void Player2::Step()
 {
+	m_squattime--;
+	m_hplength = 300 * m_hp / m_maxhp;
 
 	m_K_time = knife2.GetCoul();
 	m_A_time = attack2.GetCoul();
-	m_squattime--;
-	
+
 	//プレイヤー移動処理
 	if (IsKeyInput(KEY_RIGHT2) && IsKeyInput(KEY_SQUAT2))
 	{
@@ -239,17 +243,34 @@ void Player2::Draw()
 			DrawRotaGraph((int)m_pos.x, (int)m_pos.y + 10, 0.18, 0.0, (int)m_shndl[frame], TRUE, TurnFrag);
 		}
 	}
+	//残りHPに応じて色を変える
+	int color;
 
-	DrawFormatString(760, 100, GetColor(0, 0, 255), "残りHP : %d", m_hp);
-	if (player2.m_K_time > 0) {
-		DrawFormatString(760, 80, GetColor(0, 0, 255), "ナイフ");
+	if (m_hp >= 6)
+	{
+		color = GetColor(0, 255, 0);      // 緑
 	}
-	DrawLine(750, 88, 750 - player2.m_K_time, 88, GetColor(0, 0, 255), player2.m_t = 3);
+	else if (m_hp >= 3)
+	{
+		color = GetColor(255, 255, 0);    // 黄
+	}
+	else
+	{
+		color = GetColor(255, 0, 0);      // 赤
+	}
+
+	DrawFormatString(825, 40, GetColor(0, 0, 255), "HP");
+	DrawLine(HP2_STARTPOS_X, 47, HP2_STARTPOS_X - m_hplength, 47, color, 15);
+
+	if (player2.m_K_time > 0) {
+		DrawFormatString(825, 80, GetColor(0, 0, 255), "ナイフ");
+	}
+	DrawLine(815, 88, 815 - player2.m_K_time, 88, GetColor(0, 0, 255), player2.m_t = 3);
 
 	if (player2.m_A_time > 0) {
-		DrawFormatString(760, 60, GetColor(0, 0, 255), "近接");
+		DrawFormatString(825, 60, GetColor(0, 0, 255), "近接");
 	}
-	DrawLine(750, 68, 750 - player2.m_A_time * 3, 68, GetColor(0, 0, 255), player2.m_t = 3);
+	DrawLine(815, 68, 815 - player2.m_A_time * 3, 68, GetColor(0, 0, 255), player2.m_t = 3);
 	DrawFormatString(m_pos.x - 9, m_pos.y - 50, GetColor(0, 0, 255), "2P");
 }
 

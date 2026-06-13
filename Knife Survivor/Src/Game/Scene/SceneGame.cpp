@@ -255,7 +255,7 @@ void DrawGame()
 		//残り時間変数
 		int remaining = TimerGetSec();
 		//残り時間を表示
-		DrawFormatString(220, 45, GetColor(0, 0, 0), "残り時間:%d秒", remaining);
+		DrawFormatString(440, 40, GetColor(0, 0, 0), "%d秒", remaining);
 		
 		break;
 	}
