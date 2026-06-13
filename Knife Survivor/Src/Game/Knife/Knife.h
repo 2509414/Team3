@@ -31,7 +31,6 @@ public:
 
 	void Request(VECTOR pos, VECTOR speed);
 
-	
 	void SetCoul(float time) { time = m_cooltime; } 
 	float GetCoul(){ return m_cooltime; }
 };

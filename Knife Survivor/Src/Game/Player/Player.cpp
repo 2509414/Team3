@@ -49,16 +49,9 @@ void Player::Init(int Stagenum)
 	m_isSquat = false;
 	m_isAttack = false;
 	hit_once = false;
-
-	if (Stagenum == 1)
-	{
-		m_pos.x = 4750;
-	}
-
-	if (Stagenum == 2)
-	{
-		m_pos.y = 423;
-	}
+	m_K_time = 0;
+	m_A_time = 0;
+	
 }
 
 //	プレイヤーデータ読み込み関数
@@ -117,6 +110,8 @@ void Player::Squat()
 void Player::Step()
 {
 	m_squattime--;
+	m_K_time = Knife1.GetCoul();
+	m_A_time = attack.GetCoul();
 	//プレイヤー移動処理
 	if (IsKeyInput(KEY_RIGHT) && IsKeyInput(KEY_SQUAT))
 	{
@@ -231,9 +226,7 @@ void Player::Step()
 //	表示関数
 void Player::Draw()
 {
-	int t;
-	float K_time = Knife1.GetCoul();
-	float A_time = attack.GetCoul();
+	
 	int frame = (int)anim;
 	if (m_isSquat == false)
 	{
@@ -253,14 +246,15 @@ void Player::Draw()
 	}
 
 	DrawFormatString(75, 100, GetColor(255, 0, 0), "残りHP : %d", m_hp);
-	if (K_time > 0) {
+	if (m_K_time > 0) {
 		DrawFormatString(75, 80, GetColor(255, 0, 0), "ナイフ");
 	}
-	DrawLine(140, 88,140 + K_time, 88, GetColor(255, 0, 0), t = 3);
-	if (A_time > 0) {
+	DrawLine(140, 88,140 + m_K_time, 88, GetColor(255, 0, 0), m_t = 3);
+	
+	if (m_A_time > 0) {
 		DrawFormatString(78, 60, GetColor(255, 0, 0), "近接");
 	}
-	DrawLine(140, 68, 140 + A_time*3, 68, GetColor(255, 0, 0), t = 3);
+	DrawLine(140, 68, 140 + m_A_time*3, 68, GetColor(255, 0, 0), m_t = 3);
 	DrawFormatString(m_pos.x - 9, m_pos.y - 50, GetColor(255, 0, 0), "1P");
 
 }

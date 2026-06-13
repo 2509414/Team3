@@ -29,6 +29,8 @@ extern Stage_DATA g_stageData;
 extern Player player1;
 extern Knife2 knife2;
 extern Attack2 attack2;
+extern Player2 player2;
+
 //プレイヤーデータ初期化関数
 void Player2::Init(int Stagenum)
 {
@@ -47,17 +49,8 @@ void Player2::Init(int Stagenum)
 	Knife = 1;
 	itemcraft = 0;
 	m_hp = 10;
-
-
-	if (Stagenum == 1)
-	{
-		m_pos.x = 4750;
-	}
-
-	if (Stagenum == 2)
-	{
-		m_pos.y = 423;
-	}
+	m_K_time = 0;
+	m_A_time = 0;
 }
 
 //	プレイヤーデータ読み込み関数
@@ -111,8 +104,11 @@ void Player2::Squat()
 //	プレイヤーデータ更新関数
 void Player2::Step()
 {
-	m_squattime--;
 
+	m_K_time = knife2.GetCoul();
+	m_A_time = attack2.GetCoul();
+	m_squattime--;
+	
 	//プレイヤー移動処理
 	if (IsKeyInput(KEY_RIGHT2) && IsKeyInput(KEY_SQUAT2))
 	{
@@ -226,10 +222,6 @@ void Player2::Step()
 //	表示関数
 void Player2::Draw()
 {
-	int t;
-	float K_time = knife2.GetCoul();
-	float A_time = attack2.GetCoul();
-	
 	int frame = (int)anim;
 	if (m_isSquat == false)
 	{
@@ -249,14 +241,15 @@ void Player2::Draw()
 	}
 
 	DrawFormatString(760, 100, GetColor(0, 0, 255), "残りHP : %d", m_hp);
-	if (K_time > 0) {
-		DrawFormatString(75, 80, GetColor(255, 0, 0), "ナイフ");
+	if (player2.m_K_time > 0) {
+		DrawFormatString(760, 80, GetColor(0, 0, 255), "ナイフ");
 	}
-	DrawLine(140, 88, 140 + K_time, 88, GetColor(255, 0, 0), t = 3);
-	if (A_time > 0) {
-		DrawFormatString(78, 60, GetColor(255, 0, 0), "近接");
+	DrawLine(750, 88, 750 - player2.m_K_time, 88, GetColor(0, 0, 255), player2.m_t = 3);
+
+	if (player2.m_A_time > 0) {
+		DrawFormatString(760, 60, GetColor(0, 0, 255), "近接");
 	}
-	DrawLine(140, 68, 140 + A_time * 3, 68, GetColor(255, 0, 0), t = 3);
+	DrawLine(750, 68, 750 - player2.m_A_time * 3, 68, GetColor(0, 0, 255), player2.m_t = 3);
 	DrawFormatString(m_pos.x - 9, m_pos.y - 50, GetColor(0, 0, 255), "2P");
 }
 

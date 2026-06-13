@@ -68,7 +68,7 @@ void Knife2::Draw()
 	//クールタイムが0より大きかったら残り何カウントか知らせる
 	if (m_cooltime > 0)
 	{
-		DrawFormatString(600, 75, GetColor(0, 0, 255), "Knife クールタイム : %.1f", m_cooltime);
+	/*	DrawFormatString(600, 75, GetColor(0, 0, 255), "Knife クールタイム : %.1f", m_cooltime);*/
 	}
 }
 

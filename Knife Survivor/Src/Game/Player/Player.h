@@ -27,7 +27,9 @@ public:
 	bool m_isSquat;			//しゃがんでるかどうか
 	bool m_isAttack;		//必殺技フラグ
 	bool hit_once;			//当たり判定1回きりフラグ
-
+	int m_t;
+	float m_K_time;
+	float m_A_time;
 
 	VECTOR m_pos;			// 座標
 	SHOT_DATA m_shot;		// 弾管理

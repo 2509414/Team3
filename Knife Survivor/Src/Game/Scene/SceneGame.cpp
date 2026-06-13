@@ -37,29 +37,51 @@ int StepGame(int Stagenum)
 	{
 	case GAMESCENE_INIT:
 		//初期化処理
-		if (Stagenum != 3)
+		if (Stagenum == 3)
 		{
+			InitBG();
+			InitSound();
+			InitFps();
+			InitStage();
+
+			Knife1.Init();
+			knife2.Init();
+
+			player1.Init(Stagenum);
+			player2.Init(Stagenum);
+
+			attack.Init();
+			attack2.Init();
+			item.Init();
+			controller.Init();
+			g_gameScene.m_state = GAMESCENE_LOAD;
+			break;
+		}
+		else
+		{
+			InitBG();
+			InitSound();
+			InitFps();
+			InitStage();
+
+			Knife1.Init();
+			knife2.Init();
+
+			player1.Init(Stagenum);
+			player2.Init(Stagenum);
+
+			attack.Init();
+			attack2.Init();
+
 			TimerInit(300);	//〇秒タイマー
 			TimerStart();	//タイマー開始
+
+			item.Init();
+			controller.Init();
+			g_gameScene.m_state = GAMESCENE_LOAD;
+			break;
 		}
-		InitBG();
-		InitSound();
-		InitFps();
-		InitStage();
-
-		Knife1.Init();
-		knife2.Init();
 		
-		player1.Init(Stagenum);
-		player2.Init(Stagenum);
-
-		attack.Init();
-		attack2.Init();
-
-		item.Init();
-		controller.Init();
-		g_gameScene.m_state = GAMESCENE_LOAD;
-		break;
 
 	case GAMESCENE_LOAD:
 		//データをロード
