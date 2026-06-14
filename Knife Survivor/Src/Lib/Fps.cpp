@@ -60,11 +60,7 @@ void PrintFps()
 		g_fps.m_count = 0;
 		g_fps.m_prevDrawTime = g_fps.m_nowtime;
 	}
-
-
 	//FPSÇÕèÌÇ…ï\é¶Çë±ÇØÇÈ
-	/*DrawFormatString(16, 16, GetColor(255, 255, 255), "FPS:%.1lf", g_fps.m_drawFps);*/
-
-
+	//DrawFormatString(16, 16, GetColor(255, 255, 255), "FPS:%.1lf", g_fps.m_drawFps);
 }
 

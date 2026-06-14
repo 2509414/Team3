@@ -102,6 +102,25 @@ int StepTitle()
 			{
 				g_titleScene.m_hndl[7] = LoadGraph("Data/Textures/STAGE4.png");
 			}
+
+			if (g_titleScene.m_hndl[8] == -1)
+			{
+				g_titleScene.m_hndl[8] = LoadGraph("Data/Textures/Stage1Image.png");
+			}
+
+			if (g_titleScene.m_hndl[9] == -1)
+			{
+				g_titleScene.m_hndl[9] = LoadGraph("Data/Textures/Stage2Image.png");
+			}
+			if (g_titleScene.m_hndl[10] == -1)
+			{
+				g_titleScene.m_hndl[10] = LoadGraph("Data/Textures/Stage3Image.png");
+			}
+
+			if (g_titleScene.m_hndl[11] == -1)
+			{
+				g_titleScene.m_hndl[11] = LoadGraph("Data/Textures/Stage4Image.png");
+			}
 		}
 		
 		RequestFadeIn();
@@ -238,6 +257,10 @@ void DrawTitle()
 					START_BTN_Y + START_BTN_H+a,
 					GetColor(255, 255, 0), //ここで色を指定
 					TRUE);
+
+				DrawGraph(650, 400, g_titleScene.m_hndl[11], TRUE);
+				DrawFormatString(650, 340, GetColor(0, 0, 0), "複雑な地形でバトル！\nしゃがみアクションを\n駆使しよう！");
+
 			}
 
 
@@ -257,7 +280,11 @@ void DrawTitle()
 					START_BTN_Y + 100 + START_BTN_H,
 					GetColor(255, 255, 0), //ここで色を指定
 					TRUE);
+
+				DrawGraph(650, 400, g_titleScene.m_hndl[10], TRUE);
+				DrawFormatString(650, 360, GetColor(0, 0, 0), "高低差を活かして\n相手を翻弄しよう！");
 			}
+
 
 			//マウスがSTAGE1上に乗っていたらSTAGE1をtrue
 			bool Stage1 = IsMouseOnButton(START_BTN_X - a,
@@ -275,6 +302,9 @@ void DrawTitle()
 					START_BTN_Y + 200 + START_BTN_H,
 					GetColor(255, 255, 0), //ここで色を指定
 					TRUE);
+				DrawGraph(650, 400, g_titleScene.m_hndl[9], TRUE);
+				DrawFormatString(650, 360, GetColor(0, 0, 0), "迷ったらここ！\n");
+
 			}
 
 			//マウスがSTAGE4上に乗っていたらSTAGE4をtrue
@@ -291,6 +321,8 @@ void DrawTitle()
 						485 + START_BTN_H,
 						GetColor(255, 255, 0), TRUE); //ここで色を指定
 
+				DrawGraph(650, 400, g_titleScene.m_hndl[8], TRUE);
+				DrawFormatString(650, 340, GetColor(0, 0, 0), "時間無制限！\nフラットな地形で\n操作確認ができる！");
 			}
 
 				//③文字
@@ -311,9 +343,6 @@ void DrawTitle()
 				DrawGraph(680, 50, g_titleScene.m_hndl[5], TRUE);
 
 				DrawGraph(80, 50, g_titleScene.m_hndl[5], TRUE);
-
-				////操作方法
-				//DrawGraph(-10, 350, g_titleScene.m_hndl[6], TRUE);
 
 				// 点滅スピード調整
 				int blink = (GetNowCount() / 750) % 2;

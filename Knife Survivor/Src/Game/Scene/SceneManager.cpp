@@ -44,10 +44,10 @@ int StepScene()
 		if (next == 1)
 		{
 			
-			//STAGEBOSSÇÃè„Ç≈âüÇ≥ÇÍÇƒÇΩÇÁg_titleScene.m_nextstagenum = 0Ç…Ç∑ÇÈ
+			//STAGEBOSSÇÃè„Ç≈âüÇ≥ÇÍÇƒÇΩÇÁg_titleScene.m_nextstagenum = 2Ç…Ç∑ÇÈ
 			if (IsMouseOnButton(START_BTN_X - 5,START_BTN_Y - 5,START_BTN_W + 5,START_BTN_H + 5) == true)
 			{
-				Stagenum = 1;
+				Stagenum = 2;
 				g_scene.m_state = SCENE_GAME;
 			}
 	
@@ -55,14 +55,14 @@ int StepScene()
 			//STAGE2ÇÃè„Ç≈âüÇ≥ÇÍÇƒÇΩÇÁg_titleScene.m_nextstagenum = 0Ç…Ç∑ÇÈ
 			if (IsMouseOnButton(START_BTN_X - 5,START_BTN_Y + 100,START_BTN_W + 5,START_BTN_H + 5) == true)
 			{
-				Stagenum = 0;
+				Stagenum = 1;
 				g_scene.m_state = SCENE_GAME;
 			}
 		
 			//STAGE1ÇÃè„Ç≈âüÇ≥ÇÍÇƒÇΩÇÁg_titleScene.m_nextstagenum = 2Ç…Ç∑ÇÈ
 			if (IsMouseOnButton(START_BTN_X - 5,START_BTN_Y + 200,START_BTN_W + 5,START_BTN_H + 5) == true)
 			{
-				Stagenum = 2;
+				Stagenum = 0;
 				g_scene.m_state = SCENE_GAME;
 			}
 
