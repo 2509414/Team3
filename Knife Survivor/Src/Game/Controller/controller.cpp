@@ -16,13 +16,6 @@ void Controller::Load()
 	}
 }
 
-
-//アイテムデータ更新関数
-void Controller::Step()
-{
-	
-}
-
 //表示関数
 void Controller::Draw()
 {

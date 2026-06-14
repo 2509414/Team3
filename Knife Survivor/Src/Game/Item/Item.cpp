@@ -4,7 +4,6 @@
 extern Player player1;
 extern Player2 player2;
 
-
 //アイテムデータ初期化関数
 void Item::Init()
 {
@@ -76,13 +75,13 @@ void Item::Draw()
 	if (m_isdraw == true)
 	{
 		DrawGraph(m_pos.x, m_pos.y, m_hndl, TRUE);
-	/*	DrawFormatString(365, 45, GetColor(0,0,0), "あと%d回で割れる！", m_hp);*/
 	}
 }
 
 //破棄関数
 void Item::Exit()
 {
+	//HPが0になったら描画をやめる
 	if (m_hp == 0)
 	{
 		DeleteGraph(m_hndl);

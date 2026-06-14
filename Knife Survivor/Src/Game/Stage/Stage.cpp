@@ -83,25 +83,15 @@ void DrawStage()
 	{
 		for (int x = 0; x < STAGE_WIDTH; x++)
 		{
-			
+
 			VECTOR drawPos;
 
 			drawPos.x = g_stageData.m_stageData[y][x].m_pos.x;
 			drawPos.y = g_stageData.m_stageData[y][x].m_pos.y;
 			int useID = g_stageData.m_mapData[y][x];
 			int useHndl = g_stageData.m_hndl[useID];
-				DrawRotaGraph((int)drawPos.x, (int)drawPos.y, 1.0f, 0.0f,
-					useHndl, TRUE);
-
-
-			//// 本来は必要ない処理だけど分かりやすいように
-			//// 二次元配列に格納された値を変数に入れる
-			//int useID = g_stageData.m_mapData[y][x];
-			//// さらにそこから使用する画像ハンドルを探し出す
-			//int useHndl = g_stageData.m_hndl[useID];
-
-			//// 指定された画像を描画
-			//DrawGraph(MAP_CHIP_SIZE * x, MAP_CHIP_SIZE * y, useHndl, TRUE);
+			DrawRotaGraph((int)drawPos.x, (int)drawPos.y, 1.0f, 0.0f,
+				useHndl, TRUE);
 		}
 	}
 }

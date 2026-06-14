@@ -34,9 +34,6 @@
     <Filter Include="ソース ファイル\Game\Scene">
       <UniqueIdentifier>{5da31a0f-871f-43fa-8576-9a849f25eff1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Sound">
-      <UniqueIdentifier>{c89cb236-b102-4a19-a15b-8f9bcbfdbf56}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Stage">
       <UniqueIdentifier>{6773b5f5-1560-4c42-8925-547b0ebb872b}</UniqueIdentifier>
     </Filter>
@@ -48,6 +45,9 @@
     </Filter>
     <Filter Include="ソース ファイル\Game\Controller">
       <UniqueIdentifier>{1bef2afa-e873-4241-ac9f-98caf29956b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Sound">
+      <UniqueIdentifier>{c89cb236-b102-4a19-a15b-8f9bcbfdbf56}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -77,12 +77,6 @@
     </ClCompile>
     <ClCompile Include="Src\Game\Knife\Knife.cpp">
       <Filter>ソース ファイル\Game\Knife</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Game\Player\Player.cpp">
-      <Filter>ソース ファイル\Game\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Game\Player\Player2.cpp">
-      <Filter>ソース ファイル\Game\Player</Filter>
     </ClCompile>
     <ClCompile Include="Src\Game\Scene\SceneGame.cpp">
       <Filter>ソース ファイル\Game\Scene</Filter>
@@ -117,6 +111,12 @@
     <ClCompile Include="Src\Game\Controller\controller.cpp">
       <Filter>ソース ファイル\Game\Controller</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Player\Player.cpp">
+      <Filter>ソース ファイル\Game\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Player\Player2.cpp">
+      <Filter>ソース ファイル\Game\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Lib\Input.h">
@@ -145,12 +145,6 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Knife\Knife.h">
       <Filter>ソース ファイル\Game\Knife</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Game\Player\Player.h">
-      <Filter>ソース ファイル\Game\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Game\Player\Player2.h">
-      <Filter>ソース ファイル\Game\Player</Filter>
     </ClInclude>
     <ClInclude Include="Src\Game\Scene\SceneGame.h">
       <Filter>ソース ファイル\Game\Scene</Filter>
@@ -184,6 +178,12 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Controller\controller.h">
       <Filter>ソース ファイル\Game\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Player\Player.h">
+      <Filter>ソース ファイル\Game\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Player\Player2.h">
+      <Filter>ソース ファイル\Game\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

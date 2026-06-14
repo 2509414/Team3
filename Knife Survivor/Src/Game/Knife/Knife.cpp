@@ -32,7 +32,7 @@ void Knife::Load()
 //	ナイフデータ更新関数
 void Knife::Step()
 {
-	// クールタイム減少
+	// クールタイムが0より大きかったら減少
 	if (m_cooltime > 0.0f)
 	{
 		m_cooltime--;
@@ -65,12 +65,6 @@ void Knife::Draw()
 		if (m_speed.x < 0.0f) isTurn = true;
 		else isTurn = false;
 		DrawRotaGraph((int)m_pos.x, (int)m_pos.y, 1.0, 0.0,m_hndl, TRUE, isTurn);
-	}
-
-	//クールタイムが0より大きかったら残り何カウントか知らせる
-	if (m_cooltime > 0)
-	{
-		//DrawFormatString(40, 75,GetColor(255,0,0),"Knife クールタイム : %.1f",m_cooltime);
 	}
 }
 

@@ -2,14 +2,10 @@
 #include "../Sound/Sound.h"
 #include"../Player/Player.h"
 
-
-
 //定義関連
 #define Attack_SPEED (5)
 #define Attack_ACTIVE_TIME (30)
-
 #define Attack_Len (30)
-
 #define ANIM_NUM (3)		//全画像枚数
 #define X_SIZE (142)		//1枚分の大きさ（横）
 #define Y_SIZE (320)		//1枚分の大きさ（縦）
@@ -67,7 +63,6 @@ void Attack::Step()
 			m_isActive = 0;
 
 		}
-	//	DrawFormatString(300, 300, GetColor(255, 255, 255), "クールタイム %d", m_cooltime);
 	}
 	else
 	{
@@ -87,12 +82,6 @@ void Attack::Draw()
 				DrawRotaGraph((int)m_pos.x, (int)m_pos.y, 0.5f, 0.0, (int)m_hndl[frame], TRUE, !turn_flg);
 			}
 		}
-	}
-
-	//クールタイムが0より大きかったら残り何カウントか知らせる
-	if (m_cooltime > 0)
-	{
-	/*	DrawFormatString(30, 55, GetColor(255, 0, 0), "Attack クールタイム : %.1f", m_cooltime);*/
 	}
 }
 

@@ -31,7 +31,6 @@ Controller controller;
 
 int StepGame(int Stagenum) 
 {
-
 	int ret = 0;
 
 	//ゲーム本編の状態遷移
@@ -160,7 +159,7 @@ int StepGame(int Stagenum)
 		player1.HitCheckAttackToPlayer2();
 		player2.HitCheckAttackToPlayer1();
 
-		//ゲーム終了へ
+		//player1のHPが0以下になったらゲーム終了
 		if (player1.m_hp <= 0)
 		{
 			PlaybackSound(1);
@@ -170,6 +169,7 @@ int StepGame(int Stagenum)
 			RequestFadeOut();
 		}
 
+		//player2のHPが0以下になったらゲーム終了
 		if (player2.m_hp <= 0)
 		{
 			PlaybackSound(1);
@@ -203,7 +203,6 @@ int StepGame(int Stagenum)
 		
 		break;
 		
-
 		//ゲーム終了後の待機
 	case GAMESCENE_ENDWAIT:
 		
@@ -221,6 +220,8 @@ int StepGame(int Stagenum)
 	
 		ExitSound();
 		controller.Exit();
+		player1.Exit();
+		player2.Exit();
 		g_gameScene.m_state = GAMESCENE_INIT;
 		ret = 1;
 	}
@@ -238,21 +239,15 @@ void DrawGame()
 		//画像データ表示関数
 		DrawBG();
 		DrawStage();
-		
 		player1.Draw();
 		player2.Draw();
 		Knife1.Draw();
 		knife2.Draw();
 		attack.Draw();
 		attack2.Draw();
-	
 		item.Draw();
 		controller.Draw();
 		PrintFps();
-		
-		int mx, my;
-		GetMousePoint(&mx, &my);
-		DrawFormatString(10, 10, GetColor(0, 0, 0), "X %d  Y %d", mx, my);
 		
 		//残り時間変数
 		int remaining = TimerGetSec();

@@ -17,7 +17,7 @@ public:
 	int itemcraft;			// アイテムクラフト状態
 	int m_shothndl;			// 弾の画像ハンドル
 	float m_animCnt;		// アニメーションカウント
-	float anim;
+	float anim;				//アニメーション速度
 	int TurnFrag;			//ターンフラグ
 	int m_hp;				//体力
 	int m_maxhp;			//最大HP
@@ -55,9 +55,6 @@ public:
 	// ジャンプ
 	void Jump();
 
-	//しゃがみ
-	void Squat();
-
 	// 描画
 	void Draw();
 
@@ -66,9 +63,6 @@ public:
 
 	// 着地
 	void SetLand();
-
-	// 座標取得
-	VECTOR GetPos();
 
 	//ナイフと敵の当たり判定
 	bool HitCheckKnifeToPlayer2();

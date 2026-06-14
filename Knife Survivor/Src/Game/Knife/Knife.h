@@ -29,9 +29,11 @@ public:
 	//終了前の処理関数
 	void Exit();
 
+	//ナイフリクエスト関数
 	void Request(VECTOR pos, VECTOR speed);
 
 	void SetCoul(float time) { time = m_cooltime; } 
+
 	float GetCoul(){ return m_cooltime; }
 };
 

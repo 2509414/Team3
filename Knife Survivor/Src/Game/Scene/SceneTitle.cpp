@@ -9,9 +9,6 @@ bool IsMouseOnButton(int x, int y, int w, int h)
 	int mx, my;
 	GetMousePoint(&mx, &my);
 
-	//マウスの座標
-	/*DrawFormatString(10, 10, GetColor(0, 0, 0), "Mouse X:%d  Y:%d", mx, my);*/
-
 	return (mx >= x && mx <= x + w &&
 		my >= y && my <= y + h);
 }
@@ -245,7 +242,6 @@ void DrawTitle()
 
 
 			//マウスがSTAGE2上に乗っていたらSTAGE2をtrue
-			//Stage2がtrueだったら
 			bool Stage2 = IsMouseOnButton(START_BTN_X - a,
 										  START_BTN_Y + 100,
 										  START_BTN_W + a,
@@ -264,12 +260,11 @@ void DrawTitle()
 			}
 
 			//マウスがSTAGE1上に乗っていたらSTAGE1をtrue
-			//Stage1がtrueだったら
 			bool Stage1 = IsMouseOnButton(START_BTN_X - a,
 				START_BTN_Y + 200,
 				START_BTN_W + a,
 				START_BTN_H + a);
-			//Stage2がtrueだったら
+			//Stage1がtrueだったら
 			if (Stage1 == true)
 			{
 
@@ -283,24 +278,23 @@ void DrawTitle()
 			}
 
 			//マウスがSTAGE4上に乗っていたらSTAGE4をtrue
-			//Stage1がtrueだったら
+			//Stage4がtrueだったら
 			bool Stage4 = IsMouseOnButton(40, 485, START_BTN_W, START_BTN_H);
 
 			//Stage2がtrueだったら
 			if (Stage4 == true)
 			{
-
 				//乗っかっているという意味で色を表示
 				DrawBox(40,
-					485,
-					40 + START_BTN_W,
-					485 + START_BTN_H,
-					GetColor(255, 255, 0), TRUE); //ここで色を指定
+						485,
+						40 + START_BTN_W,
+						485 + START_BTN_H,
+						GetColor(255, 255, 0), TRUE); //ここで色を指定
 
 			}
 
 				//③文字
-				// 
+				
 				//訓練所
 				DrawGraph(40, 485, g_titleScene.m_hndl[7], TRUE);
 

@@ -28,35 +28,37 @@ void UpdateKeyInput()
 
 	//1P===========================================================================
 	GetJoypadXInputState(DX_INPUT_PAD1, &input);
-	
+
 	//Dを押したまたはコントローラーの右を押したら (右移動)
-	if (CheckHitKey(KEY_INPUT_D)||input.Buttons[XINPUT_BUTTON_DPAD_RIGHT])g_inputData.m_nowKey |= KEY_RIGHT;
+	if (CheckHitKey(KEY_INPUT_D) || input.Buttons[XINPUT_BUTTON_DPAD_RIGHT])g_inputData.m_nowKey |= KEY_RIGHT;
 
 	//Aを押したまたはコントローラーの左を押したら (左移動)
-	if (CheckHitKey(KEY_INPUT_A)||input.Buttons[XINPUT_BUTTON_DPAD_LEFT])g_inputData.m_nowKey |= KEY_LEFT;
+	if (CheckHitKey(KEY_INPUT_A) || input.Buttons[XINPUT_BUTTON_DPAD_LEFT])g_inputData.m_nowKey |= KEY_LEFT;
 
 	//Sを押した Aボタンを押した (ジャンプ)
 	if (CheckHitKey(KEY_INPUT_S) || input.Buttons[XINPUT_BUTTON_A]) g_inputData.m_nowKey |= KEY_JUMP;
 
 	//Dかつシフトを押した またはコントローラーの右を押したかつXボタンを押したら (ダッシュ)
-	if (CheckHitKey(KEY_INPUT_D) && CheckHitKey(KEY_INPUT_LSHIFT)||
+	if (CheckHitKey(KEY_INPUT_D) && CheckHitKey(KEY_INPUT_LSHIFT) ||
 		input.Buttons[XINPUT_BUTTON_DPAD_RIGHT] && input.Buttons[XINPUT_BUTTON_X])g_inputData.m_nowKey |= KEY_DASH;
-	
+
 	//Aかつシフトを押した またはコントローラーの左を押したかつXボタンを押したら (ダッシュ)
 	if (CheckHitKey(KEY_INPUT_A) && CheckHitKey(KEY_INPUT_LSHIFT) ||
 		input.Buttons[XINPUT_BUTTON_DPAD_LEFT] && input.Buttons[XINPUT_BUTTON_X])g_inputData.m_nowKey |= KEY_LDASH;
-	
+
 	//Wかつナイフの生存フラグがfalse　またはコントローラーのRBを押したかつナイフの生存フラグがfalse (ナイフを投げる)
 	if (CheckHitKey(KEY_INPUT_W) && Knife1.m_isActive == false ||
 		input.Buttons[XINPUT_BUTTON_RIGHT_SHOULDER] && Knife1.m_isActive == false) g_inputData.m_nowKey |= KEY_KNIFE;
-	
+
 	//Xキーまたはコントローラー下を押したら
 	if (CheckHitKey(KEY_INPUT_X) || input.Buttons[XINPUT_BUTTON_DPAD_DOWN])g_inputData.m_nowKey |= KEY_SQUAT;
 
-	if(IsMouseLeftClick() == true) g_inputData.m_nowKey |= KEY_ITEMCRAFT;
+
+	/*if (IsMouseLeftClick() == true) g_inputData.m_nowKey |= KEY_ITEMCRAFT;*/
 
 	//Qキーを押した、コントローラのLBを押した（近接攻撃（仮））
 	if (CheckHitKey(KEY_INPUT_Q) || input.Buttons[XINPUT_BUTTON_LEFT_SHOULDER]) g_inputData.m_nowKey |= KEY_ATTACK;
+
 
 	//2P===========================================================================
 	GetJoypadXInputState(DX_INPUT_PAD2, &input);
@@ -72,15 +74,15 @@ void UpdateKeyInput()
 		input.Buttons[XINPUT_BUTTON_DPAD_RIGHT] && input.Buttons[XINPUT_BUTTON_X])g_inputData.m_nowKey |= KEY_DASH2;
 
 	//Aかつシフトを押した またはコントローラーの左を押したかつXボタンを押したら (ダッシュ)
-	if (CheckHitKey(KEY_INPUT_J) && CheckHitKey(KEY_INPUT_RSHIFT)||
+	if (CheckHitKey(KEY_INPUT_J) && CheckHitKey(KEY_INPUT_RSHIFT) ||
 		input.Buttons[XINPUT_BUTTON_DPAD_LEFT] && input.Buttons[XINPUT_BUTTON_X])g_inputData.m_nowKey |= KEY_LDASH2;
 
 	//Kを押した Aボタンを押した (ジャンプ)
-	if (CheckHitKey(KEY_INPUT_K)||
+	if (CheckHitKey(KEY_INPUT_K) ||
 		input.Buttons[XINPUT_BUTTON_A])g_inputData.m_nowKey |= KEY_JUMP2;
 
 	//Iを押した またはコントローラーのRBを押したかつナイフの生存フラグがfalse (ナイフを投げる)
-	if (CheckHitKey(KEY_INPUT_I) && knife2.m_isActive == false||
+	if (CheckHitKey(KEY_INPUT_I) && knife2.m_isActive == false ||
 		input.Buttons[XINPUT_BUTTON_RIGHT_SHOULDER] && knife2.m_isActive == false) g_inputData.m_nowKey |= KEY_KNIFE2;
 
 	if (CheckHitKey(KEY_INPUT_M) || input.Buttons[XINPUT_BUTTON_DPAD_DOWN])g_inputData.m_nowKey |= KEY_SQUAT2;

@@ -67,7 +67,6 @@ void Attack2::Step()
 			m_isActive = 0;
 
 		}
-		//	DrawFormatString(300, 300, GetColor(255, 255, 255), "クールタイム %d", m_cooltime);
 	}
 	else
 	{
@@ -88,11 +87,6 @@ void Attack2::Draw()
 				DrawRotaGraph((int)m_pos.x, (int)m_pos.y, 0.5f, 0.0, (int)m_hndl[frame], TRUE, !turn_flg);
 			}
 		}
-	}
-	//クールタイムが0より大きかったら残り何カウントか知らせる
-	if (m_cooltime > 0)
-	{
-	/*	DrawFormatString(600, 55, GetColor(0, 0, 255), "Attack2 クールタイム : %.1f", m_cooltime);*/
 	}
 }
 

@@ -43,17 +43,16 @@ void Player2::Init(int Stagenum)
 	TurnFrag = 1;
 	m_pos.x = 830;
 	m_pos.y = 535;
-	g_isGameClear = false;
-	m_isBossScene = false;
-	m_isSquat = false;
-	m_isAttack = false;
-	m_isAttack = false;
+	
 	Knife = 1;
 	itemcraft = 0;
 	m_hp = 10;
 	m_maxhp = 10;
 	m_K_time = 0;
 	m_A_time = 0;
+	m_isSquat = false;
+	m_isAttack = false;
+	m_isAttack = false;
 }
 
 //	プレイヤーデータ読み込み関数
@@ -93,20 +92,23 @@ void Player2::Jump()
 		playerSy = MOVE_JUMPPW;
 		m_JpActive = false;
 	}
-
 	m_pos.y += playerSy;
 	playerSy += GRAVITY;
-
-}
-
-void Player2::Squat()
-{
-
 }
 
 //	プレイヤーデータ更新関数
 void Player2::Step()
 {
+	//必殺技状態かチェック
+	if (m_attacktime >= 0)
+	{
+		m_isAttack = true;
+	}
+	else
+	{
+		m_isAttack = false;
+	}
+
 	if (m_isAttack == true)
 	{
 		m_attacktime--;
@@ -118,16 +120,6 @@ void Player2::Step()
 	m_A_time = attack2.GetCoul();
 	m_Itemtime = GetCoul();
 	
-	//必殺技状態かチェック
-	if (m_attacktime >= 0)
-	{
-		m_isAttack = true;
-	}
-	else
-	{
-		m_isAttack = false;
-	}
-
 	//プレイヤー移動処理
 	if (IsKeyInput(KEY_RIGHT2) && IsKeyInput(KEY_SQUAT2))
 	{
@@ -149,7 +141,6 @@ void Player2::Step()
 		}
 		m_pos.x += MOVE_SPEED;
 	}
-
 
 	if (IsKeyInput(KEY_LEFT2) && IsKeyInput(KEY_SQUAT2))
 	{
@@ -179,7 +170,6 @@ void Player2::Step()
 		if (TurnFrag == 0) v.x = 5.0f;
 		else v.x = -5.0f;
 		knife2.Request(m_pos, v);
-
 	}
 
 	//しゃがみ状態だったら
@@ -275,22 +265,30 @@ void Player2::Draw()
 	}
 
 	DrawFormatString(825, 40, GetColor(0, 0, 255), "HP");
+	//HPバー
 	DrawLine(HP2_STARTPOS_X, 47, HP2_STARTPOS_X - m_hplength, 47, color, 15);
 
-	if (m_attacktime > 0) {
+	if (m_attacktime > 0)
+	{
 		DrawFormatString(825, 100, GetColor(0, 0, 255), "必殺技");
 	}
+	//必殺技の時間を表示するバー
 	DrawLine(815, 108, 815 - m_attacktime / 4, 108, GetColor(0, 0, 255), m_t = 3);
 	
-	if (player2.m_K_time > 0) {
+	if (player2.m_K_time > 0)
+	{
 		DrawFormatString(825, 80, GetColor(0, 0, 255), "ナイフ");
 	}
+	//ナイフクールタイムを表示するバー
 	DrawLine(815, 88, 815 - player2.m_K_time, 88, GetColor(0, 0, 255), player2.m_t = 3);
 
-	if (player2.m_A_time > 0) {
+	if (player2.m_A_time > 0) 
+	{
 		DrawFormatString(825, 60, GetColor(0, 0, 255), "近接");
 	}
+	//近接攻撃クールタイムを表示するバー
 	DrawLine(815, 68, 815 - player2.m_A_time * 3, 68, GetColor(0, 0, 255), player2.m_t = 3);
+
 	DrawFormatString(m_pos.x - 9, m_pos.y - 50, GetColor(0, 0, 255), "2P");
 }
 
@@ -304,6 +302,9 @@ void Player2::Exit()
 		//破棄した後はー１を入れることで未使用状態であると分かるようにする
 		m_hndl[0] = -1;
 	}
+
+	m_isAttack = false;
+	m_attacktime = 0.0f;
 }
 
 //	地面接地時処理
@@ -436,6 +437,5 @@ bool Player2::HitCheckAction2ToItem(Item& item)
 		}
 		return true;
 	}
-
 	return false;
 }
