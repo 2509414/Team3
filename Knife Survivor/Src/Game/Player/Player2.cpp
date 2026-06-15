@@ -32,6 +32,7 @@ extern Player player1;
 extern Knife2 knife2;
 extern Attack2 attack2;
 extern Player2 player2;
+extern HpItem hpitem;
 
 //プレイヤーデータ初期化関数
 void Player2::Init(int Stagenum)
@@ -437,4 +438,27 @@ bool Player2::HitCheckAction2ToItem(Item& item)
 		return true;
 	}
 	return false;
+}
+
+//プレイヤーとHPアイテムの判定(Hpアイテムクラスを参照)
+bool Player2::HitCheckPlayer2ToHpItem(HpItem& item)
+{
+	if (item.m_isdraw == true)
+	{
+		bool Itemhit = ChenkHitSquareToSquare(m_pos, 32, 32, item.m_pos, 35, 35);
+
+		if (Itemhit == true)
+		{
+			//アクティブをfalseに
+			hpitem.m_isdraw = false;
+			if (m_hp <= 9)
+			{
+				//サウンドを鳴らす
+				PlaybackSound(12);
+				m_hp += 1;
+			}
+			return true;
+		}
+		return false;
+	}
 }

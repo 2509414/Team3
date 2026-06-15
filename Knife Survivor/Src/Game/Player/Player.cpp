@@ -8,6 +8,7 @@
 #include "../Sound/Sound.h"
 #include "../Item/Item.h"
 #include"../Attack/Attack.h"
+#include "../Item/HpItem.h"
 
 //定義関連
 #define WINDOW_SIZE_X (900.0f)	//ウィンドウのサイズ（横）
@@ -31,6 +32,8 @@ extern Stage_DATA g_stageData;
 extern Knife Knife1;
 extern Player2 player2;
 extern Attack attack;
+extern HpItem hpitem;
+
 
 //プレイヤーデータ初期化関数
 void Player::Init(int Stagenum)
@@ -438,6 +441,29 @@ bool Player::HitCheckAttackToPlayer2()
 			PlaybackSound(1);
 			player2.m_hp -= 1;
 			hit_once = true;
+			return true;
+		}
+		return false;
+	}
+}
+
+//プレイヤーとHPアイテムの判定(Hpアイテムクラスを参照)
+bool Player::HitCheckPlayer1ToHpItem(HpItem& item)
+{
+	if (item.m_isdraw == true)
+	{
+		bool Itemhit = ChenkHitSquareToSquare(m_pos, 32, 32, item.m_pos, 35, 35);
+
+		if (Itemhit == true)
+		{
+			//アクティブをfalseに
+			hpitem.m_isdraw = false;
+			if (m_hp <= 9)
+			{
+				//サウンドを鳴らす
+				PlaybackSound(12);
+				m_hp += 1;
+			}
 			return true;
 		}
 		return false;

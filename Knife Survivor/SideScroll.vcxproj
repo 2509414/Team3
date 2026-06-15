@@ -141,6 +141,7 @@
     <ClCompile Include="Src\Game\Bg\Background.cpp" />
     <ClCompile Include="Src\Game\Controller\controller.cpp" />
     <ClCompile Include="Src\Game\HitCheck\HitCheck.cpp" />
+    <ClCompile Include="Src\Game\Item\HpItem.cpp" />
     <ClCompile Include="Src\Game\Item\Item.cpp" />
     <ClCompile Include="Src\Game\Knife\Knife.cpp" />
     <ClCompile Include="Src\Game\Knife\Knife2.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Src\Game\Bg\Background.h" />
     <ClInclude Include="Src\Game\Controller\controller.h" />
     <ClInclude Include="Src\Game\HitCheck\HitCheck.h" />
+    <ClInclude Include="Src\Game\Item\HpItem.h" />
     <ClInclude Include="Src\Game\Item\Item.h" />
     <ClInclude Include="Src\Game\Knife\Knife.h" />
     <ClInclude Include="Src\Game\Knife\Knife2.h" />

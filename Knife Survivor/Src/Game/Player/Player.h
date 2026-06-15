@@ -3,6 +3,7 @@
 #include "../../../Shot.h"
 
 class Item;
+class HpItem;
 
 class Player
 {
@@ -69,6 +70,9 @@ public:
 
 	//ナイフとアイテムの判定
 	bool HitCheckAction1ToItem(Item& item);
+
+	//プレイヤーとHPアイテムの当たり判定
+	bool HitCheckPlayer1ToHpItem(HpItem& item);
 
 	//近接攻撃とプレイヤーの当たり判定
 	bool HitCheckAttackToPlayer2();

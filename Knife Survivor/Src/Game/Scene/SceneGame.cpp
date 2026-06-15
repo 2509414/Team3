@@ -14,7 +14,7 @@
 #include "../Attack/Attack.h"
 #include "../Attack/Attack2.h"
 #include "../Controller/controller.h"
-
+#include"../Item/HpItem.h"
 int Winner;					//勝者
 
 extern int Stagenum;
@@ -28,6 +28,7 @@ Item item;
 Attack attack;
 Attack2 attack2;
 Controller controller;
+HpItem hpitem;
 
 int StepGame(int Stagenum) 
 {
@@ -54,6 +55,7 @@ int StepGame(int Stagenum)
 			attack.Init();
 			attack2.Init();
 			item.Init();
+			hpitem.Init();
 			controller.Init();
 			g_gameScene.m_state = GAMESCENE_LOAD;
 			break;
@@ -78,6 +80,7 @@ int StepGame(int Stagenum)
 			TimerStart();	//タイマー開始
 
 			item.Init();
+			hpitem.Init();
 			controller.Init();
 			g_gameScene.m_state = GAMESCENE_LOAD;
 			break;
@@ -103,7 +106,7 @@ int StepGame(int Stagenum)
 		attack2.Load();
 		
 		item.Load();
-
+		hpitem.Load();
 		LoadSound();
 
 		RequestFadeIn();
@@ -139,7 +142,7 @@ int StepGame(int Stagenum)
 		attack.Step();
 		attack2.Step();
 		item.Step();
-		
+		hpitem.Step();
 		UpdateStage();
 
 		
@@ -159,10 +162,14 @@ int StepGame(int Stagenum)
 		player1.HitCheckAttackToPlayer2();
 		player2.HitCheckAttackToPlayer1();
 
+		//プレイヤーとHPアイテムの当たり判定
+		player1.HitCheckPlayer1ToHpItem(hpitem);
+		player2.HitCheckPlayer2ToHpItem(hpitem);
+
 		//player1のHPが0以下になったらゲーム終了
 		if (player1.m_hp <= 0)
 		{
-			PlaybackSound(1);
+			PlaybackSound(13);
 			g_gameScene.m_waitCount = ENDWAIT_COUNT + 110;
 			g_gameScene.m_state = GAMESCENE_ENDWAIT;
 			Winner = 2;
@@ -172,7 +179,7 @@ int StepGame(int Stagenum)
 		//player2のHPが0以下になったらゲーム終了
 		if (player2.m_hp <= 0)
 		{
-			PlaybackSound(1);
+			PlaybackSound(14);
 			g_gameScene.m_waitCount = ENDWAIT_COUNT + 110;
 			g_gameScene.m_state = GAMESCENE_ENDWAIT;
 			Winner = 1;
@@ -246,6 +253,7 @@ void DrawGame()
 		attack.Draw();
 		attack2.Draw();
 		item.Draw();
+		hpitem.Draw();
 		controller.Draw();
 		PrintFps();
 		

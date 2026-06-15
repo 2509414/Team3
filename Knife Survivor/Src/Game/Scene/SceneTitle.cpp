@@ -130,6 +130,9 @@ int StepTitle()
 
 		//開始前
 	case TITLESCENE_START:
+		//サウンドを鳴らす
+		PlaybackSound(11);
+
 		//フェードインが終わったら本編へ
 		if (IsEndFadeIn())
 		{
@@ -140,8 +143,6 @@ int StepTitle()
 		//メイン処理
 	case TITLESCENE_MAIN:
 		
-		
-
 		//左クリックが押されたかつBOSSSTAGEボタンの上に乗ってたら次に進む
 		if (IsMouseLeftClick() == true && IsMouseOnButton(START_BTN_X - 5,
 														  START_BTN_Y - 5,

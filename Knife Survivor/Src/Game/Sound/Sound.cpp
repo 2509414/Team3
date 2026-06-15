@@ -71,11 +71,30 @@ void LoadSound()
 		g_sound.m_Soundhndl[10] = LoadSoundMem("Data/Sound/Attack.mp3");
 	}
 
+	if (g_sound.m_Soundhndl[11] == -1)
+	{
+		g_sound.m_Soundhndl[11] = LoadSoundMem("Data/Sound/TitleBGM.mp3");
+	}
+
+	if (g_sound.m_Soundhndl[12] == -1)
+	{
+		g_sound.m_Soundhndl[12] = LoadSoundMem("Data/Sound/HpItemSound.mp3");
+	}
+
+	if (g_sound.m_Soundhndl[13] == -1)
+	{
+		g_sound.m_Soundhndl[13] = LoadSoundMem("Data/Sound/Death1.mp3");
+	}
+
+	if (g_sound.m_Soundhndl[14] == -1)
+	{
+		g_sound.m_Soundhndl[14] = LoadSoundMem("Data/Sound/Death2.mp3");
+	}
 }
 
 void PlaybackSound(int SoundId)
 {
-	if (SoundId == 4)
+	if (SoundId == 4 || SoundId == 11)
 	{
 		PlaySoundMem(g_sound.m_Soundhndl[SoundId], DX_PLAYTYPE_LOOP);
 	}
