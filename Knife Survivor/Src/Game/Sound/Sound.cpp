@@ -75,8 +75,11 @@ void LoadSound()
 
 void PlaybackSound(int SoundId)
 {
-
-	if (g_sound.m_Soundhndl[SoundId] != -1)
+	if (SoundId == 4)
+	{
+		PlaySoundMem(g_sound.m_Soundhndl[SoundId], DX_PLAYTYPE_LOOP);
+	}
+	else
 	{
 		PlaySoundMem(g_sound.m_Soundhndl[SoundId], DX_PLAYTYPE_BACK);
 	}
