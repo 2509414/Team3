@@ -3,12 +3,12 @@
 
 extern Player player1;
 extern Player2 player2;
-
+extern int Stagenum;
 //アイテムデータ初期化関数
 void Item::Init()
 {
 	m_hndl = -1;
-	m_pos = { 100.0f,500.0f,0.0f };
+	m_pos = { 400.0f,450.0f,0.0f };
 	m_hp = GetRand(3) + 3;
 	m_speedX = 3.0f;
 	m_speedY = 2.0f;
@@ -35,7 +35,7 @@ void Item::Step()
 	m_differenceHP2 = player2.m_hp - player1.m_hp;
 
 	//HPの差が5以上だったらフラグをオンにする
-	if (m_differenceHP >= 5 || m_differenceHP2 >= 5)
+	if (m_differenceHP >= 3 || m_differenceHP2 >= 3)
 	{
 		m_isdraw = true;
 	}
@@ -72,7 +72,12 @@ void Item::Step()
 //表示関数
 void Item::Draw()
 {
-	if (m_isdraw == true)
+	if (m_isdraw == true && Stagenum == 3)
+	{
+		DrawGraph(m_pos.x, m_pos.y, m_hndl, TRUE);
+		DrawFormatString(m_pos.x -45,m_pos.y -20 , GetColor(0, 0, 0), "これはナイフで壊せる!");
+	}
+	else if(m_isdraw == true)
 	{
 		DrawGraph(m_pos.x, m_pos.y, m_hndl, TRUE);
 	}

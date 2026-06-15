@@ -43,7 +43,7 @@ void Player2::Init(int Stagenum)
 	TurnFrag = 1;
 	m_pos.x = 830;
 	m_pos.y = 535;
-	
+
 	Knife = 1;
 	itemcraft = 0;
 	m_hp = 10;
@@ -119,7 +119,7 @@ void Player2::Step()
 	m_K_time = knife2.GetCoul();
 	m_A_time = attack2.GetCoul();
 	m_Itemtime = GetCoul();
-	
+
 	//プレイヤー移動処理
 	if (IsKeyInput(KEY_RIGHT2) && IsKeyInput(KEY_SQUAT2))
 	{
@@ -274,7 +274,7 @@ void Player2::Draw()
 	}
 	//必殺技の時間を表示するバー
 	DrawLine(815, 108, 815 - m_attacktime / 4, 108, GetColor(0, 0, 255), m_t = 3);
-	
+
 	if (player2.m_K_time > 0)
 	{
 		DrawFormatString(825, 80, GetColor(0, 0, 255), "ナイフ");
@@ -282,7 +282,7 @@ void Player2::Draw()
 	//ナイフクールタイムを表示するバー
 	DrawLine(815, 88, 815 - player2.m_K_time, 88, GetColor(0, 0, 255), player2.m_t = 3);
 
-	if (player2.m_A_time > 0) 
+	if (player2.m_A_time > 0)
 	{
 		DrawFormatString(825, 60, GetColor(0, 0, 255), "近接");
 	}
@@ -399,15 +399,14 @@ bool Player2::HitCheckAction2ToItem(Item& item)
 	if (item.m_isdraw == true)
 	{
 		//falseだったら判定しない
-		if (knife2.m_isActive == false && attack2.m_isActive == false)
+		if (knife2.m_isActive == false)
 		{
 			return false;
 		}
 
-		bool knifehit = ChenkHitSquareToSquare(knife2.m_pos, 15, 10, item.m_pos, 35, 35);
-		bool attackhit = ChenkHitSquareToSquare(attack2.m_pos, 5, 30, item.m_pos, 35, 35);
+		bool knifehit = ChenkHitSquareToSquare(knife2.m_pos,15,2,item.m_pos,35,50);
 
-		if (knifehit == true || attackhit == true)
+		if (knifehit == true)
 		{
 			//HPが1じゃなかったら(８)の音 1だったら(10)の音を鳴らす　これで壊れると時だけ音を変えれる
 			if (item.m_hp != 1)
@@ -420,14 +419,14 @@ bool Player2::HitCheckAction2ToItem(Item& item)
 			}
 			//アクティブをfalseに
 			knife2.m_isActive = false;
-			attack2.m_isActive = false;
+
 			//hpを減らす
 			item.m_hp--;
 
 			//0以下になったら
 			if (item.m_hp <= 0)
 			{
-				
+
 				//必殺技の時間をここで設定
 				m_attacktime = 900;
 
