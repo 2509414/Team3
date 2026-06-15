@@ -210,7 +210,7 @@ void Player2::Step()
 	}
 	else if (IsKeyInputTrg(KEY_2AORI2))
 	{
-		PlaybackSound(16);
+		PlaybackSound(3);
 	}
 
 	//クリックした場所にブロックを置く

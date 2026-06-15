@@ -217,7 +217,7 @@ void Player::Step()
 	}
 	else if (IsKeyInputTrg(KEY_AORI2))
 	{
-		PlaybackSound(16);
+		PlaybackSound(3);
 	}
 
 

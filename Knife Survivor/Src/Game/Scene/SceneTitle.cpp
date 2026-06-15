@@ -252,91 +252,96 @@ void DrawTitle()
 			
 			//②背景
 
-			//マウスがSTAGEBOSS上に乗っていたらBossをtrue
-			int a = 5;
-			bool Boss = IsMouseOnButton(START_BTN_X - a,
-										START_BTN_Y - a,
-										START_BTN_W + a,
-										START_BTN_H + a);
-										
-			//Bossがtrueだったら
-			if (Boss == true)
+			//タイマーが105以上だったら判定する
+			if (g_titleScene.m_timer > 105)
 			{
-				
-				//乗っかっているという意味で色を表示
-				DrawBox(START_BTN_X-a,
-					START_BTN_Y-a,
-					START_BTN_X + START_BTN_W+a,
-					START_BTN_Y + START_BTN_H+a,
-					GetColor(255, 255, 0), //ここで色を指定
-					TRUE);
-		
-				DrawGraph(650, 400, g_titleScene.m_hndl[11], TRUE);
-				DrawFormatString(650, 340, GetColor(0, 0, 0), "複雑な地形でバトル！\nしゃがみアクションを\n駆使しよう！");
+				//マウスがSTAGEBOSS上に乗っていたらBossをtrue
+				int a = 5;
+				bool Boss = IsMouseOnButton(START_BTN_X - a,
+					START_BTN_Y - a,
+					START_BTN_W + a,
+					START_BTN_H + a);
 
-			}
+				//Bossがtrueだったら
+				if (Boss == true)
+				{
 
+					//乗っかっているという意味で色を表示
+					DrawBox(START_BTN_X - a,
+						START_BTN_Y - a,
+						START_BTN_X + START_BTN_W + a,
+						START_BTN_Y + START_BTN_H + a,
+						GetColor(255, 255, 0), //ここで色を指定
+						TRUE);
 
-			//マウスがSTAGE2上に乗っていたらSTAGE2をtrue
-			bool Stage2 = IsMouseOnButton(START_BTN_X - a,
-										  START_BTN_Y + 100,
-										  START_BTN_W + a,
-										  START_BTN_H + a);
-			//Stage2がtrueだったら
-			if (Stage2 == true)
-			{
+					DrawGraph(650, 400, g_titleScene.m_hndl[11], TRUE);
+					DrawFormatString(650, 340, GetColor(0, 0, 0), "複雑な地形でバトル！\nしゃがみアクションを\n駆使しよう！");
 
-				//乗っかっているという意味で色を表示
-				DrawBox(START_BTN_X - a,
-					START_BTN_Y +100 ,
-					START_BTN_X + START_BTN_W,
-					START_BTN_Y + 100 + START_BTN_H,
-					GetColor(255, 255, 0), //ここで色を指定
-					TRUE);
-
-				DrawGraph(650, 400, g_titleScene.m_hndl[10], TRUE);
-				DrawFormatString(650, 360, GetColor(0, 0, 0), "高低差を活かして\n相手を翻弄しよう！");
-			}
+				}
 
 
-			//マウスがSTAGE1上に乗っていたらSTAGE1をtrue
-			bool Stage1 = IsMouseOnButton(START_BTN_X - a,
-				START_BTN_Y + 200,
-				START_BTN_W + a,
-				START_BTN_H + a);
-			//Stage1がtrueだったら
-			if (Stage1 == true)
-			{
+				//マウスがSTAGE2上に乗っていたらSTAGE2をtrue
+				bool Stage2 = IsMouseOnButton(START_BTN_X - a,
+					START_BTN_Y + 100,
+					START_BTN_W + a,
+					START_BTN_H + a);
+				//Stage2がtrueだったら
+				if (Stage2 == true)
+				{
 
-				//乗っかっているという意味で色を表示
-				DrawBox(START_BTN_X - a,
+					//乗っかっているという意味で色を表示
+					DrawBox(START_BTN_X - a,
+						START_BTN_Y + 100,
+						START_BTN_X + START_BTN_W,
+						START_BTN_Y + 100 + START_BTN_H,
+						GetColor(255, 255, 0), //ここで色を指定
+						TRUE);
+
+					DrawGraph(650, 400, g_titleScene.m_hndl[10], TRUE);
+					DrawFormatString(650, 360, GetColor(0, 0, 0), "高低差を活かして\n相手を翻弄しよう！");
+				}
+
+
+				//マウスがSTAGE1上に乗っていたらSTAGE1をtrue
+				bool Stage1 = IsMouseOnButton(START_BTN_X - a,
 					START_BTN_Y + 200,
-					START_BTN_X + START_BTN_W,
-					START_BTN_Y + 200 + START_BTN_H,
-					GetColor(255, 255, 0), //ここで色を指定
-					TRUE);
-				DrawGraph(650, 400, g_titleScene.m_hndl[9], TRUE);
-				DrawFormatString(650, 360, GetColor(0, 0, 0), "迷ったらここ！\n");
+					START_BTN_W + a,
+					START_BTN_H + a);
+				//Stage1がtrueだったら
+				if (Stage1 == true)
+				{
 
-			}
+					//乗っかっているという意味で色を表示
+					DrawBox(START_BTN_X - a,
+						START_BTN_Y + 200,
+						START_BTN_X + START_BTN_W,
+						START_BTN_Y + 200 + START_BTN_H,
+						GetColor(255, 255, 0), //ここで色を指定
+						TRUE);
+					DrawGraph(650, 400, g_titleScene.m_hndl[9], TRUE);
+					DrawFormatString(650, 360, GetColor(0, 0, 0), "迷ったらここ！\n");
 
-			//マウスがSTAGE4上に乗っていたらSTAGE4をtrue
-			//Stage4がtrueだったら
-			bool Stage4 = IsMouseOnButton(40, 485, START_BTN_W, START_BTN_H);
+				}
 
-			//Stage2がtrueだったら
-			if (Stage4 == true)
-			{
-				//乗っかっているという意味で色を表示
-				DrawBox(40,
+				//マウスがSTAGE4上に乗っていたらSTAGE4をtrue
+				//Stage4がtrueだったら
+				bool Stage4 = IsMouseOnButton(40, 485, START_BTN_W, START_BTN_H);
+
+				//Stage2がtrueだったら
+				if (Stage4 == true)
+				{
+					//乗っかっているという意味で色を表示
+					DrawBox(40,
 						485,
 						40 + START_BTN_W,
 						485 + START_BTN_H,
 						GetColor(255, 255, 0), TRUE); //ここで色を指定
 
-				DrawGraph(650, 400, g_titleScene.m_hndl[8], TRUE);
-				DrawFormatString(650, 340, GetColor(0, 0, 0), "時間無制限！\nフラットな地形で\n操作確認ができる！");
+					DrawGraph(650, 400, g_titleScene.m_hndl[8], TRUE);
+					DrawFormatString(650, 340, GetColor(0, 0, 0), "時間無制限！\nフラットな地形で\n操作確認ができる！");
+				}
 			}
+			
 
 				//③文字
 			
