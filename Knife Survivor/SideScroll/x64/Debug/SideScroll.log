@@ -1,22 +1,26 @@
-﻿  Item.cpp
+﻿  Player2.cpp
 D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.h(76,36): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Game/Item/Item.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Game/Player/Player2.cpp' をコンパイルしています)
   
 D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.h(77,27): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Game/Item/Item.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Game/Player/Player2.cpp' をコンパイルしています)
   
 D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.h(47,36): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Game/Item/Item.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Game/Player/Player2.cpp' をコンパイルしています)
   
 D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.h(48,27): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Game/Item/Item.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Game/Player/Player2.cpp' をコンパイルしています)
   
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(50,26): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(51,26): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(77,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(77,18): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(78,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(78,28): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(82,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Item\Item.cpp(82,18): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(89,45): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(127,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(137,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(148,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(158,11): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(176,32): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(283,24): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(290,24): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(292,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(292,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(307,17): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.cpp(394,1): warning C4715: 'Player2::HitCheckAttackToPlayer1': 値を返さないコントロール パスがあります。
   SideScroll.vcxproj -> D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\x64\Debug\SideScroll.exe

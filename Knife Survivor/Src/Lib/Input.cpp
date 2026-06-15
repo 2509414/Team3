@@ -2,6 +2,8 @@
 #include"Input.h"
 #include "../Game/Knife/Knife.h"
 #include "../Game/Knife/Knife2.h"
+#include "../Game/Player/Player.h"
+#include "../Game/Player/Player2.h"
 
 
 //キーボード入力構造体
@@ -14,6 +16,8 @@ XINPUT_STATE input;
 static INPUT_DATA g_inputData = { 0 };
 extern Knife Knife1;
 extern Knife2 knife2;
+extern Player player1;
+extern Player2 player2;
 
 //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //			キー入力更新
@@ -36,7 +40,7 @@ void UpdateKeyInput()
 	if (CheckHitKey(KEY_INPUT_A) || input.Buttons[XINPUT_BUTTON_DPAD_LEFT])g_inputData.m_nowKey |= KEY_LEFT;
 
 	//Sを押した Aボタンを押した (ジャンプ)
-	if (CheckHitKey(KEY_INPUT_S) || input.Buttons[XINPUT_BUTTON_A]) g_inputData.m_nowKey |= KEY_JUMP;
+	if (CheckHitKey(KEY_INPUT_S) && player1.m_isSquat == false || input.Buttons[XINPUT_BUTTON_A] && player1.m_isSquat == false) g_inputData.m_nowKey |= KEY_JUMP;
 
 	//Dかつシフトを押した またはコントローラーの右を押したかつXボタンを押したら (ダッシュ)
 	if (CheckHitKey(KEY_INPUT_D) && CheckHitKey(KEY_INPUT_LSHIFT) ||
@@ -46,9 +50,9 @@ void UpdateKeyInput()
 	if (CheckHitKey(KEY_INPUT_A) && CheckHitKey(KEY_INPUT_LSHIFT) ||
 		input.Buttons[XINPUT_BUTTON_DPAD_LEFT] && input.Buttons[XINPUT_BUTTON_X])g_inputData.m_nowKey |= KEY_LDASH;
 
-	//Wかつナイフの生存フラグがfalse　またはコントローラーのRBを押したかつナイフの生存フラグがfalse (ナイフを投げる)
-	if (CheckHitKey(KEY_INPUT_W) && Knife1.m_isActive == false ||
-		input.Buttons[XINPUT_BUTTON_RIGHT_SHOULDER] && Knife1.m_isActive == false) g_inputData.m_nowKey |= KEY_KNIFE;
+	//Wかつナイフの生存フラグがfalse　またはコントローラーのRBを押したかつナイフの生存フラグがfalseかつしゃがみじゃなかったら (ナイフを投げる)
+	if (CheckHitKey(KEY_INPUT_W) && Knife1.m_isActive == false && player1.m_isSquat == false ||
+		input.Buttons[XINPUT_BUTTON_RIGHT_SHOULDER] && Knife1.m_isActive == false && player1.m_isSquat == false) g_inputData.m_nowKey |= KEY_KNIFE;
 
 	//Xキーまたはコントローラー下を押したら
 	if (CheckHitKey(KEY_INPUT_X) || input.Buttons[XINPUT_BUTTON_DPAD_DOWN])g_inputData.m_nowKey |= KEY_SQUAT;
@@ -56,8 +60,8 @@ void UpdateKeyInput()
 
 	/*if (IsMouseLeftClick() == true) g_inputData.m_nowKey |= KEY_ITEMCRAFT;*/
 
-	//Qキーを押した、コントローラのLBを押した（近接攻撃（仮））
-	if (CheckHitKey(KEY_INPUT_Q) || input.Buttons[XINPUT_BUTTON_LEFT_SHOULDER]) g_inputData.m_nowKey |= KEY_ATTACK;
+	//Qキーを押した、コントローラのLBを押した（近接攻撃）
+	if (CheckHitKey(KEY_INPUT_Q) && player1.m_isSquat == false || input.Buttons[XINPUT_BUTTON_LEFT_SHOULDER] && player1.m_isSquat == false) g_inputData.m_nowKey |= KEY_ATTACK;
 
 
 	//2P===========================================================================
@@ -78,17 +82,17 @@ void UpdateKeyInput()
 		input.Buttons[XINPUT_BUTTON_DPAD_LEFT] && input.Buttons[XINPUT_BUTTON_X])g_inputData.m_nowKey |= KEY_LDASH2;
 
 	//Kを押した Aボタンを押した (ジャンプ)
-	if (CheckHitKey(KEY_INPUT_K) ||
-		input.Buttons[XINPUT_BUTTON_A])g_inputData.m_nowKey |= KEY_JUMP2;
+	if (CheckHitKey(KEY_INPUT_K) && player2.m_isSquat == false ||
+		input.Buttons[XINPUT_BUTTON_A] && player2.m_isSquat == false)g_inputData.m_nowKey |= KEY_JUMP2;
 
 	//Iを押した またはコントローラーのRBを押したかつナイフの生存フラグがfalse (ナイフを投げる)
-	if (CheckHitKey(KEY_INPUT_I) && knife2.m_isActive == false ||
-		input.Buttons[XINPUT_BUTTON_RIGHT_SHOULDER] && knife2.m_isActive == false) g_inputData.m_nowKey |= KEY_KNIFE2;
+	if (CheckHitKey(KEY_INPUT_I) && knife2.m_isActive == false && player2.m_isSquat == false ||
+		input.Buttons[XINPUT_BUTTON_RIGHT_SHOULDER] && knife2.m_isActive == false && player2.m_isSquat == false) g_inputData.m_nowKey |= KEY_KNIFE2;
 
 	if (CheckHitKey(KEY_INPUT_M) || input.Buttons[XINPUT_BUTTON_DPAD_DOWN])g_inputData.m_nowKey |= KEY_SQUAT2;
 
 	//Uキーを押した、コントローラのLBを押した（近接攻撃（仮））
-	if (CheckHitKey(KEY_INPUT_U) || input.Buttons[XINPUT_BUTTON_LEFT_SHOULDER]) g_inputData.m_nowKey |= KEY_ATTACK2;
+	if (CheckHitKey(KEY_INPUT_U) && player2.m_isSquat == false || input.Buttons[XINPUT_BUTTON_LEFT_SHOULDER] && player2.m_isSquat == false ) g_inputData.m_nowKey |= KEY_ATTACK2;
 }
 
 int IsKeyInput(unsigned int key)
