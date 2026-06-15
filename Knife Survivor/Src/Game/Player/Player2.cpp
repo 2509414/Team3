@@ -203,6 +203,16 @@ void Player2::Step()
 		}
 	}
 
+	//煽り
+	if (IsKeyInputTrg(KEY_2AORI1))
+	{
+		PlaybackSound(15);
+	}
+	else if (IsKeyInputTrg(KEY_2AORI2))
+	{
+		PlaybackSound(16);
+	}
+
 	//クリックした場所にブロックを置く
 	if (IsKeyInputTrg(KEY_ITEMCRAFT))
 	{

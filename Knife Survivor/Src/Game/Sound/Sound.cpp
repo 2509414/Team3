@@ -90,6 +90,17 @@ void LoadSound()
 	{
 		g_sound.m_Soundhndl[14] = LoadSoundMem("Data/Sound/Death2.mp3");
 	}
+
+	if (g_sound.m_Soundhndl[15] == -1)
+	{
+		g_sound.m_Soundhndl[15] = LoadSoundMem("Data/Sound/Aori.mp3");
+	}
+
+	if (g_sound.m_Soundhndl[16] == -1)
+	{
+		g_sound.m_Soundhndl[16] = LoadSoundMem("Data/Sound/Aori2.mp3");
+	}
+
 }
 
 void PlaybackSound(int SoundId)

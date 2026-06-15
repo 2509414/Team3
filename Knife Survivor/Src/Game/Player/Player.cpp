@@ -33,6 +33,7 @@ extern Knife Knife1;
 extern Player2 player2;
 extern Attack attack;
 extern HpItem hpitem;
+extern XINPUT_STATE input;
 
 
 //プレイヤーデータ初期化関数
@@ -168,7 +169,7 @@ void Player::Step()
 		m_pos.x -= MOVE_SPEED;
 	}
 
-
+	//ナイフの処理
 	if (IsKeyInputTrg(KEY_KNIFE))
 	{
 		// ナイフの移動方向を決める
@@ -208,6 +209,17 @@ void Player::Step()
 			}
 		}
 	}
+
+	//煽り
+	if (IsKeyInputTrg(KEY_AORI1))
+	{
+		PlaybackSound(15);
+	}
+	else if (IsKeyInputTrg(KEY_AORI2))
+	{
+		PlaybackSound(16);
+	}
+
 
 	//クリックした場所にブロックを置く
 	if (IsKeyInputTrg(KEY_ITEMCRAFT))

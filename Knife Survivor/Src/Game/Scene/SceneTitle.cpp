@@ -3,6 +3,7 @@
 #include "../../Lib/fade.h"
 #include "SceneTitle.h"
 #include "../Sound/Sound.h"
+#include <corecrt_math.h>
 
 bool IsMouseOnButton(int x, int y, int w, int h)
 {
@@ -46,7 +47,7 @@ int StepTitle()
 		
 		//サウンド関連をここで初期化
 		InitSound();
-
+		g_titleScene.m_timer = 0;
 		//変数初期化
 		for (int i = 0; i < TitlePic; i++)
 		{
@@ -143,6 +144,8 @@ int StepTitle()
 		//メイン処理
 	case TITLESCENE_MAIN:
 		
+		g_titleScene.m_timer++;
+
 		//左クリックが押されたかつBOSSSTAGEボタンの上に乗ってたら次に進む
 		if (IsMouseLeftClick() == true && IsMouseOnButton(START_BTN_X - 5,
 														  START_BTN_Y - 5,
@@ -234,10 +237,19 @@ void DrawTitle()
 		case TITLESCENE_ENDWAIT:
 
 			//①タイトルを表示
-			DrawGraph(0, 0, g_titleScene.m_hndl[0], TRUE);
+			if (g_titleScene.m_timer > 30)
+			{
+				DrawGraph(0, 0, g_titleScene.m_hndl[0], TRUE);
+			}
 			
-			//ゲームタイトル表示
-			DrawGraph(200, 70, g_titleScene.m_hndl[2], TRUE);
+			if (g_titleScene.m_timer > 30)
+			{
+				float Scale = 1.0f + sin(GetNowCount() * 0.005f) * 0.05f;
+
+				DrawRotaGraph(550, 110, Scale, 0.0, g_titleScene.m_hndl[2], TRUE);
+			}
+
+			
 			//②背景
 
 			//マウスがSTAGEBOSS上に乗っていたらBossをtrue
@@ -258,7 +270,7 @@ void DrawTitle()
 					START_BTN_Y + START_BTN_H+a,
 					GetColor(255, 255, 0), //ここで色を指定
 					TRUE);
-
+		
 				DrawGraph(650, 400, g_titleScene.m_hndl[11], TRUE);
 				DrawFormatString(650, 340, GetColor(0, 0, 0), "複雑な地形でバトル！\nしゃがみアクションを\n駆使しよう！");
 
@@ -327,30 +339,48 @@ void DrawTitle()
 			}
 
 				//③文字
-				
+			
+				//ボス
+				if (g_titleScene.m_timer > 30)
+				{
+					DrawGraph(369, START_BTN_Y,g_titleScene.m_hndl[1], TRUE);	
+				}
+
+				//STAGE２
+				if (g_titleScene.m_timer > 45)
+				{
+					DrawGraph(369, 372,g_titleScene.m_hndl[4], TRUE);
+				}
+
+				//STAGE1
+				if (g_titleScene.m_timer > 60)
+				{
+					DrawGraph(369, 472,g_titleScene.m_hndl[3], TRUE);
+				}
+
 				//訓練所
-				DrawGraph(40, 485, g_titleScene.m_hndl[7], TRUE);
-
-				//ボスステージ
-				DrawGraph(369, START_BTN_Y, g_titleScene.m_hndl[1], TRUE);
-
-				//ステージ2
-				DrawGraph(369, 372, g_titleScene.m_hndl[4], TRUE);
-
-				//ステージ1
-				DrawGraph(369, 472, g_titleScene.m_hndl[3], TRUE);
-
+				if (g_titleScene.m_timer > 75)
+				{
+					DrawGraph(40, 485, g_titleScene.m_hndl[7], TRUE);
+				}
+				
 				//モノクロボス
-				DrawGraph(680, 50, g_titleScene.m_hndl[5], TRUE);
+				if (g_titleScene.m_timer > 105)
+				{
+					DrawGraph(680, 50, g_titleScene.m_hndl[5], TRUE);
 
-				DrawGraph(80, 50, g_titleScene.m_hndl[5], TRUE);
+					DrawGraph(80, 50, g_titleScene.m_hndl[5], TRUE);
+				}
 
 				// 点滅スピード調整
-				int blink = (GetNowCount() / 750) % 2;
-
-				if (blink == 0)
+				if (g_titleScene.m_timer > 90)
 				{
-					DrawFormatString(315,205,GetColor(0, 0, 0),"Choose a stage and left-click");
+					int blink = (GetNowCount() / 750) % 2;
+
+					if (blink == 0)
+					{
+						DrawFormatString(315, 205, GetColor(0, 0, 0), "Choose a stage and left-click");
+					}
 				}
 			break;
 

@@ -27,6 +27,7 @@ typedef struct
 	tagTitleScene m_state;		//ゲームの状態遷移管理
 	int m_hndl[TitlePic];		//タイトル画面となる絵のハンドル
 	int m_nextstagenum;			//次のステージを管理するやつ
+	int m_timer;
 }TITLE_SCENE;
 
 //初期値を設定

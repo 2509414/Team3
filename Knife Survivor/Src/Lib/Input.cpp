@@ -57,12 +57,13 @@ void UpdateKeyInput()
 	//Xキーまたはコントローラー下を押したら
 	if (CheckHitKey(KEY_INPUT_X) || input.Buttons[XINPUT_BUTTON_DPAD_DOWN])g_inputData.m_nowKey |= KEY_SQUAT;
 
-
-	/*if (IsMouseLeftClick() == true) g_inputData.m_nowKey |= KEY_ITEMCRAFT;*/
-
 	//Qキーを押した、コントローラのLBを押した（近接攻撃）
 	if (CheckHitKey(KEY_INPUT_Q) && player1.m_isSquat == false || input.Buttons[XINPUT_BUTTON_LEFT_SHOULDER] && player1.m_isSquat == false) g_inputData.m_nowKey |= KEY_ATTACK;
 
+	//Y Bを押したら煽る
+	if (input.Buttons[XINPUT_BUTTON_Y]) g_inputData.m_nowKey |= KEY_AORI1;
+
+	if (input.Buttons[XINPUT_BUTTON_B]) g_inputData.m_nowKey |= KEY_AORI2;
 
 	//2P===========================================================================
 	GetJoypadXInputState(DX_INPUT_PAD2, &input);
@@ -93,6 +94,11 @@ void UpdateKeyInput()
 
 	//Uキーを押した、コントローラのLBを押した（近接攻撃（仮））
 	if (CheckHitKey(KEY_INPUT_U) && player2.m_isSquat == false || input.Buttons[XINPUT_BUTTON_LEFT_SHOULDER] && player2.m_isSquat == false ) g_inputData.m_nowKey |= KEY_ATTACK2;
+
+	//Y Bを押したら煽る
+	if (input.Buttons[XINPUT_BUTTON_Y]) g_inputData.m_nowKey |= KEY_2AORI1;
+
+	if (input.Buttons[XINPUT_BUTTON_B]) g_inputData.m_nowKey |= KEY_2AORI2;
 }
 
 int IsKeyInput(unsigned int key)
