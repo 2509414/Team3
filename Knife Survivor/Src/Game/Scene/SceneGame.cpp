@@ -30,7 +30,7 @@ Attack2 attack2;
 Controller controller;
 HpItem hpitem;
 
-int StepGame(int Stagenum) 
+int StepGame(int Stagenum)
 {
 	int ret = 0;
 
@@ -85,7 +85,7 @@ int StepGame(int Stagenum)
 			g_gameScene.m_state = GAMESCENE_LOAD;
 			break;
 		}
-		
+
 
 	case GAMESCENE_LOAD:
 		//データをロード
@@ -104,7 +104,7 @@ int StepGame(int Stagenum)
 
 		attack.Load();
 		attack2.Load();
-		
+
 		item.Load();
 		hpitem.Load();
 		LoadSound();
@@ -128,10 +128,10 @@ int StepGame(int Stagenum)
 		StepFps();
 		player1.Step();
 		player2.Step();
-		
+
 		Knife1.Step();
 		knife2.Step();
-		
+
 		TimerGetSec();
 
 		player1.Dash();
@@ -145,7 +145,7 @@ int StepGame(int Stagenum)
 		hpitem.Step();
 		UpdateStage();
 
-		
+
 		//プレイヤーとステージの当たり判定
 		HitCheckPlayerToStage();
 		HitCheckPlayer2ToStage();
@@ -170,9 +170,11 @@ int StepGame(int Stagenum)
 		if (player1.m_hp <= 0)
 		{
 			PlaybackSound(13);
+
+			Winner = 2;
+
 			g_gameScene.m_waitCount = ENDWAIT_COUNT + 110;
 			g_gameScene.m_state = GAMESCENE_ENDWAIT;
-			Winner = 2;
 			RequestFadeOut();
 		}
 
@@ -180,15 +182,17 @@ int StepGame(int Stagenum)
 		if (player2.m_hp <= 0)
 		{
 			PlaybackSound(14);
+
+			Winner = 1;
+
 			g_gameScene.m_waitCount = ENDWAIT_COUNT + 110;
 			g_gameScene.m_state = GAMESCENE_ENDWAIT;
-			Winner = 1;
 			RequestFadeOut();
 		}
 
 		//時間切れになったら残りHPを見て勝敗を決める
 		if (TimeUp() == true && Stagenum != 3)
-		{	
+		{
 			if (player1.m_hp > player2.m_hp)
 			{
 				Winner = 1;
@@ -201,30 +205,30 @@ int StepGame(int Stagenum)
 			{
 				Winner = 0;
 			}
-			
-			g_gameScene.m_waitCount = ENDWAIT_COUNT +110;
+
+			g_gameScene.m_waitCount = ENDWAIT_COUNT + 110;
 			g_gameScene.m_state = GAMESCENE_ENDWAIT;
-			
 			RequestFadeOut();
 		}
-		
+
 		break;
-		
+
+
 		//ゲーム終了後の待機
 	case GAMESCENE_ENDWAIT:
-		
+
 		//カウントを徐々に減らし終わったら終了
 		g_gameScene.m_waitCount--;
-		
+
 		if (g_gameScene.m_waitCount <= 0)
 		{
-			if(IsEndFadeOut())
-			g_gameScene.m_state = GAMESCENE_END;
+			if (IsEndFadeOut())
+				g_gameScene.m_state = GAMESCENE_END;
 		}
 		break;
 
 	case GAMESCENE_END:
-	
+
 		ExitSound();
 		controller.Exit();
 		player1.Exit();
@@ -256,7 +260,7 @@ void DrawGame()
 		hpitem.Draw();
 		controller.Draw();
 		PrintFps();
-		
+
 		//残り時間変数
 		int remaining = TimerGetSec();
 		//残り時間を表示

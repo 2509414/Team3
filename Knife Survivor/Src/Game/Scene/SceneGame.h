@@ -18,7 +18,6 @@ enum tagGameScene {
 typedef struct {
 	int m_state;		//ゲームの状態遷移管理
 	int m_waitCount;	//待機時間カウント
-	
 }GAME_SCENE;
 
 extern GAME_SCENE g_gameScene;

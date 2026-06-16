@@ -4,9 +4,12 @@
 #include "../../Lib/Input.h"
 #include "../../Lib/fade.h"
 #include "../Sound/Sound.h"
+#include "../Player/Player2.h"
 
 
 extern int Winner;
+extern Player player1;
+extern Player2 player2;
 
 // ==============================
 // リザルト画面UI定義
@@ -114,6 +117,7 @@ int StepResult()
 
 		//開始前
 	case RESULTSCENE_START:
+		PlaybackSound(17);
 		//フェードインが終わったら本編へ
 		if (IsEndFadeIn())
 		{
@@ -123,8 +127,6 @@ int StepResult()
 
 		//メイン処理
 	case RESULTSCENE_MAIN:
-
-
 
 		//左クリックが押されたかつスタートボタンの上に乗ってたら次に進む
 		if (IsMouseLeftClick() == true && IsMouseOnStartButtonGameOver() == true)
@@ -183,14 +185,21 @@ void DrawResult()
 		if (Winner == 1)
 		{
 			DrawGraph(0, 0, g_resultScene.m_hndl[1], TRUE);
+
+			player1.DrawResultAnim(130, 500, false);
 		}
 		else if (Winner == 2)
 		{
 			DrawGraph(0, 0, g_resultScene.m_hndl[2], TRUE);
+
+			player2.DrawResultAnim(300, 500, true);
 		}
 		else
 		{
 			DrawGraph(0, 0, g_resultScene.m_hndl[3], TRUE);
+
+			player1.DrawResultAnim(130, 500, false);
+			player2.DrawResultAnim(300, 500, true);
 		}
 
 		//②背景
@@ -201,14 +210,14 @@ void DrawResult()
 		//IsOnがtrueだったら
 		if (Ison == true)
 		{
-			//int a = 5;
-			////乗っかっているという意味で色を表示
-			//DrawBox(START_GOBTN_X - a,
-			//	START_GOBTN_Y - a,
-			//	START_GOBTN_X + START_GOBTN_W_ + a,
-			//	START_GOBTN_Y + START_GOBTN_H + a,
-			//	GetColor(255, 255, 0), //ここで色を指定
-			//	TRUE);
+			int a = 5;
+			//乗っかっているという意味で色を表示
+			DrawBox(START_GOBTN_X - a,
+				START_GOBTN_Y - a,
+				START_GOBTN_X + START_GOBTN_W_ + a,
+				START_GOBTN_Y + START_GOBTN_H + a,
+				GetColor(255, 255, 0), //ここで色を指定
+				TRUE);
 		}
 		//③Exitボタン
 		DrawGraph(475, 475, g_resultScene.m_hndl[0], TRUE);

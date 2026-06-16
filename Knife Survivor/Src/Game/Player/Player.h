@@ -77,6 +77,8 @@ public:
 	//‹ßÚUŒ‚‚ÆƒvƒŒƒCƒ„[‚Ì“–‚½‚è”»’è
 	bool HitCheckAttackToPlayer2();
 
+	void DrawResultAnim(int x, int y, bool turn);
+
 	void SetCoul(float time) { time = m_attacktime; }
 	float GetCoul() { return m_attacktime; }
 };

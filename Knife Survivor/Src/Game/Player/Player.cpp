@@ -125,7 +125,7 @@ void Player::Step()
 	m_K_time = Knife1.GetCoul();
 	m_A_time = attack.GetCoul();
 	m_Itemtime = GetCoul();
-	
+
 	//プレイヤー移動処理
 	if (IsKeyInput(KEY_RIGHT) && IsKeyInput(KEY_SQUAT))
 	{
@@ -198,12 +198,12 @@ void Player::Step()
 		{
 			// 攻撃の移動方向を決める
 			VECTOR v = { 0.0f, 0.0f, 0.0f };
-			if (TurnFrag == 0) 
+			if (TurnFrag == 0)
 			{
-				
+
 				attack.Request(m_pos, true);
 			}
-			else 
+			else
 			{
 				attack.Request(m_pos, false);
 			}
@@ -249,7 +249,7 @@ void Player::Step()
 //	表示関数
 void Player::Draw()
 {
-	
+
 	int frame = (int)anim;
 	if (m_isSquat == false)
 	{
@@ -283,18 +283,18 @@ void Player::Draw()
 	{
 		color = GetColor(255, 0, 0);      // 赤
 	}
-		
+
 	DrawFormatString(75, 40, GetColor(255, 0, 0), "HP");
-	
+
 	//HPバー
-	DrawLine(HP_STARTPOS_X, 47, HP_STARTPOS_X + m_hplength , 47,color,15);
-	
-	if (m_attacktime > 0) 
+	DrawLine(HP_STARTPOS_X, 47, HP_STARTPOS_X + m_hplength, 47, color, 15);
+
+	if (m_attacktime > 0)
 	{
 		DrawFormatString(75, 100, GetColor(255, 0, 0), "必殺技");
 	}
 	//必殺技の時間を表示するバー
-	DrawLine(140, 108, 140 + m_attacktime / 4,108, GetColor(255, 0, 0), m_t = 3);
+	DrawLine(140, 108, 140 + m_attacktime / 4, 108, GetColor(255, 0, 0), m_t = 3);
 
 
 	if (m_K_time > 0)
@@ -302,14 +302,14 @@ void Player::Draw()
 		DrawFormatString(75, 80, GetColor(255, 0, 0), "ナイフ");
 	}
 	//ナイフクールタイムを表示するバー
-	DrawLine(140, 88,140 + m_K_time, 88, GetColor(255, 0, 0), m_t = 3);
-	
-	if (m_A_time > 0) 
+	DrawLine(140, 88, 140 + m_K_time, 88, GetColor(255, 0, 0), m_t = 3);
+
+	if (m_A_time > 0)
 	{
 		DrawFormatString(75, 60, GetColor(255, 0, 0), "近接");
 	}
 	//近接攻撃クールタイムを表示するバー
-	DrawLine(140, 68, 140 + m_A_time*3, 68, GetColor(255, 0, 0), m_t = 3);
+	DrawLine(140, 68, 140 + m_A_time * 3, 68, GetColor(255, 0, 0), m_t = 3);
 
 	DrawFormatString(m_pos.x - 9, m_pos.y - 50, GetColor(255, 0, 0), "1P");
 
@@ -361,9 +361,9 @@ bool Player::HitCheckKnifeToPlayer2()
 	if (hit == true && m_isAttack == true)
 	{
 		//当たったらナイフの生存フラグを消す
-		Knife1.m_isActive = 0;				
-		PlaybackSound(1);					
-		player2.m_hp -= 2;	
+		Knife1.m_isActive = 0;
+		PlaybackSound(1);
+		player2.m_hp -= 2;
 
 		return true;
 	}
@@ -391,8 +391,8 @@ bool Player::HitCheckAction1ToItem(Item& item)
 			return false;
 		}
 
-		bool knifehit = ChenkHitSquareToSquare(Knife1.m_pos, 15,2, item.m_pos, 35, 50);
-		
+		bool knifehit = ChenkHitSquareToSquare(Knife1.m_pos, 15, 2, item.m_pos, 35, 50);
+
 		if (knifehit == true)
 		{
 			//HPが1じゃなかったら(８)の音 1だったら(10)の音を鳴らす　これで壊れると時だけ音を変えれる
@@ -404,10 +404,10 @@ bool Player::HitCheckAction1ToItem(Item& item)
 			{
 				PlaybackSound(10);
 			}
-			
+
 			//アクティブをfalseに
 			Knife1.m_isActive = false;
-			
+
 			//hpを減らす
 			item.m_hp--;
 
@@ -480,4 +480,20 @@ bool Player::HitCheckPlayer1ToHpItem(HpItem& item)
 		}
 		return false;
 	}
+}
+
+void Player::DrawResultAnim(int x, int y, bool turn)
+{
+	static float resultAnim = 0;
+
+	resultAnim += 0.08f;
+
+	if (resultAnim >= 4)
+	{
+		resultAnim = 0;
+	}
+
+	int frame = (int)resultAnim;
+
+	DrawRotaGraph(x,y,1.0,0.0,m_shndl[frame],TRUE,turn);
 }
