@@ -5,16 +5,17 @@
 #include "../../Lib/fade.h"
 #include "../Sound/Sound.h"
 
+
 extern int Winner;
 
 // ==============================
 // リザルト画面UI定義
 // ==============================
-#define START_GOBTN_X  (405)			//STARTボタンのX座標
-#define START_GOBTN_Y  (400)		//STARTボタンのY座標
-#define START_GOBTN_W_ (110)		//横の長さ
+#define START_GOBTN_X  (555)		//STARTボタンのX座標
+#define START_GOBTN_Y  (525)		//STARTボタンのY座標
+#define START_GOBTN_W_ (150)		//横の長さ
 #define START_GOBTN_H  (44)			//高さ
-#define ResultPic		(3)			//リザルトに使う画像の枚数
+#define ResultPic		(5)			//リザルトに使う画像の枚数
 
 enum tagResultScene
 {
@@ -33,7 +34,7 @@ typedef struct
 {
 	tagResultScene m_state;				//ゲームの状態遷移管理
 	int m_hndl[ResultPic];				//タイトル画面となる絵のハンドル
-
+	
 }RESULT_SCENE;
 
 //初期値を設定
@@ -70,6 +71,7 @@ int StepResult()
 
 		//サウンド関連をここで初期化
 		InitSound();
+		
 		//変数初期化
 		for (int i = 0; i < ResultPic; i++)
 		{
@@ -87,19 +89,23 @@ int StepResult()
 
 		if (g_resultScene.m_hndl[0] == -1)
 		{
-			g_resultScene.m_hndl[0] = LoadGraph("Data/Textures/Result.png");
+			g_resultScene.m_hndl[0] = LoadGraph("Data/Textures/Exit.png");
 		}
 
 		if (g_resultScene.m_hndl[1] == -1)
 		{
-			g_resultScene.m_hndl[1] = LoadGraph("Data/Textures/Exit.png");
+			g_resultScene.m_hndl[1] = LoadGraph("Data/Textures/Result_1.png");
 		}
 
 		if (g_resultScene.m_hndl[2] == -1)
 		{
-			g_resultScene.m_hndl[2] = LoadGraph("Data/Textures/Tie.png");
+			g_resultScene.m_hndl[2] = LoadGraph("Data/Textures/Result_2.png");
 		}
 
+		if (g_resultScene.m_hndl[3] == -1)
+		{
+			g_resultScene.m_hndl[3] = LoadGraph("Data/Textures/Tie.png");
+		}
 
 		RequestFadeIn();
 		//ロードが終わったらゲーム本編へ進む
@@ -164,21 +170,27 @@ int StepResult()
 //タイトル画面全体の管理（描画用）
 void DrawResult()
 {
-
+	
 	switch (g_resultScene.m_state)
 	{
 	case RESULTSCENE_START:
 	case RESULTSCENE_MAIN:
 	case RESULTSCENE_ENDWAIT:
 
+		
+
 		//①リザルトを表示
-		if (Winner == 0)
+		if (Winner == 1)
+		{
+			DrawGraph(0, 0, g_resultScene.m_hndl[1], TRUE);
+		}
+		else if (Winner == 2)
 		{
 			DrawGraph(0, 0, g_resultScene.m_hndl[2], TRUE);
 		}
-		if (Winner != 0)
+		else
 		{
-			DrawGraph(0, 0, g_resultScene.m_hndl[0], TRUE);
+			DrawGraph(0, 0, g_resultScene.m_hndl[3], TRUE);
 		}
 
 		//②背景
@@ -189,29 +201,23 @@ void DrawResult()
 		//IsOnがtrueだったら
 		if (Ison == true)
 		{
-			//サウンドを鳴らす
-
-			int a = 5;
-			//乗っかっているという意味で色を表示
-			DrawBox(START_GOBTN_X - a,
-				START_GOBTN_Y - a,
-				START_GOBTN_X + START_GOBTN_W_ + a,
-				START_GOBTN_Y + START_GOBTN_H + a,
-				GetColor(255, 255, 0), //ここで色を指定
-				TRUE);
+			//int a = 5;
+			////乗っかっているという意味で色を表示
+			//DrawBox(START_GOBTN_X - a,
+			//	START_GOBTN_Y - a,
+			//	START_GOBTN_X + START_GOBTN_W_ + a,
+			//	START_GOBTN_Y + START_GOBTN_H + a,
+			//	GetColor(255, 255, 0), //ここで色を指定
+			//	TRUE);
 		}
 		//③Exitボタン
-		DrawGraph(389, 400, g_resultScene.m_hndl[1], TRUE);
-
-		//④誰が勝ったか
-		if (Winner != 0)
-		{
-			DrawFormatString(230, 240, GetColor(255, 255, 0), "P  l  a  y  e  r  %d", Winner);
-		}
-
-
+		DrawGraph(475, 475, g_resultScene.m_hndl[0], TRUE);
+		
+		//座標表示（デバック用)
+		/*int mx, my;
+		GetMousePoint(&mx, &my);
+		DrawFormatString(100, 100, GetColor(255, 255, 255), "X %d Y %d", mx, my);*/
 		break;
-
 	}
 }
 

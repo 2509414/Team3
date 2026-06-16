@@ -76,7 +76,7 @@ int StepGame(int Stagenum)
 			attack.Init();
 			attack2.Init();
 
-			TimerInit(300);	//〇秒タイマー
+			TimerInit(180);	//〇秒タイマー
 			TimerStart();	//タイマー開始
 
 			item.Init();
