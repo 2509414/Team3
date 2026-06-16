@@ -1,7 +1,7 @@
 #pragma once
 #include<DxLib.h>
 
-#define SOUND_NUM  (15)
+#define SOUND_NUM  (20)
 typedef struct {
 	int m_Soundhndl[SOUND_NUM];
 

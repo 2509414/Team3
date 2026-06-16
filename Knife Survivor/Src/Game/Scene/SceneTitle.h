@@ -7,7 +7,7 @@
 #define START_BTN_Y  (272)//		STARTボタンのY座標
 #define START_BTN_W  (159)//		横の長さ
 #define START_BTN_H  (47) //		高さ
-#define TitlePic	 (6)  //		タイトルに使う画像の枚数
+#define TitlePic	 (15)  //		タイトルに使う画像の枚数
 
 
 enum tagTitleScene
@@ -27,6 +27,7 @@ typedef struct
 	tagTitleScene m_state;		//ゲームの状態遷移管理
 	int m_hndl[TitlePic];		//タイトル画面となる絵のハンドル
 	int m_nextstagenum;			//次のステージを管理するやつ
+	int m_timer;
 }TITLE_SCENE;
 
 //初期値を設定

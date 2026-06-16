@@ -4,8 +4,10 @@
 #include"Player2.h"
 #include"Player.h"
 #include "../Item/Item.h"
+#include "../Item/HpItem.h"
 
 class Item;
+class HpItem;
 
 class Player2:public Player
 {
@@ -32,21 +34,23 @@ public:
 	// 終了処理
 	void Exit();
 
-	//しゃがみ
-	void Squat();
-
 	// 着地
 	void SetLand();
 
 	//ナイフとプレイヤーの当たり判定
 	bool HitCheckKnifeToPlayer1();
 
+	//プレイヤーとHPアイテムの当たり判定
+	bool HitCheckPlayer2ToHpItem(HpItem& item);
+
 	//近接攻撃とプレイヤーの当たり判定
 	bool HitCheckAttackToPlayer1();
 
 	//アクションとアイテムの判定
 	bool HitCheckAction2ToItem(Item& item);
-	// 座標設定
-	void SetPos(VECTOR pos);
+
+
+	void SetCoul(float time) { time = m_attacktime; }
+	float GetCoul() { return m_attacktime; }
 };
 

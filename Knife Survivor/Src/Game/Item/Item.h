@@ -27,9 +27,6 @@ public:
 	// XV
 	void Step();
 
-	//‚µ‚á‚ª‚İ
-	void Squat();
-
 	// •`‰æ
 	void Draw();
 

@@ -8,6 +8,7 @@
 #include "../Sound/Sound.h"
 #include "../Item/Item.h"
 #include"../Attack/Attack.h"
+#include "../Item/HpItem.h"
 
 //定義関連
 #define WINDOW_SIZE_X (900.0f)	//ウィンドウのサイズ（横）
@@ -24,12 +25,16 @@
 #define Y_NUM (1)				//縦に何枚並んでいるか
 #define ANIM_SPEED (0.08)		//アニメーションのスピード
 #define BOSSSCENE_POSX (5300)	//ボスシーンに入るX座標
-
+#define HP_STARTPOS_X (100)		//HPを描画する基準点
+#define HP_END_X (300)			//HPを描画する終点
 
 extern Stage_DATA g_stageData;
 extern Knife Knife1;
 extern Player2 player2;
 extern Attack attack;
+extern HpItem hpitem;
+extern XINPUT_STATE input;
+
 
 //プレイヤーデータ初期化関数
 void Player::Init(int Stagenum)
@@ -41,24 +46,15 @@ void Player::Init(int Stagenum)
 	TurnFrag = 0;
 	m_pos.x = 150;
 	m_pos.y = 535;
-	g_isGameClear = false;
-	m_isBossScene = false;
 	Knife = 1;
 	itemcraft = 0;
 	m_hp = 10;
+	m_maxhp = 10;
+	m_K_time = 0;
+	m_A_time = 0;
 	m_isSquat = false;
 	m_isAttack = false;
 	hit_once = false;
-
-	if (Stagenum == 1)
-	{
-		m_pos.x = 4750;
-	}
-
-	if (Stagenum == 2)
-	{
-		m_pos.y = 423;
-	}
 }
 
 //	プレイヤーデータ読み込み関数
@@ -105,18 +101,31 @@ void Player::Jump()
 
 }
 
-//しゃがみ処理
-void Player::Squat()
-{
-
-
-}
-
-
 //	プレイヤーデータ更新関数
 void Player::Step()
 {
+
+	//必殺技状態かチェック
+	if (m_attacktime >= 0)
+	{
+		m_isAttack = true;
+	}
+	else
+	{
+		m_isAttack = false;
+	}
+
+	if (m_isAttack == true)
+	{
+		m_attacktime--;
+	}
+
 	m_squattime--;
+	m_hplength = HP_END_X * m_hp / m_maxhp;
+	m_K_time = Knife1.GetCoul();
+	m_A_time = attack.GetCoul();
+	m_Itemtime = GetCoul();
+	
 	//プレイヤー移動処理
 	if (IsKeyInput(KEY_RIGHT) && IsKeyInput(KEY_SQUAT))
 	{
@@ -139,7 +148,6 @@ void Player::Step()
 		m_pos.x += MOVE_SPEED;
 	}
 
-
 	if (IsKeyInput(KEY_LEFT) && IsKeyInput(KEY_SQUAT))
 	{
 		TurnFrag = 1;
@@ -161,7 +169,7 @@ void Player::Step()
 		m_pos.x -= MOVE_SPEED;
 	}
 
-
+	//ナイフの処理
 	if (IsKeyInputTrg(KEY_KNIFE))
 	{
 		// ナイフの移動方向を決める
@@ -174,7 +182,7 @@ void Player::Step()
 
 	if (IsKeyInput(KEY_SQUAT) == true)
 	{
-		m_squattime = 10;
+		m_squattime = 1;
 
 		m_isSquat = true;
 	}
@@ -190,17 +198,28 @@ void Player::Step()
 		{
 			// 攻撃の移動方向を決める
 			VECTOR v = { 0.0f, 0.0f, 0.0f };
-			if (TurnFrag == 0) {
-				/*m_pos.x += 10.0f;*/
+			if (TurnFrag == 0) 
+			{
+				
 				attack.Request(m_pos, true);
 			}
 			else 
 			{
-				/*m_pos.x += -10.0f;*/
 				attack.Request(m_pos, false);
 			}
 		}
 	}
+
+	//煽り
+	if (IsKeyInputTrg(KEY_AORI1))
+	{
+		PlaybackSound(15);
+	}
+	else if (IsKeyInputTrg(KEY_AORI2))
+	{
+		PlaybackSound(3);
+	}
+
 
 	//クリックした場所にブロックを置く
 	if (IsKeyInputTrg(KEY_ITEMCRAFT))
@@ -209,7 +228,6 @@ void Player::Step()
 		const int BLOCK_LIFE = 240; // 4秒
 		int mx, my;
 		GetMousePoint(&mx, &my);
-
 
 		int mapX = mx / OBJECT_SIZE_X;	//今の座標÷マップチップのサイズ(32)をして
 		int mapY = my / OBJECT_SIZE_Y;	//格納する場所を決める
@@ -231,6 +249,7 @@ void Player::Step()
 //	表示関数
 void Player::Draw()
 {
+	
 	int frame = (int)anim;
 	if (m_isSquat == false)
 	{
@@ -249,7 +268,49 @@ void Player::Draw()
 		}
 	}
 
-	DrawFormatString(75, 100, GetColor(255, 0, 0), "残りHP : %d", m_hp);
+	//残りHPに応じて色を変える
+	int color;
+
+	if (m_hp >= 6)
+	{
+		color = GetColor(0, 255, 0);      // 緑
+	}
+	else if (m_hp >= 3)
+	{
+		color = GetColor(255, 255, 0);    // 黄
+	}
+	else
+	{
+		color = GetColor(255, 0, 0);      // 赤
+	}
+		
+	DrawFormatString(75, 40, GetColor(255, 0, 0), "HP");
+	
+	//HPバー
+	DrawLine(HP_STARTPOS_X, 47, HP_STARTPOS_X + m_hplength , 47,color,15);
+	
+	if (m_attacktime > 0) 
+	{
+		DrawFormatString(75, 100, GetColor(255, 0, 0), "必殺技");
+	}
+	//必殺技の時間を表示するバー
+	DrawLine(140, 108, 140 + m_attacktime / 4,108, GetColor(255, 0, 0), m_t = 3);
+
+
+	if (m_K_time > 0)
+	{
+		DrawFormatString(75, 80, GetColor(255, 0, 0), "ナイフ");
+	}
+	//ナイフクールタイムを表示するバー
+	DrawLine(140, 88,140 + m_K_time, 88, GetColor(255, 0, 0), m_t = 3);
+	
+	if (m_A_time > 0) 
+	{
+		DrawFormatString(75, 60, GetColor(255, 0, 0), "近接");
+	}
+	//近接攻撃クールタイムを表示するバー
+	DrawLine(140, 68, 140 + m_A_time*3, 68, GetColor(255, 0, 0), m_t = 3);
+
 	DrawFormatString(m_pos.x - 9, m_pos.y - 50, GetColor(255, 0, 0), "1P");
 
 }
@@ -264,6 +325,10 @@ void Player::Exit()
 		//破棄した後はー１を入れることで未使用状態であると分かるようにする
 		m_hndl[0] = -1;
 	}
+
+	m_isAttack = false;
+	m_attacktime = 0.0f;
+
 }
 
 //	地面接地時処理
@@ -320,17 +385,15 @@ bool Player::HitCheckAction1ToItem(Item& item)
 {
 	if (item.m_isdraw == true)
 	{
-
-
 		//falseだったら判定しない
-		if (Knife1.m_isActive == false && attack.m_isActive == false)
+		if (Knife1.m_isActive == false)
 		{
 			return false;
 		}
 
-		bool knifehit = ChenkHitSquareToSquare(Knife1.m_pos, 15, 10, item.m_pos, 35, 35);
-		bool attackhit = ChenkHitSquareToSquare(attack.m_pos, 5, 30, item.m_pos, 35, 35);
-		if (knifehit == true || attackhit == true)
+		bool knifehit = ChenkHitSquareToSquare(Knife1.m_pos, 15,2, item.m_pos, 35, 50);
+		
+		if (knifehit == true)
 		{
 			//HPが1じゃなかったら(８)の音 1だったら(10)の音を鳴らす　これで壊れると時だけ音を変えれる
 			if (item.m_hp != 1)
@@ -341,26 +404,24 @@ bool Player::HitCheckAction1ToItem(Item& item)
 			{
 				PlaybackSound(10);
 			}
-
+			
 			//アクティブをfalseに
 			Knife1.m_isActive = false;
-			attack.m_isActive = false;
+			
 			//hpを減らす
 			item.m_hp--;
 
 			//0以下になったら
 			if (item.m_hp <= 0)
 			{
-				// 必殺技獲得
-				m_isAttack = true;
+				//必殺技の時間をここで設定
+				m_attacktime = 900;
 
 				// アイテム消す
 				item.m_isdraw = false;
 			}
-
 			return true;
 		}
-
 		return false;
 	}
 }
@@ -368,7 +429,6 @@ bool Player::HitCheckAction1ToItem(Item& item)
 //近接攻撃とプレイヤーも当たり判定
 bool Player::HitCheckAttackToPlayer2()
 {
-
 	//攻撃が出てなかったら判定しない
 	if (attack.m_isActive == 0)
 	{
@@ -399,44 +459,25 @@ bool Player::HitCheckAttackToPlayer2()
 	}
 }
 
-
-////オフセット値を取得
-//VECTOR GetOffset()
-//{
-//
-//	// プレイヤーの座標を基に理想の位置からどれだけ離れたかを計算する
-//	VECTOR v;
-//	// 理想の表示位置
-//	v.x = WINDOW_SIZE_X / 2;
-//	v.y = WINDOW_SIZE_Y ;
-//	// 本来の座標から理想の表示位置までどれだけ離れたか
-//	v.x = m_pos.x - v.x;
-//	v.y = m_pos.y - v.y;
-//	v.z = 0.0f;
-//	// もしもオフセット値が限界を超えたら強制的に限界値へ===================
-//	// 上下左右の限界値を計算
-//	// プレイヤーはX=320,y=240からどれだけ離れているかを考える
-//	// 左は今回プレイヤーが320まで来たら停止、上は240まで来たら停止なので、オフセットは共に0
-//	float left = 0.0f;
-//	float up = 0.0f;
-//	// 右はステージ右端の40マス×32ドット=1280からウィンドウサイズの半分320を引いた960の位置が限界値
-//	// ということは理想の位置320からのオフセットは960-320の640が限界となる
-//	// 下の式は結果としてウィンドウサイズの半分を2回引き算しているので、まとめて表記している
-//	float right = STAGE_X * OBJECT_SIZE_X - WINDOW_SIZE_X;
-//	// こちらも上の式と同様の理論で作成
-//	float down = STAGE_Y * OBJECT_SIZE_Y - WINDOW_SIZE_Y;
-//
-//	// 上で計算した上限を超えないようにする
-//	if (v.x < left) v.x = left;
-//	else if (v.x > right) v.x = right;
-//	if (v.y < up) v.y = up;
-//	else if (v.y > down) v.y = down;
-//	//======================================================================
-//
-//	return v;
-//}
-
-VECTOR Player::GetPos()
+//プレイヤーとHPアイテムの判定(Hpアイテムクラスを参照)
+bool Player::HitCheckPlayer1ToHpItem(HpItem& item)
 {
-	return m_pos;
+	if (item.m_isdraw == true)
+	{
+		bool Itemhit = ChenkHitSquareToSquare(m_pos, 32, 32, item.m_pos, 35, 35);
+
+		if (Itemhit == true)
+		{
+			//アクティブをfalseに
+			hpitem.m_isdraw = false;
+			if (m_hp <= 9)
+			{
+				//サウンドを鳴らす
+				PlaybackSound(12);
+				m_hp += 1;
+			}
+			return true;
+		}
+		return false;
+	}
 }

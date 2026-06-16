@@ -13,8 +13,11 @@
 #include "../Item/Item.h"
 #include "../Attack/Attack.h"
 #include "../Attack/Attack2.h"
-
+#include "../Controller/controller.h"
+#include"../Item/HpItem.h"
 int Winner;					//勝者
+
+extern int Stagenum;
 
 GAME_SCENE g_gameScene = { GAMESCENE_INIT };
 Player player1;
@@ -24,10 +27,11 @@ Knife2 knife2;
 Item item;
 Attack attack;
 Attack2 attack2;
+Controller controller;
+HpItem hpitem;
 
 int StepGame(int Stagenum) 
 {
-
 	int ret = 0;
 
 	//ゲーム本編の状態遷移
@@ -35,28 +39,61 @@ int StepGame(int Stagenum)
 	{
 	case GAMESCENE_INIT:
 		//初期化処理
-		InitBG();
-		InitSound();
-		InitFps();
-		InitStage();
+		if (Stagenum == 3)
+		{
+			InitBG();
+			InitSound();
+			InitFps();
+			InitStage();
 
-		Knife1.Init();
-		knife2.Init();
+			Knife1.Init();
+			knife2.Init();
+
+			player1.Init(Stagenum);
+			player2.Init(Stagenum);
+
+			attack.Init();
+			attack2.Init();
+			item.Init();
+			hpitem.Init();
+			controller.Init();
+			g_gameScene.m_state = GAMESCENE_LOAD;
+			break;
+		}
+		else
+		{
+			InitBG();
+			InitSound();
+			InitFps();
+			InitStage();
+
+			Knife1.Init();
+			knife2.Init();
+
+			player1.Init(Stagenum);
+			player2.Init(Stagenum);
+
+			attack.Init();
+			attack2.Init();
+
+			TimerInit(300);	//〇秒タイマー
+			TimerStart();	//タイマー開始
+
+			item.Init();
+			hpitem.Init();
+			controller.Init();
+			g_gameScene.m_state = GAMESCENE_LOAD;
+			break;
+		}
 		
-		TimerInit(300);	//〇秒タイマー
-		TimerStart();	//タイマー開始
-		player1.Init(Stagenum);
-		player2.Init(Stagenum);
-
-		attack.Init();
-		attack2.Init();
-
-		item.Init();
-		g_gameScene.m_state = GAMESCENE_LOAD;
-		break;
 
 	case GAMESCENE_LOAD:
 		//データをロード
+		if (Stagenum == 3)
+		{
+			controller.Load();
+		}
+
 		LoadBG();
 		LoadStageGraph();
 		LoadStageData(Stagenum);
@@ -69,7 +106,7 @@ int StepGame(int Stagenum)
 		attack2.Load();
 		
 		item.Load();
-
+		hpitem.Load();
 		LoadSound();
 
 		RequestFadeIn();
@@ -105,7 +142,7 @@ int StepGame(int Stagenum)
 		attack.Step();
 		attack2.Step();
 		item.Step();
-		
+		hpitem.Step();
 		UpdateStage();
 
 		
@@ -125,19 +162,24 @@ int StepGame(int Stagenum)
 		player1.HitCheckAttackToPlayer2();
 		player2.HitCheckAttackToPlayer1();
 
-		//ゲーム終了へ
+		//プレイヤーとHPアイテムの当たり判定
+		player1.HitCheckPlayer1ToHpItem(hpitem);
+		player2.HitCheckPlayer2ToHpItem(hpitem);
+
+		//player1のHPが0以下になったらゲーム終了
 		if (player1.m_hp <= 0)
 		{
-			PlaybackSound(1);
+			PlaybackSound(13);
 			g_gameScene.m_waitCount = ENDWAIT_COUNT + 110;
 			g_gameScene.m_state = GAMESCENE_ENDWAIT;
 			Winner = 2;
 			RequestFadeOut();
 		}
 
+		//player2のHPが0以下になったらゲーム終了
 		if (player2.m_hp <= 0)
 		{
-			PlaybackSound(1);
+			PlaybackSound(14);
 			g_gameScene.m_waitCount = ENDWAIT_COUNT + 110;
 			g_gameScene.m_state = GAMESCENE_ENDWAIT;
 			Winner = 1;
@@ -145,7 +187,7 @@ int StepGame(int Stagenum)
 		}
 
 		//時間切れになったら残りHPを見て勝敗を決める
-		if (TimeUp() == true)
+		if (TimeUp() == true && Stagenum != 3)
 		{	
 			if (player1.m_hp > player2.m_hp)
 			{
@@ -168,7 +210,6 @@ int StepGame(int Stagenum)
 		
 		break;
 		
-
 		//ゲーム終了後の待機
 	case GAMESCENE_ENDWAIT:
 		
@@ -185,6 +226,9 @@ int StepGame(int Stagenum)
 	case GAMESCENE_END:
 	
 		ExitSound();
+		controller.Exit();
+		player1.Exit();
+		player2.Exit();
 		g_gameScene.m_state = GAMESCENE_INIT;
 		ret = 1;
 	}
@@ -202,26 +246,28 @@ void DrawGame()
 		//画像データ表示関数
 		DrawBG();
 		DrawStage();
-		
 		player1.Draw();
 		player2.Draw();
 		Knife1.Draw();
 		knife2.Draw();
 		attack.Draw();
 		attack2.Draw();
-	
 		item.Draw();
+		hpitem.Draw();
+		controller.Draw();
 		PrintFps();
-		
-		int mx, my;
-		GetMousePoint(&mx, &my);
-		DrawFormatString(10, 10, GetColor(0, 0, 0), "X %d  Y %d", mx, my);
 		
 		//残り時間変数
 		int remaining = TimerGetSec();
 		//残り時間を表示
-		DrawFormatString(220, 45, GetColor(0, 0, 0), "残り時間:%d秒", remaining);
-		
+		if (Stagenum == 3)
+		{
+			DrawFormatString(450, 40, GetColor(0, 0, 0), "∞");
+		}
+		else
+		{
+			DrawFormatString(440, 40, GetColor(0, 0, 0), "%d秒", remaining);
+		}
 		break;
 	}
 }

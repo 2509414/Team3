@@ -18,7 +18,6 @@ extern Player player1;
 extern Player2 player2;
 extern Knife Knife1;
 extern Knife2 knife2;
-
 extern Knife_DATA g_knife;
 extern Stage_DATA g_stageData;
 extern GAME_SCENE g_gameScene;
@@ -270,7 +269,6 @@ void HitCheckPlayer2ToStage()
 			}
 		}
 	}
-
 }
 
 

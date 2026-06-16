@@ -32,7 +32,7 @@ void LoadBG()
 		g_bg.m_hndl = LoadGraph("Data/Textures/背景.png");
 	}
 }
-//		背景データ更新関数
+//背景データ更新関数
 void StepBG() {
 	//背景を下に移動させる
 	g_bg.m_pos.y += MOVE_SPEED;
@@ -44,7 +44,7 @@ void StepBG() {
 	}
 
 }
-//		背景データ表示関数
+//背景データ表示関数
 void DrawBG()
 {
 

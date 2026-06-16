@@ -38,7 +38,7 @@ void UpdateFade()
 			g_fade.m_state = FADE_NON;
 		}
 		break;
-	
+
 		//徐々に暗くしていく
 	case FADE_OUT:
 		g_fade.m_count += FADE_SPEED;
@@ -52,49 +52,49 @@ void UpdateFade()
 }
 
 //フェード描画
-	void DrawFade()
+void DrawFade()
+{
+	switch (g_fade.m_state)
 	{
-		switch (g_fade.m_state)
-		{
-		case FADE_IN:
-		case FADE_OUT:
-		case FADE_OUT_WAIT:
-			//αブレンド開始
-			SetDrawBlendMode(DX_BLENDMODE_ALPHA, g_fade.m_count);
-			//フェード用の黒い板
-			DrawBox(0, 0, WINDOW_SIZE_X, WINDOW_SIZE_Y, GetColor(0, 0, 0), TRUE);
-			//αブレンド終了
-			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
-			break;
-		}
+	case FADE_IN:
+	case FADE_OUT:
+	case FADE_OUT_WAIT:
+		//αブレンド開始
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, g_fade.m_count);
+		//フェード用の黒い板
+		DrawBox(0, 0, WINDOW_SIZE_X, WINDOW_SIZE_Y, GetColor(0, 0, 0), TRUE);
+		//αブレンド終了
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+		break;
 	}
-	//フェードインリクエスト
-	void RequestFadeIn()
-	{
-		g_fade.m_state = FADE_IN;
-		g_fade.m_count = 255;
-	}
+}
+//フェードインリクエスト
+void RequestFadeIn()
+{
+	g_fade.m_state = FADE_IN;
+	g_fade.m_count = 255;
+}
 
-	//フェードアウトリクエスト
-	void RequestFadeOut()
-	{
-		g_fade.m_state = FADE_OUT;
-		g_fade.m_count = 0;
-	}
-	
-	//フェードインが終了しているか？
-	bool IsEndFadeIn()
-	{
-		if (g_fade.m_state == FADE_IN)return false;
-		else return true;
-	}
-	
-	//フェードアウトが終了しているかどうか？
-	bool IsEndFadeOut()
-	{
-		if (g_fade.m_state == FADE_OUT)return false;
-		else return true;
-	}
+//フェードアウトリクエスト
+void RequestFadeOut()
+{
+	g_fade.m_state = FADE_OUT;
+	g_fade.m_count = 0;
+}
+
+//フェードインが終了しているか？
+bool IsEndFadeIn()
+{
+	if (g_fade.m_state == FADE_IN)return false;
+	else return true;
+}
+
+//フェードアウトが終了しているかどうか？
+bool IsEndFadeOut()
+{
+	if (g_fade.m_state == FADE_OUT)return false;
+	else return true;
+}
 
 
 

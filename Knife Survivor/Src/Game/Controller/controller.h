@@ -1,0 +1,21 @@
+#pragma once
+class Controller
+{
+public:
+	int m_hndl;			//‰æ‘œƒnƒ“ƒhƒ‹
+public:
+
+	// ‰Šú‰»
+	void Init();
+
+	// “Ç‚İ‚İ
+	void Load();
+
+	// •`‰æ
+	void Draw();
+
+	// I—¹ˆ—
+	void Exit();
+
+};
+
