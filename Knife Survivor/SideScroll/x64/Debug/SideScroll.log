@@ -1,14 +1,14 @@
-﻿  SceneGame.cpp
+﻿  Input.cpp
 D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.h(80,36): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Game/Scene/SceneGame.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Lib/Input.cpp' をコンパイルしています)
   
 D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player.h(81,27): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Game/Scene/SceneGame.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Lib/Input.cpp' をコンパイルしています)
   
 D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.h(53,36): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Game/Scene/SceneGame.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Lib/Input.cpp' をコンパイルしています)
   
 D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\Src\Game\Player\Player2.h(54,27): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Src/Game/Scene/SceneGame.cpp' をコンパイルしています)
+  (ソース ファイル 'Src/Lib/Input.cpp' をコンパイルしています)
   
   SideScroll.vcxproj -> D:\Users\2409028\Desktop\GitHub\Team3\Knife Survivor\x64\Debug\SideScroll.exe

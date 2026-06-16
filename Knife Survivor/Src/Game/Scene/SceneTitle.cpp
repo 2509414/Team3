@@ -271,11 +271,11 @@ void DrawTitle()
 						START_BTN_Y - a,
 						START_BTN_X + START_BTN_W + a,
 						START_BTN_Y + START_BTN_H + a,
-						GetColor(255, 255, 0), //ここで色を指定
+						GetColor(255,255,255), //ここで色を指定
 						TRUE);
 
 					DrawGraph(650, 400, g_titleScene.m_hndl[11], TRUE);
-					DrawFormatString(650, 340, GetColor(0, 0, 0), "複雑な地形でバトル！\nしゃがみアクションを\n駆使しよう！");
+					DrawFormatString(650, 340, GetColor(0, 0, 150), "複雑な地形でバトル！\nしゃがみアクションを\n駆使しよう！");
 
 				}
 
@@ -294,11 +294,11 @@ void DrawTitle()
 						START_BTN_Y + 100,
 						START_BTN_X + START_BTN_W,
 						START_BTN_Y + 100 + START_BTN_H,
-						GetColor(255, 255, 0), //ここで色を指定
+						GetColor(255, 255, 255), //ここで色を指定
 						TRUE);
 
 					DrawGraph(650, 400, g_titleScene.m_hndl[10], TRUE);
-					DrawFormatString(650, 360, GetColor(0, 0, 0), "高低差を活かして\n相手を翻弄しよう！");
+					DrawFormatString(650, 360, GetColor(0, 0, 150), "高低差を活かして\n相手を翻弄しよう！");
 				}
 
 
@@ -316,10 +316,10 @@ void DrawTitle()
 						START_BTN_Y + 200,
 						START_BTN_X + START_BTN_W,
 						START_BTN_Y + 200 + START_BTN_H,
-						GetColor(255, 255, 0), //ここで色を指定
+						GetColor(255, 255, 255), //ここで色を指定
 						TRUE);
 					DrawGraph(650, 400, g_titleScene.m_hndl[9], TRUE);
-					DrawFormatString(650, 360, GetColor(0, 0, 0), "迷ったらここ！\n");
+					DrawFormatString(650, 360, GetColor(0, 0, 150), "迷ったらここ！\n");
 
 				}
 
@@ -335,10 +335,10 @@ void DrawTitle()
 						485,
 						40 + START_BTN_W,
 						485 + START_BTN_H,
-						GetColor(255, 255, 0), TRUE); //ここで色を指定
+						GetColor(255, 255, 255), TRUE); //ここで色を指定
 
 					DrawGraph(650, 400, g_titleScene.m_hndl[8], TRUE);
-					DrawFormatString(650, 340, GetColor(0, 0, 0), "時間無制限！\nフラットな地形で\n操作確認ができる！");
+					DrawFormatString(650, 340, GetColor(0, 0, 150), "時間無制限！\nフラットな地形で\n操作確認ができる！");
 				}
 			}
 			
@@ -369,13 +369,13 @@ void DrawTitle()
 					DrawGraph(40, 485, g_titleScene.m_hndl[7], TRUE);
 				}
 				
-				//モノクロボス
-				if (g_titleScene.m_timer > 105)
-				{
-					DrawGraph(680, 50, g_titleScene.m_hndl[5], TRUE);
+				////モノクロボス
+				//if (g_titleScene.m_timer > 105)
+				//{
+				//	DrawGraph(680, 50, g_titleScene.m_hndl[5], TRUE);
 
-					DrawGraph(80, 50, g_titleScene.m_hndl[5], TRUE);
-				}
+				//	DrawGraph(80, 50, g_titleScene.m_hndl[5], TRUE);
+				//}
 
 				// 点滅スピード調整
 				if (g_titleScene.m_timer > 90)

@@ -43,12 +43,12 @@ void UpdateKeyInput()
 	if (CheckHitKey(KEY_INPUT_S) && player1.m_isSquat == false || input.Buttons[XINPUT_BUTTON_A] && player1.m_isSquat == false) g_inputData.m_nowKey |= KEY_JUMP;
 
 	//Dかつシフトを押した またはコントローラーの右を押したかつXボタンを押したら (ダッシュ)
-	if (CheckHitKey(KEY_INPUT_D) && CheckHitKey(KEY_INPUT_LSHIFT) ||
-		input.Buttons[XINPUT_BUTTON_DPAD_RIGHT] && input.Buttons[XINPUT_BUTTON_X])g_inputData.m_nowKey |= KEY_DASH;
+	if (CheckHitKey(KEY_INPUT_D) && CheckHitKey(KEY_INPUT_LSHIFT) && player1.m_isSquat == false ||
+		input.Buttons[XINPUT_BUTTON_DPAD_RIGHT] && input.Buttons[XINPUT_BUTTON_X] && player1.m_isSquat == false)g_inputData.m_nowKey |= KEY_DASH;
 
 	//Aかつシフトを押した またはコントローラーの左を押したかつXボタンを押したら (ダッシュ)
-	if (CheckHitKey(KEY_INPUT_A) && CheckHitKey(KEY_INPUT_LSHIFT) ||
-		input.Buttons[XINPUT_BUTTON_DPAD_LEFT] && input.Buttons[XINPUT_BUTTON_X])g_inputData.m_nowKey |= KEY_LDASH;
+	if (CheckHitKey(KEY_INPUT_A) && CheckHitKey(KEY_INPUT_LSHIFT) && player1.m_isSquat == false ||
+		input.Buttons[XINPUT_BUTTON_DPAD_LEFT] && input.Buttons[XINPUT_BUTTON_X] && player1.m_isSquat == false)g_inputData.m_nowKey |= KEY_LDASH;
 
 	//Wかつナイフの生存フラグがfalse　またはコントローラーのRBを押したかつナイフの生存フラグがfalseかつしゃがみじゃなかったら (ナイフを投げる)
 	if (CheckHitKey(KEY_INPUT_W) && Knife1.m_isActive == false && player1.m_isSquat == false ||
@@ -75,12 +75,12 @@ void UpdateKeyInput()
 	if (CheckHitKey(KEY_INPUT_J) || input.Buttons[XINPUT_BUTTON_DPAD_LEFT])g_inputData.m_nowKey |= KEY_LEFT2;
 
 	//Dかつシフトを押した またはコントローラーの右を押したかつXボタンを押したら (ダッシュ)
-	if (CheckHitKey(KEY_INPUT_L) && CheckHitKey(KEY_INPUT_RSHIFT) ||
-		input.Buttons[XINPUT_BUTTON_DPAD_RIGHT] && input.Buttons[XINPUT_BUTTON_X])g_inputData.m_nowKey |= KEY_DASH2;
+	if (CheckHitKey(KEY_INPUT_L) && CheckHitKey(KEY_INPUT_RSHIFT) && player2.m_isSquat == false ||
+		input.Buttons[XINPUT_BUTTON_DPAD_RIGHT] && input.Buttons[XINPUT_BUTTON_X] && player2.m_isSquat == false)g_inputData.m_nowKey |= KEY_DASH2;
 
 	//Aかつシフトを押した またはコントローラーの左を押したかつXボタンを押したら (ダッシュ)
-	if (CheckHitKey(KEY_INPUT_J) && CheckHitKey(KEY_INPUT_RSHIFT) ||
-		input.Buttons[XINPUT_BUTTON_DPAD_LEFT] && input.Buttons[XINPUT_BUTTON_X])g_inputData.m_nowKey |= KEY_LDASH2;
+	if (CheckHitKey(KEY_INPUT_J) && CheckHitKey(KEY_INPUT_RSHIFT) && player2.m_isSquat == false ||
+		input.Buttons[XINPUT_BUTTON_DPAD_LEFT] && input.Buttons[XINPUT_BUTTON_X] && player2.m_isSquat == false)g_inputData.m_nowKey |= KEY_LDASH2;
 
 	//Kを押した Aボタンを押した (ジャンプ)
 	if (CheckHitKey(KEY_INPUT_K) && player2.m_isSquat == false ||
