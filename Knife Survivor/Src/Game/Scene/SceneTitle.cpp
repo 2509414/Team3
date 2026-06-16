@@ -131,7 +131,8 @@ int StepTitle()
 
 		//開始前
 	case TITLESCENE_START:
-		//サウンドを鳴らす
+
+		//タイトルBGMを鳴らす
 		PlaybackSound(11);
 
 		//フェードインが終わったら本編へ
@@ -146,6 +147,7 @@ int StepTitle()
 		
 		g_titleScene.m_timer++;
 
+		
 		//左クリックが押されたかつBOSSSTAGEボタンの上に乗ってたら次に進む
 		if (IsMouseLeftClick() == true && IsMouseOnButton(START_BTN_X - 5,
 														  START_BTN_Y - 5,
@@ -235,14 +237,14 @@ void DrawTitle()
 		case TITLESCENE_START:
 		case TITLESCENE_MAIN:
 		case TITLESCENE_ENDWAIT:
-
+			
 			//①タイトルを表示
 			if (g_titleScene.m_timer > 30)
 			{
 				DrawGraph(0, 0, g_titleScene.m_hndl[0], TRUE);
 			}
 			
-			if (g_titleScene.m_timer > 30)
+			if (g_titleScene.m_timer > 350)
 			{
 				float Scale = 1.0f + sin(GetNowCount() * 0.005f) * 0.05f;
 
@@ -253,7 +255,7 @@ void DrawTitle()
 			//②背景
 
 			//タイマーが105以上だったら判定する
-			if (g_titleScene.m_timer > 105)
+			if (g_titleScene.m_timer > 350)
 			{
 				//マウスがSTAGEBOSS上に乗っていたらBossをtrue
 				int a = 5;
@@ -341,30 +343,29 @@ void DrawTitle()
 					DrawFormatString(650, 340, GetColor(0, 0, 150), "時間無制限！\nフラットな地形で\n操作確認ができる！");
 				}
 			}
-			
 
 				//③文字
 			
 				//ボス
-				if (g_titleScene.m_timer > 30)
+				if (g_titleScene.m_timer > 60)
 				{
 					DrawGraph(369, START_BTN_Y,g_titleScene.m_hndl[1], TRUE);	
 				}
 
 				//STAGE２
-				if (g_titleScene.m_timer > 45)
+				if (g_titleScene.m_timer > 120)
 				{
 					DrawGraph(369, 372,g_titleScene.m_hndl[4], TRUE);
 				}
 
 				//STAGE1
-				if (g_titleScene.m_timer > 60)
+				if (g_titleScene.m_timer > 180)
 				{
 					DrawGraph(369, 472,g_titleScene.m_hndl[3], TRUE);
 				}
 
 				//訓練所
-				if (g_titleScene.m_timer > 75)
+				if (g_titleScene.m_timer > 240)
 				{
 					DrawGraph(40, 485, g_titleScene.m_hndl[7], TRUE);
 				}
@@ -378,7 +379,7 @@ void DrawTitle()
 				//}
 
 				// 点滅スピード調整
-				if (g_titleScene.m_timer > 90)
+				if (g_titleScene.m_timer > 350)
 				{
 					int blink = (GetNowCount() / 750) % 2;
 
