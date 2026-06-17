@@ -288,10 +288,10 @@ void Player::Draw()
 
 	//HPバー
 	DrawLine(HP_STARTPOS_X, 47, HP_STARTPOS_X + m_hplength, 47, color, 15);
-
+	
 	if (m_attacktime > 0)
 	{
-		DrawFormatString(75, 100, GetColor(255, 0, 0), "必殺技");
+		DrawFormatString(75, 100, GetColor(255, 0, 0), "力2倍");
 	}
 	//必殺技の時間を表示するバー
 	DrawLine(140, 108, 140 + m_attacktime / 4, 108, GetColor(255, 0, 0), m_t = 3);

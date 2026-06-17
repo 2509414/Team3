@@ -281,7 +281,7 @@ void Player2::Draw()
 
 	if (m_attacktime > 0)
 	{
-		DrawFormatString(825, 100, GetColor(0, 0, 255), "•KE‹Z");
+		DrawFormatString(825, 100, GetColor(0, 0, 255), "—Í2”{");
 	}
 	//•KE‹Z‚ÌŠÔ‚ğ•\¦‚·‚éƒo[
 	DrawLine(815, 108, 815 - m_attacktime / 4, 108, GetColor(0, 0, 255), m_t = 3);
