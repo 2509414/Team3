@@ -261,6 +261,11 @@ void DrawGame()
 		controller.Draw();
 		PrintFps();
 
+		////座標表示（デバック用)
+		//int mx, my;
+		//GetMousePoint(&mx, &my);
+		//DrawFormatString(100, 100, GetColor(255, 255, 255), "X %d Y %d", mx, my);
+		
 		//残り時間変数
 		int remaining = TimerGetSec();
 		//残り時間を表示

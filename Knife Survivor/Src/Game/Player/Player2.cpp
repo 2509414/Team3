@@ -43,7 +43,7 @@ void Player2::Init(int Stagenum)
 	m_shothndl = -1;
 	TurnFrag = 1;
 	m_pos.x = 830;
-	m_pos.y = 535;
+	m_pos.y = 519;
 
 	Knife = 1;
 	itemcraft = 0;
