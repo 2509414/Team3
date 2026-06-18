@@ -13,7 +13,8 @@ public:
 	float m_speedY;		//Y²‚ÌˆÚ“®‘¬“x
 	bool m_isdraw;		//•`‰æ‚·‚é‚©‚Ç‚¤‚©
 	int m_differenceHP;	//HP‚Ì·‚ğŠi”[‚·‚é•Ï”
-	int m_differenceHP2;//
+	int m_differenceHP2;//HP‚Ì·‚ğŠi”[‚·‚é•Ï”
+
 	VECTOR m_pos;		// À•W
 
 public:

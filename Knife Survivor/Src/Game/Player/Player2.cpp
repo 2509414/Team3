@@ -455,7 +455,7 @@ bool Player2::HitCheckPlayer2ToHpItem(HpItem& item)
 {
 	if (item.m_isdraw == true)
 	{
-		bool Itemhit = ChenkHitSquareToSquare(m_pos, 32, 32, item.m_pos, 35, 35);
+		bool Itemhit = ChenkHitSquareToSquare(m_pos, 32, 32, item.m_pos, 16, 32);
 
 		if (Itemhit == true)
 		{

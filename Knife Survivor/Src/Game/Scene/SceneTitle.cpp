@@ -44,7 +44,7 @@ int StepTitle()
 	{
 		//初期化関連
 	case TITLESCENE_INIT:
-		
+
 		//サウンド関連をここで初期化
 		InitSound();
 		g_titleScene.m_timer = 0;
@@ -59,8 +59,8 @@ int StepTitle()
 
 		//画像ロード
 	case TITLESCENE_LOAD:
-			//サウンドロード
-			LoadSound();
+		//サウンドロード
+		LoadSound();
 		//絵のロード
 		for (int i = 0; i < TitlePic; i++)
 		{
@@ -123,7 +123,7 @@ int StepTitle()
 				g_titleScene.m_hndl[11] = LoadGraph("Data/Textures/Stage4Image.png");
 			}
 		}
-		
+
 		RequestFadeIn();
 		//ロードが終わったらゲーム本編へ進む
 		g_titleScene.m_state = TITLESCENE_START;
@@ -144,54 +144,57 @@ int StepTitle()
 
 		//メイン処理
 	case TITLESCENE_MAIN:
-		
+
 		g_titleScene.m_timer++;
 
-		
-		//左クリックが押されたかつBOSSSTAGEボタンの上に乗ってたら次に進む
-		if (IsMouseLeftClick() == true && IsMouseOnButton(START_BTN_X - 5,
-														  START_BTN_Y - 5,
-														  START_BTN_W + 5,
-														  START_BTN_H + 5) == true)
+		//タイマーが350以上だったら判定する
+		if (g_titleScene.m_timer > 350)
 		{
-			PlaybackSound(2);
-			//フェードアウトをリクエストする
-			RequestFadeOut();
-			g_titleScene.m_state = TITLESCENE_ENDWAIT;
-		}
+			//左クリックが押されたかつBOSSSTAGEボタンの上に乗ってたら次に進む
+			if (IsMouseLeftClick() == true && IsMouseOnButton(START_BTN_X - 5,
+				START_BTN_Y - 5,
+				START_BTN_W + 5,
+				START_BTN_H + 5) == true)
+			{
+				PlaybackSound(2);
+				//フェードアウトをリクエストする
+				RequestFadeOut();
+				g_titleScene.m_state = TITLESCENE_ENDWAIT;
+			}
 
-		//左クリックが押されたかつSTAGE2ボタンの上に乗ってたら次に進む
-		if (IsMouseLeftClick() == true && IsMouseOnButton(START_BTN_X - 5,
-														  START_BTN_Y + 100,
-														  START_BTN_W + 5,
-													   	  START_BTN_H + 5) == true)
-		{
-			PlaybackSound(2);
-			//フェードアウトをリクエストする
-			RequestFadeOut();
-			g_titleScene.m_state = TITLESCENE_ENDWAIT;
-		}
-		
+			//左クリックが押されたかつSTAGE2ボタンの上に乗ってたら次に進む
+			if (IsMouseLeftClick() == true && IsMouseOnButton(START_BTN_X - 5,
+				START_BTN_Y + 100,
+				START_BTN_W + 5,
+				START_BTN_H + 5) == true)
+			{
+				PlaybackSound(2);
+				//フェードアウトをリクエストする
+				RequestFadeOut();
+				g_titleScene.m_state = TITLESCENE_ENDWAIT;
+			}
 
-		//左クリックが押されたかつSTAGE1ボタンの上に乗ってたら次に進む
-		if (IsMouseLeftClick() == true && IsMouseOnButton(START_BTN_X - 5,
-														  START_BTN_Y + 200,
-														  START_BTN_W + 5,
-														  START_BTN_H + 5) == true)
-		{
-			PlaybackSound(2);
-			//フェードアウトをリクエストする
-			RequestFadeOut();
-			g_titleScene.m_state = TITLESCENE_ENDWAIT;
-		}
 
-		//左クリックが押されたかつSTAGE4ボタンの上に乗ってたら次に進む
-		if (IsMouseLeftClick() == true && IsMouseOnButton(40, 485, START_BTN_W, START_BTN_H))
-		{
-			PlaybackSound(2);
-			//フェードアウトをリクエストする
-			RequestFadeOut();
-			g_titleScene.m_state = TITLESCENE_ENDWAIT;
+			//左クリックが押されたかつSTAGE1ボタンの上に乗ってたら次に進む
+			if (IsMouseLeftClick() == true && IsMouseOnButton(START_BTN_X - 5,
+				START_BTN_Y + 200,
+				START_BTN_W + 5,
+				START_BTN_H + 5) == true)
+			{
+				PlaybackSound(2);
+				//フェードアウトをリクエストする
+				RequestFadeOut();
+				g_titleScene.m_state = TITLESCENE_ENDWAIT;
+			}
+
+			//左クリックが押されたかつSTAGE4ボタンの上に乗ってたら次に進む
+			if (IsMouseLeftClick() == true && IsMouseOnButton(40, 485, START_BTN_W, START_BTN_H))
+			{
+				PlaybackSound(2);
+				//フェードアウトをリクエストする
+				RequestFadeOut();
+				g_titleScene.m_state = TITLESCENE_ENDWAIT;
+			}
 		}
 		break;
 
@@ -218,7 +221,7 @@ int StepTitle()
 				g_titleScene.m_hndl[TitlePic] = -1;
 			}
 		}
-		
+
 
 		//最初に戻す
 		g_titleScene.m_state = TITLESCENE_INIT;
@@ -234,161 +237,161 @@ void DrawTitle()
 {
 	switch (g_titleScene.m_state)
 	{
-		case TITLESCENE_START:
-		case TITLESCENE_MAIN:
-		case TITLESCENE_ENDWAIT:
-			
-			//①タイトルを表示
-			if (g_titleScene.m_timer > 30)
-			{
-				DrawGraph(0, 0, g_titleScene.m_hndl[0], TRUE);
-			}
-			
-			if (g_titleScene.m_timer > 350)
-			{
-				float Scale = 1.0f + sin(GetNowCount() * 0.005f) * 0.05f;
+	case TITLESCENE_START:
+	case TITLESCENE_MAIN:
+	case TITLESCENE_ENDWAIT:
 
-				DrawRotaGraph(550, 110, Scale, 0.0, g_titleScene.m_hndl[2], TRUE);
-			}
+		//①タイトルを表示
+		if (g_titleScene.m_timer > 30)
+		{
+			DrawGraph(0, 0, g_titleScene.m_hndl[0], TRUE);
+		}
 
-			
-			//②背景
+		if (g_titleScene.m_timer > 350)
+		{
+			float Scale = 1.0f + sin(GetNowCount() * 0.005f) * 0.05f;
 
-			//タイマーが105以上だったら判定する
-			if (g_titleScene.m_timer > 350)
+			DrawRotaGraph(550, 110, Scale, 0.0, g_titleScene.m_hndl[2], TRUE);
+		}
+
+
+		//②背景
+
+		//タイマーが350以上だったら判定する
+		if (g_titleScene.m_timer > 350)
+		{
+			//マウスがSTAGEBOSS上に乗っていたらBossをtrue
+			int a = 5;
+			bool Boss = IsMouseOnButton(START_BTN_X - a,
+				START_BTN_Y - a,
+				START_BTN_W + a,
+				START_BTN_H + a);
+
+			//Bossがtrueだったら
+			if (Boss == true)
 			{
-				//マウスがSTAGEBOSS上に乗っていたらBossをtrue
-				int a = 5;
-				bool Boss = IsMouseOnButton(START_BTN_X - a,
+
+				//乗っかっているという意味で色を表示
+				DrawBox(START_BTN_X - a,
 					START_BTN_Y - a,
-					START_BTN_W + a,
-					START_BTN_H + a);
+					START_BTN_X + START_BTN_W + a,
+					START_BTN_Y + START_BTN_H + a,
+					GetColor(255, 255, 255), //ここで色を指定
+					TRUE);
 
-				//Bossがtrueだったら
-				if (Boss == true)
-				{
+				DrawGraph(650, 400, g_titleScene.m_hndl[11], TRUE);
+				DrawFormatString(650, 340, GetColor(0, 0, 150), "複雑な地形でバトル！\nしゃがみアクションを\n駆使しよう！");
 
-					//乗っかっているという意味で色を表示
-					DrawBox(START_BTN_X - a,
-						START_BTN_Y - a,
-						START_BTN_X + START_BTN_W + a,
-						START_BTN_Y + START_BTN_H + a,
-						GetColor(255,255,255), //ここで色を指定
-						TRUE);
-
-					DrawGraph(650, 400, g_titleScene.m_hndl[11], TRUE);
-					DrawFormatString(650, 340, GetColor(0, 0, 150), "複雑な地形でバトル！\nしゃがみアクションを\n駆使しよう！");
-
-				}
-
-
-				//マウスがSTAGE2上に乗っていたらSTAGE2をtrue
-				bool Stage2 = IsMouseOnButton(START_BTN_X - a,
-					START_BTN_Y + 100,
-					START_BTN_W + a,
-					START_BTN_H + a);
-				//Stage2がtrueだったら
-				if (Stage2 == true)
-				{
-
-					//乗っかっているという意味で色を表示
-					DrawBox(START_BTN_X - a,
-						START_BTN_Y + 100,
-						START_BTN_X + START_BTN_W,
-						START_BTN_Y + 100 + START_BTN_H,
-						GetColor(255, 255, 255), //ここで色を指定
-						TRUE);
-
-					DrawGraph(650, 400, g_titleScene.m_hndl[10], TRUE);
-					DrawFormatString(650, 360, GetColor(0, 0, 150), "高低差を活かして\n相手を翻弄しよう！");
-				}
-
-
-				//マウスがSTAGE1上に乗っていたらSTAGE1をtrue
-				bool Stage1 = IsMouseOnButton(START_BTN_X - a,
-					START_BTN_Y + 200,
-					START_BTN_W + a,
-					START_BTN_H + a);
-				//Stage1がtrueだったら
-				if (Stage1 == true)
-				{
-
-					//乗っかっているという意味で色を表示
-					DrawBox(START_BTN_X - a,
-						START_BTN_Y + 200,
-						START_BTN_X + START_BTN_W,
-						START_BTN_Y + 200 + START_BTN_H,
-						GetColor(255, 255, 255), //ここで色を指定
-						TRUE);
-					DrawGraph(650, 400, g_titleScene.m_hndl[9], TRUE);
-					DrawFormatString(650, 360, GetColor(0, 0, 150), "迷ったらここ！\n");
-
-				}
-
-				//マウスがSTAGE4上に乗っていたらSTAGE4をtrue
-				//Stage4がtrueだったら
-				bool Stage4 = IsMouseOnButton(40, 485, START_BTN_W, START_BTN_H);
-
-				//Stage2がtrueだったら
-				if (Stage4 == true)
-				{
-					//乗っかっているという意味で色を表示
-					DrawBox(40,
-						485,
-						40 + START_BTN_W,
-						485 + START_BTN_H,
-						GetColor(255, 255, 255), TRUE); //ここで色を指定
-
-					DrawGraph(650, 400, g_titleScene.m_hndl[8], TRUE);
-					DrawFormatString(650, 340, GetColor(0, 0, 150), "時間無制限！\nフラットな地形で\n操作確認ができる！");
-				}
 			}
 
-				//③文字
-			
-				//ボス
-				if (g_titleScene.m_timer > 60)
-				{
-					DrawGraph(369, START_BTN_Y,g_titleScene.m_hndl[1], TRUE);	
-				}
 
-				//STAGE２
-				if (g_titleScene.m_timer > 120)
-				{
-					DrawGraph(369, 372,g_titleScene.m_hndl[4], TRUE);
-				}
+			//マウスがSTAGE2上に乗っていたらSTAGE2をtrue
+			bool Stage2 = IsMouseOnButton(START_BTN_X - a,
+				START_BTN_Y + 100,
+				START_BTN_W + a,
+				START_BTN_H + a);
+			//Stage2がtrueだったら
+			if (Stage2 == true)
+			{
 
-				//STAGE1
-				if (g_titleScene.m_timer > 180)
-				{
-					DrawGraph(369, 472,g_titleScene.m_hndl[3], TRUE);
-				}
+				//乗っかっているという意味で色を表示
+				DrawBox(START_BTN_X - a,
+					START_BTN_Y + 100,
+					START_BTN_X + START_BTN_W,
+					START_BTN_Y + 100 + START_BTN_H,
+					GetColor(255, 255, 255), //ここで色を指定
+					TRUE);
 
-				//訓練所
-				if (g_titleScene.m_timer > 240)
-				{
-					DrawGraph(40, 485, g_titleScene.m_hndl[7], TRUE);
-				}
-				
-				////モノクロボス
-				//if (g_titleScene.m_timer > 105)
-				//{
-				//	DrawGraph(680, 50, g_titleScene.m_hndl[5], TRUE);
+				DrawGraph(650, 400, g_titleScene.m_hndl[10], TRUE);
+				DrawFormatString(650, 360, GetColor(0, 0, 150), "高低差を活かして\n相手を翻弄しよう！");
+			}
 
-				//	DrawGraph(80, 50, g_titleScene.m_hndl[5], TRUE);
-				//}
 
-				// 点滅スピード調整
-				if (g_titleScene.m_timer > 350)
-				{
-					int blink = (GetNowCount() / 750) % 2;
+			//マウスがSTAGE1上に乗っていたらSTAGE1をtrue
+			bool Stage1 = IsMouseOnButton(START_BTN_X - a,
+				START_BTN_Y + 200,
+				START_BTN_W + a,
+				START_BTN_H + a);
+			//Stage1がtrueだったら
+			if (Stage1 == true)
+			{
 
-					if (blink == 0)
-					{
-						DrawFormatString(315, 205, GetColor(0, 0, 0), "Choose a stage and left-click");
-					}
-				}
-			break;
+				//乗っかっているという意味で色を表示
+				DrawBox(START_BTN_X - a,
+					START_BTN_Y + 200,
+					START_BTN_X + START_BTN_W,
+					START_BTN_Y + 200 + START_BTN_H,
+					GetColor(255, 255, 255), //ここで色を指定
+					TRUE);
+				DrawGraph(650, 400, g_titleScene.m_hndl[9], TRUE);
+				DrawFormatString(650, 360, GetColor(0, 0, 150), "迷ったらここ！\n");
+
+			}
+
+			//マウスがSTAGE4上に乗っていたらSTAGE4をtrue
+			//Stage4がtrueだったら
+			bool Stage4 = IsMouseOnButton(40, 485, START_BTN_W, START_BTN_H);
+
+			//Stage2がtrueだったら
+			if (Stage4 == true)
+			{
+				//乗っかっているという意味で色を表示
+				DrawBox(40,
+					485,
+					40 + START_BTN_W,
+					485 + START_BTN_H,
+					GetColor(255, 255, 255), TRUE); //ここで色を指定
+
+				DrawGraph(650, 400, g_titleScene.m_hndl[8], TRUE);
+				DrawFormatString(650, 340, GetColor(0, 0, 150), "時間無制限！\nフラットな地形で\n操作確認ができる！");
+			}
+		}
+
+		//③文字
+
+		//ボス
+		if (g_titleScene.m_timer > 60)
+		{
+			DrawGraph(369, START_BTN_Y, g_titleScene.m_hndl[1], TRUE);
+		}
+
+		//STAGE２
+		if (g_titleScene.m_timer > 120)
+		{
+			DrawGraph(369, 372, g_titleScene.m_hndl[4], TRUE);
+		}
+
+		//STAGE1
+		if (g_titleScene.m_timer > 180)
+		{
+			DrawGraph(369, 472, g_titleScene.m_hndl[3], TRUE);
+		}
+
+		//訓練所
+		if (g_titleScene.m_timer > 240)
+		{
+			DrawGraph(40, 485, g_titleScene.m_hndl[7], TRUE);
+		}
+
+		////モノクロボス
+		//if (g_titleScene.m_timer > 105)
+		//{
+		//	DrawGraph(680, 50, g_titleScene.m_hndl[5], TRUE);
+
+		//	DrawGraph(80, 50, g_titleScene.m_hndl[5], TRUE);
+		//}
+
+		// 点滅スピード調整
+		if (g_titleScene.m_timer > 350)
+		{
+			int blink = (GetNowCount() / 750) % 2;
+
+			if (blink == 0)
+			{
+				DrawFormatString(315, 205, GetColor(0, 0, 0), "Choose a stage and left-click");
+			}
+		}
+		break;
 
 	}
 }

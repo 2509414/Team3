@@ -13,6 +13,7 @@ void Item::Init()
 	m_speedX = 3.0f;
 	m_speedY = 2.0f;
 	m_isdraw = false;
+	m_drawtime = 0;
 	m_differenceHP = 0;
 	m_differenceHP2 = 0;
 }
@@ -30,12 +31,14 @@ void Item::Load()
 //アイテムデータ更新関数
 void Item::Step()
 {
+	//描画するまでの時間に値を＋し続ける
+	m_drawtime++;
 	//playerのHPの差を格納
-	m_differenceHP  = player1.m_hp - player2.m_hp;
+	m_differenceHP = player1.m_hp - player2.m_hp;
 	m_differenceHP2 = player2.m_hp - player1.m_hp;
 
 	//HPの差が5以上だったらフラグをオンにする
-	if (m_differenceHP >= 3 || m_differenceHP2 >= 3)
+	if (m_differenceHP >= 2 || m_differenceHP2 >= 2 || m_drawtime > 6000)
 	{
 		m_isdraw = true;
 	}
@@ -67,6 +70,7 @@ void Item::Step()
 	{
 		Item::Exit();
 	}
+
 }
 
 //表示関数
@@ -75,9 +79,9 @@ void Item::Draw()
 	if (m_isdraw == true && Stagenum == 3)
 	{
 		DrawGraph(m_pos.x, m_pos.y, m_hndl, TRUE);
-		DrawFormatString(m_pos.x -45,m_pos.y -20 , GetColor(0, 0, 0), "これはナイフで壊せる!");
+		DrawFormatString(m_pos.x - 45, m_pos.y - 20, GetColor(0, 0, 0), "これはナイフで壊せる!");
 	}
-	else if(m_isdraw == true)
+	else if (m_isdraw == true)
 	{
 		DrawGraph(m_pos.x, m_pos.y, m_hndl, TRUE);
 	}
@@ -90,7 +94,8 @@ void Item::Exit()
 	if (m_hp == 0)
 	{
 		DeleteGraph(m_hndl);
-		m_pos = { -100,-100,-100 };
+		m_pos = { -10000,-10000,-10000 };
 		m_isdraw = false;
+		m_hp == 0;
 	}
 }

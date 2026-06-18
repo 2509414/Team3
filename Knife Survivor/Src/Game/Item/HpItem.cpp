@@ -44,8 +44,8 @@ void HpItem::Step()
 		if (isHpItemDraw == 0)
 		{
 			m_isdraw = true;
-			m_pos.x = GetRand(900);
-			m_pos.y = GetRand(600);
+			m_pos.x = GetRand(800) + 50;
+			m_pos.y = GetRand(500) + 50;
 			m_drawtime = 600;
 		}
 	}
